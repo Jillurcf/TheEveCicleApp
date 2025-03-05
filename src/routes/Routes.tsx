@@ -1,0 +1,51 @@
+import React from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import BottomRoutes from './BottomRoutes';
+import SplashScreen from '../screens/SplashScreen';
+import DrawerRoute from './DrawerRotues';
+import WelcomeScreen1 from '../screens/welcome/WelcomeScreen1';
+import WelcomeScreen2 from '../screens/welcome/WelcomeScreen2';
+import WelcomeScreen3 from '../screens/welcome/WelcomeScreen3';
+import RegistrationScreen from '../screens/auth/RegistrationScreen';
+import LoginForm from '../screens/auth/LoginForm';
+import FreeTrialScreen from '../screens/auth/FreeTrialScreen';
+import Signup from '../screens/auth/Signup';
+import ForgetPassword from '../screens/auth/ForgetPassword';
+import OtpScreen from '../screens/auth/OtpScreen';
+import ChangePassword from '../screens/auth/ChangePassword';
+
+const Stack = createNativeStackNavigator();
+
+export default function Routes() {
+  return (
+    // <StripeProvider publishableKey="pk_test_51QKAtBKOpUtqOuW1x5VdNqH3vG7CZZl1P6V3VuV1qsRUmPLNk26i34AXeu2zCO3QurFJAOZ9zfb0EkWeCVhqBYgH008X41cXr6">
+    <Stack.Navigator
+      screenOptions={{headerShown: false, animation: 'slide_from_right'}}
+      //   initialRouteName="LoadingSplash"
+    >
+      {/* <Stack.Screen name="LoadingSplash" component={LoadingSplash}
+         /> */}
+
+      {/* <Stack.Screen name="Verify" component={VerifyScreen} />
+      <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="Popup" component={PopupScreen} />
+      <Stack.Screen name="Drawer" component={DrawerRoute} />
+      <Stack.Screen name="DiscoverResult" component={DiscoverResult} /> */}
+
+      <Stack.Screen name="WelcomeScreen1" component={WelcomeScreen1} />
+      <Stack.Screen name="WelcomeScreen2" component={WelcomeScreen2} />
+      <Stack.Screen name="WelcomeScreen3" component={WelcomeScreen3} />
+      <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
+      <Stack.Screen name="Login" component={LoginForm} />
+      <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
+      <Stack.Screen name="OtpScreen" component={OtpScreen} />
+      <Stack.Screen name="ChangePassword" component={ChangePassword} />
+      <Stack.Screen name="FreeTrialScreen" component={FreeTrialScreen} />
+      {/* <Stack.Screen name="SplashScreen" component={SplashScreen} /> 
+      <Stack.Screen name="Drawer" component={DrawerRoute} /> */}
+      {/* <Stack.Screen name="BottomRoutes" component={BottomRoutes} /> */}
+    </Stack.Navigator>
+    // </StripeProvider>
+  );
+}
