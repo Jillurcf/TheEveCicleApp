@@ -10,15 +10,20 @@ type Props = {};
 const WelcomeScreen1 = ({navigation}: any) => {
   const [currentOnboard, setCurrentOnboard] = useState(1);
   return (
-    <ScrollView style={tw`bg-[#E8F6F6] flex-1`}>
-      <Text
-        style={tw`text-black font-SatoshiBold text-center text-3xl mt-6`}>
+    <ScrollView contentContainerStyle={tw`bg-[#E8F6F6] flex-1`}>
+     <View>
+     <Text style={tw`text-black font-SatoshiBold text-center text-3xl mt-6`}>
         Welcome to {'\n'} The Sanctum app
       </Text>
-      <Image
-        style={tw`relative`}
-        source={require('../../assets/Imgages/welcomeScreen1img.png')}
-      />
+     </View>
+      <View style={tw`flex items-center justify-center`}>
+        <Image
+          style={tw`w-[98%]`}
+          source={require('../../assets/Imgages/welcomeScreen1img.png')}
+          resizeMode="contain"
+        />
+      </View>
+
       <View
         style={tw`bottom-0 bg-white h-42 rounded-t-3xl z-40 w-full absolute`}>
         <Text style={tw`font-SatoshiRegular my-4 text-black text-center`}>
@@ -31,7 +36,7 @@ const WelcomeScreen1 = ({navigation}: any) => {
         </View>
         <View style={tw`items-center justify-center`}>
           <TButton
-          onPress={() => navigation.navigate("WelcomeScreen2")}
+            onPress={() => navigation.navigate('WelcomeScreen2')}
             containerStyle={tw`bg-[#4FA8A8] w-[80%]  `}
             title="Next"
             titleStyle={tw`font-SatoshiRegular`}

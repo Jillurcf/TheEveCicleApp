@@ -13,6 +13,14 @@ import Signup from '../screens/auth/Signup';
 import ForgetPassword from '../screens/auth/ForgetPassword';
 import OtpScreen from '../screens/auth/OtpScreen';
 import ChangePassword from '../screens/auth/ChangePassword';
+import FirstStep from '../screens/accountSetup/FirstStep';
+import SetupStep1 from '../screens/accountSetup/SetupStep1';
+import SetupStep2 from '../screens/accountSetup/SetupStep2';
+import SetupStep3 from '../screens/accountSetup/SetupStep3';
+import SetupStep4 from '../screens/accountSetup/SetupStep4';
+import SetupStep5 from '../screens/accountSetup/SetupStep5';
+import SetupStep6 from '../screens/accountSetup/SetupStep6';
+import LinkOtherUsers from '../screens/accountSetup/LinkOtherUsers';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +50,14 @@ export default function Routes() {
       <Stack.Screen name="OtpScreen" component={OtpScreen} />
       <Stack.Screen name="ChangePassword" component={ChangePassword} />
       <Stack.Screen name="FreeTrialScreen" component={FreeTrialScreen} />
+      <Stack.Screen name="FirstStep" component={FirstStep} />
+      <Stack.Screen name="SetupStep1" component={SetupStep1} />
+      <Stack.Screen name="SetupStep2" component={SetupStep2} />
+      <Stack.Screen name="SetupStep3" component={SetupStep3} />
+      <Stack.Screen name="SetupStep4" component={SetupStep4} />
+      <Stack.Screen name="SetupStep5" component={SetupStep5} />
+      <Stack.Screen name="SetupStep6" component={SetupStep6} />
+      <Stack.Screen name="LinkOtherUsers" component={LinkOtherUsers} />
       {/* <Stack.Screen name="SplashScreen" component={SplashScreen} /> 
       <Stack.Screen name="Drawer" component={DrawerRoute} /> */}
       {/* <Stack.Screen name="BottomRoutes" component={BottomRoutes} /> */}

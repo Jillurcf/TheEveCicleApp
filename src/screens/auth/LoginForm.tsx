@@ -31,10 +31,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ navigation }) => {
   const [isCheck, setIsCheck] = useState(false);
 
   const handleLogin = () => {
-    if (!email || !password) {
-      Alert.alert('Please enter both email and password');
-      return;
-    }
+    // if (!email || !password) {
+    //   Alert.alert('Please enter both email and password');
+    //   return;
+    // }
     // Handle login logic here
   };
 

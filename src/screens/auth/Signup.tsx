@@ -108,18 +108,18 @@ const Signup = ({navigation}) => {
         <Button
           style={tw`text-white`}
           containerStyle={tw`mt-6 bg-[#4FA8A8] rounded-2xl`}
-          title={'Start your seasons journey'}
+          title={'Start my seasons trial'}
           titleSyle={tw`text-[#FFFFFF]`}
-          // onPress={handleLogin}
-          // onPress={() => {
-          //   navigation?.navigate('Drawer');
-          // }}
+          
+          onPress={() => {
+            navigation?.navigate('FirstStep');
+          }}
         />
         <TouchableOpacity
           onPress={() => navigation.navigate('Login')}
           style={tw`items-center justify-center flex`}>
           <Text style={tw`font-SatoshiMedium my-4`}>
-            Don't have an account?{' '}
+           Already have an account?{' '}
             <Text style={tw`text-[#2B9696]`}>Sign in</Text>{' '}
           </Text>
         </TouchableOpacity>
