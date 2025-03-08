@@ -37,7 +37,7 @@ export default function Routes() {
       {/* <Stack.Screen name="Verify" component={VerifyScreen} />
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Popup" component={PopupScreen} />
-      <Stack.Screen name="Drawer" component={DrawerRoute} />
+  
       <Stack.Screen name="DiscoverResult" component={DiscoverResult} /> */}
 
       <Stack.Screen name="WelcomeScreen1" component={WelcomeScreen1} />
@@ -58,6 +58,7 @@ export default function Routes() {
       <Stack.Screen name="SetupStep5" component={SetupStep5} />
       <Stack.Screen name="SetupStep6" component={SetupStep6} />
       <Stack.Screen name="LinkOtherUsers" component={LinkOtherUsers} />
+      <Stack.Screen name="Drawer" component={DrawerRoute} />
       {/* <Stack.Screen name="SplashScreen" component={SplashScreen} /> 
       <Stack.Screen name="Drawer" component={DrawerRoute} /> */}
       {/* <Stack.Screen name="BottomRoutes" component={BottomRoutes} /> */}

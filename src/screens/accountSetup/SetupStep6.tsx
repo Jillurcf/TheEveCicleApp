@@ -287,7 +287,7 @@ const SetupStep6 = ({navigation}) => {
       <View style={tw`flex-row w-full gap-2 justify-between py-6`}>
         <View>
           <TButton
-            onPress={() => navigation.navigate('SetupStep4')}
+            onPress={() => navigation.navigate('Drawer')}
             titleStyle={tw`text-[#4FA8A8]`}
             title="Skip"
             containerStyle={tw`bg-[#EAF5F5] h-12`}
@@ -295,7 +295,7 @@ const SetupStep6 = ({navigation}) => {
         </View>
         <View>
           <TButton
-            onPress={() => navigation.navigate('SetupStep4')}
+            onPress={() => navigation.navigate('Drawer')}
             title="Continue"
             containerStyle={tw`bg-[#4FA8A8] h-12`}
           />

@@ -20,6 +20,7 @@ const FirstStep = ({navigation}) => {
           <Text style={tw`text-[#4FA8A8] font-SatoshiBold`}>No, I have my partner code</Text>
         </TouchableOpacity>
         <TouchableOpacity
+         onPress={() => navigation.navigate('LinkOtherUsers')}
           style={tw`bg-[#E7E7E9] w-full items-center rounded-xl h-12 justify-center mt-4`}>
           <Text style={tw`text-[#4FA8A8] font-SatoshiBold`}>
             No. I have my village (friends & family) code

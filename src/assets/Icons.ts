@@ -101,3 +101,7 @@ export const IconUser =`<svg width="24" height="24" viewBox="0 0 24 24" fill="no
 </svg>
 
 `
+export const redFullRound = `<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.34794 16.6162C3.39593 22.9193 10.1658 26.3687 16.4688 24.3207C22.7719 22.2727 26.2213 15.5029 24.1733 9.19981C22.1253 2.89676 15.3555 -0.552671 9.05241 1.49531C2.74936 3.5433 -0.700042 10.3132 1.34794 16.6162Z" fill="#E84663"/>
+</svg>
+`

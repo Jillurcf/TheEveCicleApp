@@ -1,13 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import OvulationCircle from './movingCircle/OvulationCircle'
+import tw from '../lib/tailwind'
 
 type Props = {}
 
 const Today = (props: Props) => {
   return (
-    <View>
-      <Text>Today</Text>
-    </View>
+    <ScrollView contentContainerStyle={tw``}>
+      <OvulationCircle />
+      <OvulationCircle />
+    </ScrollView>
   )
 }
 

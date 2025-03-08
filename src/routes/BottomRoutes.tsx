@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { SvgXml } from "react-native-svg";
 import tw from "../lib/tailwind";
 
-import Today from "../screens/Today";
+
 import Calendar from "../screens/Calendar";
 import {
   IconCalendar,
@@ -13,13 +13,14 @@ import {
   IconToday,
   IconTodayFocus,
 } from "../assets/Icons";
+import Today from "../screens/Today";
 
 const Tab = createBottomTabNavigator();
 
 function BottomRoutes() {
   const CustomAddButton = ({ onPress }) => (
     <TouchableOpacity
-      style={tw`absolute top-[-30px] left-1/4 -translate-x-1/2 w-16 h-16 bg-[#E5F4F2] rounded-full justify-center items-center shadow-lg`}
+      style={tw`absolute bottom-[25px] left-[40%] -translate-x-1/2 w-16 h-16 bg-[#E5F4F2] rounded-full justify-center items-center shadow-lg`}
       onPress={onPress}
     >
       <SvgXml xml={IconPlus} width={24} height={24} />
@@ -30,9 +31,9 @@ function BottomRoutes() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarStyle: tw`h-16 bg-white shadow-md`, // Increased height
-        tabBarItemStyle: { marginVertical: 5 },
-        tabBarLabelStyle: { display: "none" },
+        tabBarStyle: tw`h-[70px] bg-white shadow-md`, // Increased height for button spacing
+        tabBarItemStyle: tw`my-1`, // Adjusted margin
+        tabBarLabelStyle: tw`hidden`, // Hide labels
         tabBarIcon: ({ focused }) => {
           let icon;
 
