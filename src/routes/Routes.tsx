@@ -21,9 +21,10 @@ import SetupStep4 from '../screens/accountSetup/SetupStep4';
 import SetupStep5 from '../screens/accountSetup/SetupStep5';
 import SetupStep6 from '../screens/accountSetup/SetupStep6';
 import LinkOtherUsers from '../screens/accountSetup/LinkOtherUsers';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Stack = createNativeStackNavigator();
-
+const Drawer = createDrawerNavigator();
 export default function Routes() {
   return (
     // <StripeProvider publishableKey="pk_test_51QKAtBKOpUtqOuW1x5VdNqH3vG7CZZl1P6V3VuV1qsRUmPLNk26i34AXeu2zCO3QurFJAOZ9zfb0EkWeCVhqBYgH008X41cXr6">
@@ -39,7 +40,7 @@ export default function Routes() {
       <Stack.Screen name="Popup" component={PopupScreen} />
   
       <Stack.Screen name="DiscoverResult" component={DiscoverResult} /> */}
-
+{/* 
       <Stack.Screen name="WelcomeScreen1" component={WelcomeScreen1} />
       <Stack.Screen name="WelcomeScreen2" component={WelcomeScreen2} />
       <Stack.Screen name="WelcomeScreen3" component={WelcomeScreen3} />
@@ -57,7 +58,7 @@ export default function Routes() {
       <Stack.Screen name="SetupStep4" component={SetupStep4} />
       <Stack.Screen name="SetupStep5" component={SetupStep5} />
       <Stack.Screen name="SetupStep6" component={SetupStep6} />
-      <Stack.Screen name="LinkOtherUsers" component={LinkOtherUsers} />
+      <Stack.Screen name="LinkOtherUsers" component={LinkOtherUsers} /> */}
       <Stack.Screen name="Drawer" component={DrawerRoute} />
       {/* <Stack.Screen name="SplashScreen" component={SplashScreen} /> 
       <Stack.Screen name="Drawer" component={DrawerRoute} /> */}

@@ -33,6 +33,7 @@
     "react-native-tab-view": "^4.0.5",
     "react-native-ui-lib": "^7.38.1",
     "react-native-wheely": "^0.6.0",
+    "recharts": "^2.15.2",
     "twrnc": "^4.6.1"
   },
   "devDependencies": {

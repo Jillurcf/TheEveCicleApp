@@ -6,14 +6,23 @@ import {
   StatusBar,
   PanResponder,
   Animated,
+  ImageBackground,
+  ScrollView,
 } from "react-native";
-import Svg, { Circle, G, Image } from "react-native-svg";
+import Svg, { Circle, G, Image, SvgXml } from "react-native-svg";
 import DayPicker from "./CustomCalender";
 import tw from "../../lib/tailwind";
 import LinearGradient from "react-native-linear-gradient";
+import HormoneChart from "../../component/HomeChart";
+import Header from "../../component/Header";
+import IconArrow from "../../component/IconArrow";
+import { IconBell } from "../../assets/Icons";
+import CheckInList from "../../component/MyCheckIntoday";
+import SeasonInsights from "../../component/SeasonInsights";
+import MoonPahseTody from "../../component/MoonPahseTody";
 
 
-const OvulationCircle: React.FC = () => {
+const OvulationCircle: React.FC = ({ navigation }) => {
   const totalCircles = 31;
   const circumference = 220; // Circumference of the circle
   const radius = circumference / (1 * Math.PI); // Radius calculation
@@ -21,7 +30,9 @@ const OvulationCircle: React.FC = () => {
   const rotationAnim = useRef(new Animated.Value(0)).current; // Track rotation
   const [rotation, setRotation] = useState(0);
   const [selectedDay, setSelectedDay] = useState(1); // Default selected day to 1
+  const [selectedTab, setSelectedTab] = useState("Ovulation");
 
+  const tabs = ["Menstrual", "Follicular", "Ovulation", "Luteal"];
   const updateRotation = (day: number) => {
     const angle = (day / totalCircles) * 360;
     setRotation(angle);
@@ -56,6 +67,7 @@ const OvulationCircle: React.FC = () => {
   });
 
   const imagePaths = [
+
     require("../../assets/Imgages/Yellow-fullMoon.png"),
     require("../../assets/Imgages/yl1.png"),
     require("../../assets/Imgages/red-r1.png"),
@@ -90,103 +102,139 @@ const OvulationCircle: React.FC = () => {
   ];
 
   return (
-    <LinearGradient
-      colors={["#0B3434", "#207272", "#A8D4D41A"]} // Gradient colors
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
-      style={tw`flex-1 items-center`}
-    >
-      <StatusBar translucent={false} />
+    <ScrollView>
+      <LinearGradient
+        colors={["#0B3434", "#207272", "#FFFFFFFF"]} // Gradient colors
+        start={{ x: 1, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={tw`items-center w-full`}
+      >
+        <StatusBar translucent={false} />
+        <View style={tw`w-full px-[4%]`}>
+          <Header />
+        </View>
+        {/* SVG Circle */}
+        <View {...panResponder.panHandlers}>
+          <Svg height="420" width="490" viewBox="0 0 300 300">
+            <Animated.View
+              style={[
+                tw`absolute left-[75px] top-[25px]`,
+                { transform: [{ rotate: animatedRotation }] },
+              ]}
+            >
+              <Svg height="340" width="340" viewBox="0 0 150 150">
+                <G origin="75, 75">
+                  {/* Static Background Circle */}
+                  <Circle cx="75" cy="75" r={radius} strokeWidth="1" fill="none" />
 
-      {/* SVG Circle */}
-      <View {...panResponder.panHandlers}>
-        <Svg height="420" width="490" viewBox="0 0 300 300">
-          <Animated.View
-            style={[
-              tw`absolute left-[75px] top-[25px]`,
-              { transform: [{ rotate: animatedRotation }] },
-            ]}
-          >
-            <Svg height="340" width="340" viewBox="0 0 150 150">
-              <G origin="75, 75">
-                {/* Static Background Circle */}
-                <Circle cx="75" cy="75" r={radius} strokeWidth="1" fill="none" />
+                  {/* Progress Circles */}
+                  {[...Array(totalCircles)].map((_, index) => {
+                    const angle = (index * 360) / totalCircles;
+                    return (
+                      <Image
+                        key={index}
+                        x={75 + Math.cos((angle * Math.PI) / 180) * radius - 5}
+                        y={75 + Math.sin((angle * Math.PI) / 180) * radius - 5}
+                        width={10}
+                        height={10}
+                        href={imagePaths[index]}
+                      />
+                    );
+                  })}
+                </G>
+              </Svg>
+            </Animated.View>
 
-                {/* Progress Circles */}
-                {[...Array(totalCircles)].map((_, index) => {
-                  const angle = (index * 360) / totalCircles;
-                  return (
-                    <Image
-                      key={index}
-                      x={75 + Math.cos((angle * Math.PI) / 180) * radius - 5}
-                      y={75 + Math.sin((angle * Math.PI) / 180) * radius - 5}
-                      width={10}
-                      height={10}
-                      href={imagePaths[index]}
-                    />
-                  );
-                })}
-              </G>
-            </Svg>
-          </Animated.View>
+            {/* Fixed Circle at the Bottom */}
+            <Circle
+              cx="144"
+              cy={183 + radius}
+              r={14}
+              strokeOpacity={"10%"}
+              strokeWidth={5}
+              stroke="#E6F2F2"
+              fill="white"
+            />
+          </Svg>
+        </View>
 
-          {/* Fixed Circle at the Bottom */}
-          <Circle
-            cx="144"
-            cy={183 + radius}
-            r={14}
-            strokeOpacity={"10%"}
-            strokeWidth={5}
-            stroke="#E6F2F2"
-            fill="white"
-          />
-        </Svg>
-      </View>
+        {/* Text Content */}
+        <View style={tw`absolute top-[25%] items-center`}>
+          <Text style={tw`  font-SatoshiBold text-white`}>Current session</Text>
+          <Text style={tw`text-lg  font-SatoshiBold text-white`}>Summer . Ovulation</Text>
+          {/* <Text style={tw`text-white text-base font-bold mt-6`}>
+        <Text style={tw`text-[25px] font-bold`}>{selectedDay}th</Text> Day
+      </Text> */}
+          <Text style={tw`text-white text-sm  font-SatoshiBold text-center max-w-[250px] mt-2`}>
+            Next period in 12 days
+          </Text>
 
-      {/* Text Content */}
-      <View style={tw`absolute top-[15%] items-center`}>
-        <Text style={tw`text-lg font-semibold text-white`}>Ovulation Cycle</Text>
-        <Text style={tw`text-white text-base font-bold mt-6`}>
-          <Text style={tw`text-[25px] font-bold`}>{selectedDay}th</Text> Day
-        </Text>
-        <Text style={tw`text-white text-sm text-center max-w-[250px] mt-2`}>
-          High chance of getting pregnant
-        </Text>
+          {/* Log Period Button */}
+          <TouchableOpacity style={tw`mt-5 border-2 font- SatoshiBold border-white px-4 py-1 rounded-full bg-white`}>
+            <Text style={tw`text-[#1E6969] text-base  font-SatoshiBold`}>Log Period</Text>
+          </TouchableOpacity>
+        </View>
 
-        {/* Log Period Button */}
-        <TouchableOpacity style={tw`mt-5 border-2 border-white px-8 py-3 rounded-full bg-[#FF6B6B]`}>
-          <Text style={tw`text-white text-base font-medium`}>Log Period</Text>
-        </TouchableOpacity>
-      </View>
+        <View style={tw`flex-row justify-betweenp-2 rounded-full px-[4%]`}>
+          {tabs.map((tab, index) => (
+            <TouchableOpacity
+              key={index}
+              style={tw`flex-1 py-2 mx-1 rounded-full ${selectedTab === tab ? "bg-green-700 " : "bg-gray-200"
+                }`}
+              onPress={() => setSelectedTab(tab)}
+            >
+              <Text
+                style={tw`text-center font-semibold ${selectedTab === tab ? "text-white" : "text-gray-600"
+                  }`}
+              >
+                {tab}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+        {/* Day picker */}
 
-      {/* Day Picker */}
-      {/* <View style={tw` w-full mt-auto`}> */}
         <DayPicker selectedDay={selectedDay} onDaySelect={updateRotation} rotation={rotation} />
-      {/* </View> */}
-      <View>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
+
+        <View style={tw`flex-row gap-4 my-4`}>
+          <View style={tw`flex-row items-center justify-center gap-2`}>
+            <View style={tw`w-3 h-3 rounded-full bg-[#4CAF50]`}></View>
+            <Text style={tw`text-black font-satoshiBlack text-xs`}>Estrogen</Text>
+          </View>
+          <View style={tw`flex-row items-center justify-center gap-2`}>
+            <View style={tw`w-3 h-3 rounded-full bg-[#9733EE]`}></View>
+            <Text style={tw`text-black font-satoshiBlack text-xs`}>Progestterone</Text>
+          </View>
+          <View style={tw`flex-row items-center justify-center gap-2`}>
+            <View style={tw`w-3 h-3 rounded-full bg-[#FF4C4C]`}></View>
+            <Text style={tw`text-black font-satoshiBlack text-xs`}>Testosterone</Text>
+          </View>
+          <View style={tw`flex-row items-center justify-center gap-2`}>
+            <View style={tw`w-3 h-3 rounded-full bg-[#FFA500]`}></View>
+            <Text style={tw`text-black font-satoshiBlack text-xs`}>LH</Text>
+          </View>
+        </View>
+
+      </LinearGradient>
+      <View style={tw` bg-white  `}>
+        <CheckInList />
       </View>
-    </LinearGradient>
+      <LinearGradient
+        colors={["#0B3434", "#20727280", "#20727280", "#A8D4D4CC", "#FFFFFFFF"]} // Gradient colors
+        start={{ x: 1, y: 1 }}
+        end={{ x: 1, y: 0 }}
+        style={tw`items-center w-full`}
+      >
+        <SeasonInsights />
+        <MoonPahseTody />
+      </LinearGradient>
+      <StatusBar translucent={false} />
+    </ScrollView>
+
+
+
+
+
   );
 };
 

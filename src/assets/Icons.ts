@@ -105,3 +105,64 @@ export const redFullRound = `<svg width="25" height="25" viewBox="0 0 25 25" fil
 <path d="M1.34794 16.6162C3.39593 22.9193 10.1658 26.3687 16.4688 24.3207C22.7719 22.2727 26.2213 15.5029 24.1733 9.19981C22.1253 2.89676 15.3555 -0.552671 9.05241 1.49531C2.74936 3.5433 -0.700042 10.3132 1.34794 16.6162Z" fill="#E84663"/>
 </svg>
 `
+export const IconSanctum = `<svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2646_10533)">
+<path d="M14.9268 8.26468L10.9968 14.4621C10.7658 14.8264 10.2342 14.8264 10.0032 14.4621L6.07323 8.26468L14.9268 8.26468ZM15.6729 7.08824L5.32714 7.08824L2.3562 2.40328C2.10785 2.0116 2.38921 1.5 2.85296 1.5L18.1471 1.5C18.6108 1.5 18.8922 2.0116 18.6438 2.40328L15.6729 7.08824ZM4.68015 8.26468L9.00971 15.0921C9.70272 16.1849 11.2973 16.1849 11.9903 15.0921L16.3199 8.26468L18.1471 8.26468C18.6108 8.26468 18.8922 8.77628 18.6438 9.16796L10.9968 21.2268C10.7658 21.5911 10.2342 21.5911 10.0032 21.2268L2.3562 9.16796C2.10785 8.77632 2.38921 8.26468 2.85296 8.26468L4.68015 8.26468Z" fill="#76767E"/>
+</g>
+<defs>
+<clipPath id="clip0_2646_10533">
+<rect width="22" height="20.4725" fill="white" transform="translate(20.7363 0.5) rotate(90)"/>
+</clipPath>
+</defs>
+</svg>
+
+`
+export const IconSanctumFocus = `<svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2646_8776)">
+<path d="M14.9269 7.76468L10.9968 13.9621C10.7658 14.3264 10.2343 14.3264 10.0033 13.9621L6.0733 7.76468L14.9269 7.76468ZM15.6729 6.58824L5.3272 6.58824L2.35627 1.90328C2.10791 1.5116 2.38927 0.999999 2.85302 0.999999L18.1472 1C18.6109 1 18.8923 1.5116 18.6439 1.90328L15.6729 6.58824ZM4.68021 7.76468L9.00978 14.5921C9.70278 15.6849 11.2974 15.6849 11.9904 14.5921L16.32 7.76468L18.1472 7.76468C18.6109 7.76468 18.8923 8.27628 18.6439 8.66796L10.9968 20.7268C10.7658 21.0911 10.2343 21.0911 10.0033 20.7268L2.35627 8.66796C2.10791 8.27632 2.38927 7.76468 2.85302 7.76468L4.68021 7.76468Z" fill="#4FA8A8"/>
+</g>
+<defs>
+<clipPath id="clip0_2646_8776">
+<rect width="22" height="20.4725" fill="white" transform="translate(20.7363) rotate(90)"/>
+</clipPath>
+</defs>
+</svg>
+
+
+`
+export const IconProfile = `<svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="9.5" cy="6" r="5.5" fill="#76767E"/>
+<path d="M9.49892 13.5C14.9104 13.5 19.0699 18.1912 18.4361 23.5C13.3856 20.3764 5.62359 20.3764 0.56174 23.5C-0.060482 18.1912 4.09882 13.5 9.49892 13.5Z" fill="#76767E"/>
+</svg>
+
+
+`
+export const IconProfileFocus = `<svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="9.5" cy="6" r="5.5" fill="#4FA8A8"/>
+<path d="M9.49892 13.5C14.9104 13.5 19.0699 18.1912 18.4361 23.5C13.3856 20.3764 5.62359 20.3764 0.56174 23.5C-0.060482 18.1912 4.09882 13.5 9.49892 13.5Z" fill="#4FA8A8"/>
+</svg>
+`
+export const IconDrawer = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1508_19336" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_1508_19336)">
+<path d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z" fill="white"/>
+</g>
+</svg>
+
+`
+export const IconBell = `<svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 20C9.1 20 10 19.1 10 18H6C6 19.1 6.89 20 8 20ZM14 14V9C14 5.93 12.36 3.36 9.5 2.68V2C9.5 1.17 8.83 0.5 8 0.5C7.17 0.5 6.5 1.17 6.5 2V2.68C3.63 3.36 2 5.92 2 9V14L0 16V17H16V16L14 14Z" fill="white"/>
+</svg>
+`
+export const IconRightArrrow = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1095_28762" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_1095_28762)">
+<path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z" fill="#76767E"/>
+</g>
+</svg>
+
+`
