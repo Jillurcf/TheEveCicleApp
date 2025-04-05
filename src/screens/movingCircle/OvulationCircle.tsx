@@ -70,6 +70,7 @@ const OvulationCircle: React.FC = ({ navigation }) => {
 
     require("../../assets/Imgages/Yellow-fullMoon.png"),
     require("../../assets/Imgages/yl1.png"),
+     //  require("../../assets/Imgages/wr6.png"),
     require("../../assets/Imgages/red-r1.png"),
     require("../../assets/Imgages/red-r2.png"),
     require("../../assets/Imgages/pink-r1.png"),
@@ -77,13 +78,17 @@ const OvulationCircle: React.FC = ({ navigation }) => {
     require("../../assets/Imgages/pink-r3.png"),
     require("../../assets/Imgages/pink-r4.png"),
     require("../../assets/Imgages/pink-r5.png"),
+     
     require("../../assets/Imgages/wr1.png"),
     require("../../assets/Imgages/wr2.png"),
     require("../../assets/Imgages/wr-3.png"),
     require("../../assets/Imgages/wr4.png"),
     require("../../assets/Imgages/wr5.png"),
+   
     require("../../assets/Imgages/gr1.png"),
     require("../../assets/Imgages/gr2.png"),
+
+   
     require("../../assets/Imgages/yl14.png"),
     require("../../assets/Imgages/yl13.png"),
     require("../../assets/Imgages/yl12.png"),
@@ -99,6 +104,7 @@ const OvulationCircle: React.FC = ({ navigation }) => {
     require("../../assets/Imgages/yl2.png"),
     require("../../assets/Imgages/yl1.png"),
     require("../../assets/Imgages/yl1.png"),
+   
   ];
 
   return (
@@ -147,13 +153,13 @@ const OvulationCircle: React.FC = ({ navigation }) => {
 
             {/* Fixed Circle at the Bottom */}
             <Circle
-              cx="144"
+              cx="150"
               cy={183 + radius}
               r={14}
               strokeOpacity={"10%"}
-              strokeWidth={5}
-              stroke="#E6F2F2"
-              fill="white"
+              strokeWidth={5  }
+              stroke="#FFFFFFFF"
+              fill="transparent"
             />
           </Svg>
         </View>
@@ -196,7 +202,7 @@ const OvulationCircle: React.FC = ({ navigation }) => {
 
         <DayPicker selectedDay={selectedDay} onDaySelect={updateRotation} rotation={rotation} />
 
-        <View style={tw`flex-row gap-4 my-4`}>
+        {/* <View style={tw`flex-row gap-4 my-4`}>
           <View style={tw`flex-row items-center justify-center gap-2`}>
             <View style={tw`w-3 h-3 rounded-full bg-[#4CAF50]`}></View>
             <Text style={tw`text-black font-satoshiBlack text-xs`}>Estrogen</Text>
@@ -213,7 +219,7 @@ const OvulationCircle: React.FC = ({ navigation }) => {
             <View style={tw`w-3 h-3 rounded-full bg-[#FFA500]`}></View>
             <Text style={tw`text-black font-satoshiBlack text-xs`}>LH</Text>
           </View>
-        </View>
+        </View> */}
 
       </LinearGradient>
       <View style={tw` bg-white  `}>

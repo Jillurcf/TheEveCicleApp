@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import moment from "moment";
 import tw from "../../lib/tailwind";
+import HormoneChart from "../../component/HomeChart";
 
 
 interface DayPickerProps {
@@ -81,64 +82,65 @@ const DayPicker: React.FC<DayPickerProps> = ({
   };
 
   return (
-    <View style={tw`flex-1`}>
-      <View style={tw`w-ful h-60 flex justify-end relative`}>
-      <Image source={require('../../assets/Imgages/Today/graphs.png')} style={tw``}/>
+    <View style={tw`flex-1 mt-12`}>
+      <View style={tw`w-full justify-end relative`}>
+        <HormoneChart />
+        {/* <Image source={require('../../assets/Imgages/Today/graphs.png')} style={tw``} /> */}
       </View>
-     
-      <View style={tw` py-4 left-7 absolute`}>
+
+      <View style={tw`w-full bottom-6 ml-6 py-4 absolute`}>
         {/* <Text style={tw`text-xl font-bold text-black`}>{moment().format("MMM, YYYY")}</Text> */}
-    
-          <FlatList
-            ref={flatListRef}
-            horizontal
-            data={daysInMonth}
-            keyExtractor={(item) => item}
-            renderItem={({ item }) => {
-              const isSelected = selectedDays.includes(
-                parseInt(moment(item).format("D"), 10)
-              );
-              return (
+
+        <FlatList
+          ref={flatListRef}
+          horizontal
+          data={daysInMonth}
+          keyExtractor={(item) => item}
+          renderItem={({ item }) => {
+            const isSelected = selectedDays.includes(
+              parseInt(moment(item).format("D"), 10)
+            );
+            return (
 
 
-                <TouchableOpacity
-                  style={tw`w-[${ITEM_WIDTH}px] items-center py-2 rounded-lg ${isSelected ? "bg-green-300" : ""
-                    }`}
-                  onPress={() => toggleDate(item)}
-                >
-                  <Text style={tw`text-lg font-medium ${isSelected ? "text-white font-bold" : "text-gray-800"}`}>
-                    {moment(item).format("D")}
-                  </Text>
-                  <Text style={tw`text-sm ${isSelected ? "text-white font-medium" : "text-gray-500"}`}>
-                    {moment(item).format("ddd")}
-                  </Text>
+              <TouchableOpacity
+                style={tw`w-[${ITEM_WIDTH}px] items-center py-2 rounded-lg ${isSelected ? "bg-green-300" : ""
+                  }`}
+                onPress={() => toggleDate(item)}
+              >
+                <Text style={tw`text-lg font-medium ${isSelected ? "text-white font-bold" : "text-gray-800"}`}>
+                  {moment(item).format("D")}
+                </Text>
+                <Text style={tw`text-sm ${isSelected ? "text-white font-medium" : "text-gray-500"}`}>
+                  {moment(item).format("ddd")}
+                </Text>
 
-                  <View style={tw`h-40 bg-black w-0.2`}></View>
-                </TouchableOpacity>
+                <View style={tw`h-40 bg-black w-0.2`}></View>
+              </TouchableOpacity>
 
-              );
-            }}
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={tw`items-center`}
-            onScroll={onScrollHandler}
-            getItemLayout={(_, index) => ({
-              length: ITEM_WIDTH,
-              offset: ITEM_WIDTH * index,
-              index,
-            })}
-            onScrollToIndexFailed={(info) => {
-              console.warn("Scroll to index failed:", info);
-              if (info.index >= 0 && info.index < daysInMonth.length) {
-                setTimeout(() => {
-                  flatListRef.current?.scrollToIndex({
-                    index: info.index,
-                    animated: true,
-                  });
-                }, 500);
-              }
-            }}
-          />
-        
+            );
+          }}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={tw`items-center`}
+          onScroll={onScrollHandler}
+          getItemLayout={(_, index) => ({
+            length: ITEM_WIDTH,
+            offset: ITEM_WIDTH * index,
+            index,
+          })}
+          onScrollToIndexFailed={(info) => {
+            console.warn("Scroll to index failed:", info);
+            if (info.index >= 0 && info.index < daysInMonth.length) {
+              setTimeout(() => {
+                flatListRef.current?.scrollToIndex({
+                  index: info.index,
+                  animated: true,
+                });
+              }, 500);
+            }
+          }}
+        />
+
         {/* <View style={tw`mt-4`}>
           <Text style={tw`text-lg font-semibold text-gray-700`}>Selected Dates:</Text>
           {selectedDays.length > 0 ? (
