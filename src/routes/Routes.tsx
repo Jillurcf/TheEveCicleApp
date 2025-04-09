@@ -22,6 +22,7 @@ import SetupStep5 from '../screens/accountSetup/SetupStep5';
 import SetupStep6 from '../screens/accountSetup/SetupStep6';
 import LinkOtherUsers from '../screens/accountSetup/LinkOtherUsers';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import Autumn from '../screens/phase/Autumn';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -60,9 +61,7 @@ export default function Routes() {
       <Stack.Screen name="SetupStep6" component={SetupStep6} />
       <Stack.Screen name="LinkOtherUsers" component={LinkOtherUsers} /> */}
       <Stack.Screen name="Drawer" component={DrawerRoute} />
-      {/* <Stack.Screen name="SplashScreen" component={SplashScreen} /> 
-      <Stack.Screen name="Drawer" component={DrawerRoute} /> */}
-      {/* <Stack.Screen name="BottomRoutes" component={BottomRoutes} /> */}
+    <Stack.Screen name="Autumn" component={Autumn} />
     </Stack.Navigator>
     // </StripeProvider>
   );
