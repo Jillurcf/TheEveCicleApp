@@ -17,7 +17,8 @@ import Button from '../component/Button';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 // import { getStorageToken, removeStorageToken } from '../utils/Utils';
 
-function DrawerContent({navigation}: any) {
+function DrawerContent({navigation, route}: any) {
+  console.log("route 21 +++++++++++++", route)
   const [vacationMode, setVacationMode] = useState(true);
   const [logoutConfirmationModalVisible, setLogoutConfirmationModalVisible] =
     useState(false);

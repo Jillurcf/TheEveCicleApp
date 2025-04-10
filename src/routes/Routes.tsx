@@ -1,5 +1,5 @@
-import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React, { useState } from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BottomRoutes from './BottomRoutes';
 import SplashScreen from '../screens/SplashScreen';
 import DrawerRoute from './DrawerRotues';
@@ -23,15 +23,20 @@ import SetupStep6 from '../screens/accountSetup/SetupStep6';
 import LinkOtherUsers from '../screens/accountSetup/LinkOtherUsers';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Autumn from '../screens/phase/Autumn';
+import Winter from '../screens/phase/Winter';
+import Summer from '../screens/phase/Summer';
+import Spring from '../screens/phase/Spring';
+import AddLogs from '../screens/AddLogs';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 export default function Routes() {
+  const [partner, setPartner] = useState(false)
   return (
     // <StripeProvider publishableKey="pk_test_51QKAtBKOpUtqOuW1x5VdNqH3vG7CZZl1P6V3VuV1qsRUmPLNk26i34AXeu2zCO3QurFJAOZ9zfb0EkWeCVhqBYgH008X41cXr6">
     <Stack.Navigator
-      screenOptions={{headerShown: false, animation: 'slide_from_right'}}
-      //   initialRouteName="LoadingSplash"
+      screenOptions={{ headerShown: false, animation: 'slide_from_right' }}
+    //   initialRouteName="LoadingSplash"
     >
       {/* <Stack.Screen name="LoadingSplash" component={LoadingSplash}
          /> */}
@@ -41,8 +46,8 @@ export default function Routes() {
       <Stack.Screen name="Popup" component={PopupScreen} />
   
       <Stack.Screen name="DiscoverResult" component={DiscoverResult} /> */}
-{/* 
-      <Stack.Screen name="WelcomeScreen1" component={WelcomeScreen1} />
+
+      {/* <Stack.Screen name="WelcomeScreen1" component={WelcomeScreen1} />
       <Stack.Screen name="WelcomeScreen2" component={WelcomeScreen2} />
       <Stack.Screen name="WelcomeScreen3" component={WelcomeScreen3} />
       <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
@@ -61,7 +66,11 @@ export default function Routes() {
       <Stack.Screen name="SetupStep6" component={SetupStep6} />
       <Stack.Screen name="LinkOtherUsers" component={LinkOtherUsers} /> */}
       <Stack.Screen name="Drawer" component={DrawerRoute} />
-    <Stack.Screen name="Autumn" component={Autumn} />
+      <Stack.Screen name="Autumn" component={Autumn} />
+      <Stack.Screen name="Winter" component={Winter} />
+      <Stack.Screen name="Summer" component={Summer} />
+      <Stack.Screen name="Spring" component={Spring} />
+      <Stack.Screen name="AddLogs" component={AddLogs} />
     </Stack.Navigator>
     // </StripeProvider>
   );

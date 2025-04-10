@@ -176,7 +176,8 @@ const LinkOtherUsers = ({navigation}) => {
 
       <View style={tw`w-full py-6`}>
         <TButton
-          onPress={() => navigation.navigate('SetupStep4')}
+          // onPress={() => navigation.navigate('SetupStep4')}
+          onPress={() => navigation.navigate('Drawer', {role: "partner"})}
           title="Link other users"
           containerStyle={tw`bg-[#4FA8A8] w-full h-12`}
         />

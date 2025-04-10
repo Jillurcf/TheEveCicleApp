@@ -7,15 +7,15 @@ import tw from '../../lib/tailwind'
 
 type Props = {}
 
-const Autumn = ({ navigation }) => {
+const Summer = ({ navigation }) => {
     return (
         <ScrollView style={tw`flex-1 p-[4%] bg-[#E8F6F6]`}>
             <TouchableOpacity onPress={() => navigation.goBack()}>
                 <SvgXml xml={IconCross} />
             </TouchableOpacity>
             <View style={tw`items-center justify-center mt-6`}>
-                <Image style={tw`opacity-50`} source={require('../../assets/Imgages/Phase/autumn.png')} />
-                <Text style={tw`text-[#121221] text-2xl font-SatoshiBold opacity-60`}>Autumn</Text>
+                <Image style={tw`opacity-50`} source={require('../../assets/Imgages/Phase/Summer.png')} />
+                <Text style={tw`text-[#121221] text-2xl font-SatoshiBold opacity-60`}>Summer</Text>
             </View>
             <View style={tw`bg-white w-full rounded-lg h-18 mt-4 p-[2%]`}>
                 <Text style={tw`text-black text-lg font-SatoshiBold px-[4%]`}>Body</Text>
@@ -74,6 +74,6 @@ const Autumn = ({ navigation }) => {
     )
 }
 
-export default Autumn
+export default Summer
 
 const styles = StyleSheet.create({})

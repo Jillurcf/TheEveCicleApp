@@ -21,7 +21,7 @@ interface DayPickerProps {
   onScroll?: (dayIndex: number) => void;
 }
 
-const ITEM_WIDTH = 60; // Width of each day item
+const ITEM_WIDTH = 50; // Width of each day item
 
 const DayPicker: React.FC<DayPickerProps> = ({
   selectedDay,
@@ -88,7 +88,7 @@ const DayPicker: React.FC<DayPickerProps> = ({
         {/* <Image source={require('../../assets/Imgages/Today/graphs.png')} style={tw``} /> */}
       </View>
 
-      <View style={tw`w-full bottom-6 ml-6 py-4 absolute`}>
+      <View style={tw`w-full bottom-6 ml-8 py-4 absolute`}>
         {/* <Text style={tw`text-xl font-bold text-black`}>{moment().format("MMM, YYYY")}</Text> */}
 
         <FlatList

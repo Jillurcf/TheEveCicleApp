@@ -44,7 +44,9 @@ const SeasonInsights = () => {
                 end={{ x: 1, y: 1 }}
                 style={tw`flex-1 items-center h-20 justify-center rounded-2xl mt-2`}
             >
-                <View style={tw`flex-row justify-between`}>
+                <TouchableOpacity
+                   onPress={()=>navigation?.navigate("Winter")}
+                style={tw`flex-row justify-between`}>
                     <View style={tw`w-[80%]`}>
                         <Text style={tw`text-white px-3 text-lg font-SatoshiBold`}>Winter</Text>
                         <View style={tw`bg-[#FFFFFF99] w-[45%] px-0.5 rounded-md py-1 ml-3 mt-1`}>
@@ -52,7 +54,7 @@ const SeasonInsights = () => {
                         </View>
                     </View>
                     <Image source={require("../assets/Imgages/SeasonInsights/image1.png")} />
-                </View>
+                </TouchableOpacity>
             </LinearGradient>
             <LinearGradient
                 colors={["#F06956", "#F8B84E"]}
@@ -60,7 +62,9 @@ const SeasonInsights = () => {
                 end={{ x: 1, y: 1 }}
                 style={tw`flex-1 items-center h-20 justify-center rounded-2xl mt-2`}
             >
-                <View style={tw`flex-row justify-between`}>
+                <TouchableOpacity
+                  onPress={()=>navigation?.navigate("Summer")}
+                style={tw`flex-row justify-between`}>
                     <View style={tw`w-[80%]`}>
                         <Text style={tw`text-white px-3 text-lg font-SatoshiBold`}>Summer</Text>
                         <View style={tw`bg-[#FFFFFF99] w-[45%] px-0.5 rounded-md py-1 ml-3 mt-1`}>
@@ -68,7 +72,7 @@ const SeasonInsights = () => {
                         </View>
                     </View>
                     <Image source={require("../assets/Imgages/SeasonInsights/image2.png")} />
-                </View>
+                </TouchableOpacity>
             </LinearGradient>
             <LinearGradient
                 colors={["#FEE0A2", "#FF9093"]}
@@ -76,7 +80,9 @@ const SeasonInsights = () => {
                 end={{ x: 1, y: 1 }}
                 style={tw`flex-1 items-center h-20 justify-center rounded-2xl mt-2`}
             >
-                <View style={tw`flex-row justify-between`}>
+                <TouchableOpacity
+                  onPress={()=>navigation?.navigate("Spring")}
+                style={tw`flex-row justify-between`}>
                     <View style={tw`w-[80%]`}>
                         <Text style={tw`text-[#C1446D] px-3 text-lg font-SatoshiBold`}>Spring</Text>
                         <View style={tw`bg-[#FFFFFF99] w-[45%] px-0.5 rounded-md py-1 ml-3 mt-1`}>
@@ -84,7 +90,7 @@ const SeasonInsights = () => {
                         </View>
                     </View>
                     <Image source={require("../assets/Imgages/SeasonInsights/image3.png")} />
-                </View>
+                </TouchableOpacity>
             </LinearGradient>
 
         </View>
