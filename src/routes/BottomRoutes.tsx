@@ -203,7 +203,7 @@ function BottomRoutes({ route }) {
        </View>
         <TouchableOpacity
           style={tw`bg-[#96CBCB] p-2 rounded-full justify-center items-center`}
-          onPress={() => console.log("Button 3 clicked")}
+          onPress={() => navigation?.navigate("AddNotes")}
         >
           <Image source={require('../assets/Imgages/Today/addNote.png')}/>
         </TouchableOpacity>
