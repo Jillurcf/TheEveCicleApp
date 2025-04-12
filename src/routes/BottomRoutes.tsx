@@ -188,7 +188,7 @@ function BottomRoutes({ route }) {
       `}>
         <TouchableOpacity
           style={tw`bg-[#96CBCB] p-2 rounded-full justify-center items-center`}
-          onPress={() => console.log("Button 1 clicked")}
+          onPress={() => navigation?.navigate("LinkDevice")}
         >
           <Image source={require('../assets/Imgages/Today/linkDevice.png')}/>
       

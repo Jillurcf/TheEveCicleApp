@@ -28,6 +28,7 @@ import Summer from '../screens/phase/Summer';
 import Spring from '../screens/phase/Spring';
 import AddLogs from '../screens/AddLogs';
 import AddNotes from '../screens/AddNotes';
+import LinkDevice from '../screens/LinkDevice';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -73,6 +74,7 @@ export default function Routes() {
       <Stack.Screen name="Spring" component={Spring} />
       <Stack.Screen name="AddLogs" component={AddLogs} />
       <Stack.Screen name="AddNotes" component={AddNotes} />
+      <Stack.Screen name="LinkDevice" component={LinkDevice} />
     </Stack.Navigator>
     // </StripeProvider>
   );
