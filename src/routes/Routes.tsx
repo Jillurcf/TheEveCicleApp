@@ -29,6 +29,7 @@ import Spring from '../screens/phase/Spring';
 import AddLogs from '../screens/AddLogs';
 import AddNotes from '../screens/AddNotes';
 import LinkDevice from '../screens/LinkDevice';
+import Articles from '../screens/sanctum/Articles';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -75,6 +76,7 @@ export default function Routes() {
       <Stack.Screen name="AddLogs" component={AddLogs} />
       <Stack.Screen name="AddNotes" component={AddNotes} />
       <Stack.Screen name="LinkDevice" component={LinkDevice} />
+      <Stack.Screen name="Articles" component={Articles} />
     </Stack.Navigator>
     // </StripeProvider>
   );

@@ -208,3 +208,24 @@ export const IconCopy= `<svg width="24" height="24" viewBox="0 0 24 24" fill="no
 </svg>
 
 `
+export const IconDownload= `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 12L3 7L4.4 5.55L7 8.15V0H9V8.15L11.6 5.55L13 7L8 12ZM2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V11H2V14H14V11H16V14C16 14.55 15.8042 15.0208 15.4125 15.4125C15.0208 15.8042 14.55 16 14 16H2Z" fill="#2B9696"/>
+</svg>
+`
+export const IconEdit= `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1277_44356)">
+<path d="M3 17.2475V20.9975H6.75L17.81 9.9375L14.06 6.1875L3 17.2475Z" fill="#2B9696"/>
+<path d="M20.71 5.62859L18.37 3.28859C17.98 2.89859 17.35 2.89859 16.96 3.28859L15.13 5.11859L18.88 8.86859L20.71 7.03859C21.1 6.64859 21.1 6.01859 20.71 5.62859Z" fill="#2B9696"/>
+</g>
+<defs>
+<clipPath id="clip0_1277_44356">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+`
+export const IconDelete= `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.83437 17.5C5.37603 17.5 4.98367 17.3368 4.65728 17.0104C4.33089 16.684 4.1677 16.2917 4.1677 15.8333V5H3.33437V3.33333H7.50103V2.5H12.501V3.33333H16.6677V5H15.8344V15.8333C15.8344 16.2917 15.6712 16.684 15.3448 17.0104C15.0184 17.3368 14.626 17.5 14.1677 17.5H5.83437ZM7.50103 14.1667H9.1677V6.66667H7.50103V14.1667ZM10.8344 14.1667H12.501V6.66667H10.8344V14.1667Z" fill="#FF4C4C"/>
+</svg>
+
+`

@@ -41,115 +41,261 @@ const FirstRoute = () => (
                 <SvgXml xml={IconCopy} />
             </TouchableOpacity>
         </View>
+        <View style={tw`bg-white rounded-xl p-4 flex-row items-center justify-between shadow-md mt-4`}>
+            <View>
+                <Text style={tw`text-lg font-bold text-black`}>{code}</Text>
+                <Text style={tw`text-xs text-gray-500`}>for family & friends</Text>
+            </View>
+            <TouchableOpacity onPress={copyToClipboard}>
+                <SvgXml xml={IconCopy} />
+            </TouchableOpacity>
+        </View>
         <Text style={tw`text-black text-center py-4`}>This code is valid for next 48 hours</Text>
     </ScrollView>
 );
 
+// const SecondRoute = () => (
+//     <ScrollView contentContainerStyle={tw`flex-1 bg-transparent items-center mt-8`}>
+//         {/* Background circles for layout */}
+//         {/* <View style={tw`absolute w-80 h-80 rounded-full bg-teal-100 opacity-30`} /> */}
+//         <View style={tw`absolute items-center justify-center`}>
+//             <Image style={tw`object-cover w-80 h-80`} source={require('../assets/Imgages/AddNotes/MyVillageImg1.png')} />
+//         </View>
+
+//         {/* SVG for dashed lines */}
+//         <Svg height="300" width="300" style={tw`absolute`}>
+//             {/* Dashed lines connecting the profiles */}
+//             {/* <Line
+//                 y1="25" x1="150" y2='150' x2="150"
+//                 stroke="#4FD1C5" strokeWidth="1" strokeDasharray="5,5"
+//             />
+//             <Line
+//                 x1="160" y1="160" x2="50" y2="100"
+//                 stroke="#4FD1C5" strokeWidth="1" strokeDasharray="5,5"
+//             />
+//             <Line
+//                 x1="150" y1="100" x2="50" y2="70"
+//                 stroke="#4FD1C5" strokeWidth="5" strokeDasharray="5,5"
+//             />
+//             <Line
+//                 x1="60" y1="220" x2="240" y2="20"
+//                 stroke="#4FD1C5" strokeWidth="2" strokeDasharray="5,5"
+//             />
+//             <Line
+//                 x1="60" y1="220" x2="240" y2="120"
+//                 stroke="#4FD1C5" strokeWidth="2" strokeDasharray="5,5"
+//             /> */}
+//             {/* Central circle for logo */}
+//             <Circle cx="150" cy="160" r="30" fill="white" strokeWidth="6" stroke="#4FD1C5" />
+//         </Svg>
+
+//         {/* Profile images and labels */}
+//         {/* "Me" at the top */}
+//         <View style={tw`absolute top-25 right-11 transform -translate-x-1/2`}>
+//             <Image
+//                 source={{ uri: 'https://randomuser.me/api/portraits/women/1.jpg' }}
+//                 style={tw`w-14 h-14 rounded-full border-2 border-teal-500 z-20`}
+//             />
+//             <View style={tw`w-8 h-6 mx-auto`}>
+//                 <Text style={tw`text-center text-teal-800 text-xs bg-gray-300 mt-1`}>Me</Text>
+//             </View>
+
+
+//         </View>
+
+
+//         {/* "Fatima" bottom left */}
+//         <View style={tw`absolute top-25 left-11`}>
+//             <Image
+//                 source={{ uri: 'https://randomuser.me/api/portraits/women/2.jpg' }}
+//                 style={tw`w-14 h-14 rounded-full border-2 border-teal-500 z-20`}
+//             />
+//             <View style={tw`w-12 h-6 mx-auto`}>
+//                 <Text style={tw`text-center text-xs bg-gray-300 text-teal-800 mt-1`}>Fatima</Text>
+//             </View>
+//         </View>
+
+//         {/* "Ahmad" bottom right */}
+//         <View style={tw`absolute top-50 right-17`}>
+//             <Image
+//                 source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }}
+//                 style={tw`w-14 h-14 rounded-full border-2 border-teal-500 z-20`}
+//             />
+//             <View style={tw`w-12 h-6 mx-auto`}>
+//                 <Text style={tw`text-center text-xs bg-gray-300 text-teal-800 mt-1`}>Ahmad</Text>
+//             </View>
+//         </View>
+//         {/* "Fatima" bottom left */}
+//         <View style={tw`absolute top-50 left-17 z-30`}>
+//             <Image
+//                 source={{ uri: 'https://randomuser.me/api/portraits/women/2.jpg' }}
+//                 style={tw`w-14 h-14 rounded-full border-2 border-teal-500 z-20`}
+//             />
+//             <View style={tw`w-12 h-6 mx-auto z-20`}>
+//                 <Text style={tw`text-center text-xs bg-gray-300 text-teal-800 mt-1`}>Fahim</Text>
+//             </View>
+//         </View>
+
+//         {/* "Ahmad" bottom right */}
+//         <View style={tw`absolute bottom-[%] top-8`}>
+//             <Image
+//                 source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }}
+//                 style={tw`w-14 h-14 rounded-full border-2 border-teal-500`}
+//             />
+//             <View style={tw`w-12 h-6 mx-auto`}>
+//                 <Text style={tw`text-center text-xs bg-gray-300 text-teal-800 mt-1`}>Imran</Text>
+//             </View>
+//         </View>
+
+//         {/* Central logo and numbers */}
+//         {/* <View style={tw`absolute`}>
+//             <Image
+//                 source={{ uri: 'https://via.placeholder.com/50' }} // Replace with your logo
+//                 style={tw`w-12 h-12`}
+//             />
+//         </View> */}
+//         <View style={tw`absolute top-18 flex-row mt-16`}>
+//             <Image style={tw`w-8 h-8`} source={require("../assets/Imgages/SplashIcon.png")} />
+//         </View>
+//         <View style={tw`bg-white w-full h-96 absolute top-85 rounded-3xl shadow-md p-4`}>
+
+//         </View>
+
+//     </ScrollView>
+// );
+
+
 const SecondRoute = () => (
-    <View style={tw`flex-1 bg-transparent justify-center items-center`}>
-        {/* Background circles for layout */}
-        {/* <View style={tw`absolute w-80 h-80 rounded-full bg-teal-100 opacity-30`} /> */}
-        <View style={tw`absolute items-center justify-center`}>
-            <Image style={tw`object-cover w-80 h-80`} source={require('../assets/Imgages/AddNotes/MyvillageBackground.png')} />
-        </View>
+    <ScrollView contentContainerStyle={tw`flex-grow bg-transparent h-350 items-center pt-8`}>
+        {/* Tall wrapping container to enable scrolling */}
+        <View style={tw`h-[1000px] w-full relative items-center`}>
 
-        {/* SVG for dashed lines */}
-        <Svg height="300" width="300" style={tw`absolute`}>
-            {/* Dashed lines connecting the profiles */}
-            <Line
-                y1="25" x1="150" y2='150' x2="150"
-                stroke="#4FD1C5" strokeWidth="1" strokeDasharray="5,5"
-            />
-            <Line
-                x1="160" y1="160" x2="50" y2="100"
-                stroke="#4FD1C5" strokeWidth="1" strokeDasharray="5,5"
-            />
-            <Line
-                x1="150" y1="100" x2="50" y2="70"
-                stroke="#4FD1C5" strokeWidth="5" strokeDasharray="5,5"
-            />
-            <Line
-                x1="60" y1="220" x2="240" y2="20"
-                stroke="#4FD1C5" strokeWidth="2" strokeDasharray="5,5"
-            />
-            <Line
-                x1="60" y1="220" x2="240" y2="120"
-                stroke="#4FD1C5" strokeWidth="2" strokeDasharray="5,5"
-            />
-            {/* Central circle for logo */}
-            <Circle cx="150" cy="150" r="30" fill="white" strokeWidth="6" stroke="#4FD1C5" />
-        </Svg>
+            {/* Background Image */}
+            <View style={tw`absolute items-center justify-center top-0`}>
+                <Image
+                    style={tw`w-80 h-80`}
+                    resizeMode="cover"
+                    source={require('../assets/Imgages/AddNotes/MyVillageImg1.png')}
+                />
+            </View>
 
-        {/* Profile images and labels */}
-        {/* "Me" at the top */}
-        <View style={tw`absolute top-45 `}>
-            <Image
-                source={{ uri: 'https://randomuser.me/api/portraits/women/1.jpg' }}
-                style={tw`w-14 h-14 rounded-full border-2 border-teal-500`}
-            />
-            <View style={tw`w-8 h-6 mx-auto`}>
+            {/* SVG */}
+            <Svg height="300" width="300" style={tw`absolute top-0`}>
+                <Circle cx="150" cy="160" r="30" fill="white" strokeWidth="6" stroke="#4FD1C5" />
+            </Svg>
+
+            {/* Positioned avatars */}
+            <View style={tw`absolute top-25 right-11`}>
+                <Image source={{ uri: 'https://randomuser.me/api/portraits/women/1.jpg' }} style={tw`w-14 h-14 rounded-full border-2 border-teal-500`} />
                 <Text style={tw`text-center text-teal-800 text-xs bg-gray-300 mt-1`}>Me</Text>
             </View>
 
-
-        </View>
-
-
-        {/* "Fatima" bottom left */}
-        <View style={tw`absolute bottom-75 left-11`}>
-            <Image
-                source={{ uri: 'https://randomuser.me/api/portraits/women/2.jpg' }}
-                style={tw`w-14 h-14 rounded-full border-2 border-teal-500`}
-            />
-            <View style={tw`w-12 h-6 mx-auto`}>
+            <View style={tw`absolute top-25 left-11`}>
+                <Image source={{ uri: 'https://randomuser.me/api/portraits/women/2.jpg' }} style={tw`w-14 h-14 rounded-full border-2 border-teal-500`} />
                 <Text style={tw`text-center text-xs bg-gray-300 text-teal-800 mt-1`}>Fatima</Text>
             </View>
-        </View>
 
-        {/* "Ahmad" bottom right */}
-        <View style={tw`absolute bottom-48 right-17`}>
-            <Image
-                source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }}
-                style={tw`w-14 h-14 rounded-full border-2 border-teal-500`}
-            />
-            <View style={tw`w-12 h-6 mx-auto`}>
+            <View style={tw`absolute top-50 right-17`}>
+                <Image source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }} style={tw`w-14 h-14 rounded-full border-2 border-teal-500`} />
                 <Text style={tw`text-center text-xs bg-gray-300 text-teal-800 mt-1`}>Ahmad</Text>
             </View>
-        </View>
-        {/* "Fatima" bottom left */}
-        <View style={tw`absolute bottom-48 left-17`}>
-            <Image
-                source={{ uri: 'https://randomuser.me/api/portraits/women/2.jpg' }}
-                style={tw`w-14 h-14 rounded-full border-2 border-teal-500`}
-            />
-            <View style={tw`w-12 h-6 mx-auto`}>
+
+            <View style={tw`absolute top-50 left-17`}>
+                <Image source={{ uri: 'https://randomuser.me/api/portraits/women/2.jpg' }} style={tw`w-14 h-14 rounded-full border-2 border-teal-500`} />
                 <Text style={tw`text-center text-xs bg-gray-300 text-teal-800 mt-1`}>Fahim</Text>
             </View>
-        </View>
 
-        {/* "Ahmad" bottom right */}
-        <View style={tw`absolute bottom-[50%] right-12`}>
-            <Image
-                source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }}
-                style={tw`w-14 h-14 rounded-full border-2 border-teal-500`}
-            />
-            <View style={tw`w-12 h-6 mx-auto`}>
+            <View style={tw`absolute top-9`}>
+                <Image source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }} style={tw`w-14 h-14 rounded-full border-2 border-teal-500`} />
                 <Text style={tw`text-center text-xs bg-gray-300 text-teal-800 mt-1`}>Imran</Text>
             </View>
-        </View>
 
-        {/* Central logo and numbers */}
-        {/* <View style={tw`absolute`}>
-            <Image
-                source={{ uri: 'https://via.placeholder.com/50' }} // Replace with your logo
-                style={tw`w-12 h-12`}
-            />
-        </View> */}
-        <View style={tw`absolute flex-row mt-16`}>
-            <Image style={tw`w-8 h-8`} source={require("../assets/Imgages/SplashIcon.png")} />
+            {/* Center icon */}
+            <View style={tw`absolute top-37`}>
+                <Image style={tw`w-8 h-8`} source={require("../assets/Imgages/SplashIcon.png")} />
+            </View>
+
+            {/* Bottom panel */}
+            <View style={tw`absolute top-[35%] bg-white w-full rounded-3xl shadow-md p-4`}>
+                <Text style={tw`text-xl font-SatoshiBold`}>Season</Text>
+                <View style={tw`flex-row items-center gap-4 mt-4`}>
+                    <Image source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }} style={tw`w-14 h-14 rounded-full border-2 border-teal-500`} />
+                    <View>
+                        <Text style={tw`text-black text-lg font-SatoshiBold`}>Fatima Akter</Text>
+                        <Text style={tw`text-black`}>Winter</Text>
+                    </View>
+                </View>
+                <View style={tw`flex-row items-center gap-4 mt-4`}>
+                    <Image source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }} style={tw`w-14 h-14 rounded-full border-2 border-teal-500`} />
+                    <View>
+                        <Text style={tw`text-black text-lg font-SatoshiBold`}>Fatima Akter</Text>
+                        <Text style={tw`text-black`}>Summer</Text>
+                    </View>
+                </View>
+                <View style={tw`flex-row items-center gap-4 mt-4`}>
+                    <Image source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }} style={tw`w-14 h-14 rounded-full border-2 border-teal-500`} />
+                    <View>
+                        <Text style={tw`text-black text-lg font-SatoshiBold`}>Fatima Akter</Text>
+                        <Text style={tw`text-black`}>Spring</Text>
+                    </View>
+                </View>
+                <View style={tw`flex-row items-center gap-4 mt-4`}>
+                    <Image source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }} style={tw`w-14 h-14 rounded-full border-2 border-teal-500`} />
+                    <View>
+                        <Text style={tw`text-black text-lg font-SatoshiBold`}>Fatima Akter</Text>
+                        <Text style={tw`text-black`}>Autumn</Text>
+                    </View>
+                </View>
+            </View>
+            <View style={tw`absolute top-[71%] bg-white w-full rounded-3xl shadow-md p-4 mb-4`}>
+                <Text style={tw`text-xl font-SatoshiBold`}>Support</Text>
+             
+
+                    <View style={tw`mt-3`}>
+                        <Text style={tw`text-black text-lg font-SatoshiBold`}>Winter</Text>
+                        <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                    </View>
+               
+                <View style={tw`mt-3`}>
+                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Summer</Text>
+                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                </View>
+                <View style={tw`mt-3`}>
+                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Spring</Text>
+                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                </View>
+                <View style={tw`mt-3`}>
+                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Autumn</Text>
+                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                </View>
+            </View>
+            <View style={tw`absoulute top-255 bg-white w-full rounded-3xl shadow-md p-4 mb-4`}>
+                <Text style={tw`text-xl font-SatoshiBold`}>Health insights</Text>
+             
+
+                    <View style={tw`mt-3`}>
+                        <Text style={tw`text-black text-lg font-SatoshiBold`}>Winter</Text>
+                        <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                    </View>
+               
+                <View style={tw`mt-3`}>
+                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Summer</Text>
+                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                </View>
+                <View style={tw`mt-3`}>
+                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Spring</Text>
+                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                </View>
+                <View style={tw`mt-3`}>
+                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Autumn</Text>
+                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                </View>
+            </View>
+
         </View>
-    </View>
+    </ScrollView>
 );
+
 
 const LinkDevice = ({ navigation }) => {
     const layout = useWindowDimensions();

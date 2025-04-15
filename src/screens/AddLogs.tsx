@@ -1,6 +1,6 @@
 import { FlatList, NativeScrollEvent, NativeSyntheticEvent, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
-import { Iconblad, IconCross } from '../assets/Icons'
+import { Iconblad, IconCross, IconEdit } from '../assets/Icons'
 import { SvgXml } from 'react-native-svg'
 import tw from '../lib/tailwind'
 import { useNavigation } from '@react-navigation/native'
@@ -14,6 +14,7 @@ import MyDay from '../component/addlogs/MyDay'
 import MyFoodAndNutrition from '../component/addlogs/MyFoodAndNutrition'
 import MyDigestion from '../component/addlogs/MyDigestion'
 import TButton from '../component/TButton'
+import MyNotes from '../component/addlogs/MyNotes'
 
 type Props = {}
 interface DayPickerProps {
@@ -96,7 +97,16 @@ const AddLogs = ({
                     <SvgXml xml={IconCross} />
                 </TouchableOpacity>
                 <Text style={tw`font-SatoshiBold text-xl`}>Add log</Text>
-                <View></View>
+                <View>
+                    <TouchableOpacity
+                        onPress={() => console.log("LinkDevice")}
+                    >
+                        <View style={tw`flex-row items-center gap-2`}>
+                            <SvgXml xml={IconEdit} />
+                            <Text style={tw`text-[#2B9696] text-lg`}>Edit logs</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
 
             <View style={tw`w-full py-4 items-center justify-center mr-4`}>
@@ -189,14 +199,18 @@ const AddLogs = ({
             </View>
             {/* ================My food and nutrition ================= */}
             <View style={tw`mt-6`}>
-              <MyFoodAndNutrition />
+                <MyFoodAndNutrition />
             </View>
             {/* ================My digestion ================= */}
             <View style={tw`mt-6`}>
-             <MyDigestion />
+                <MyDigestion />
+            </View>
+
+            <View style={tw`mt-6`}>
+                <MyNotes />
             </View>
             <View style={tw`my-6 w-full items-center`}>
-                <TButton title='Save My Log' containerStyle={tw`bg-[#4FA8A8] w-full`}/>
+                <TButton title='Save My Log' containerStyle={tw`bg-[#4FA8A8] w-full`} />
             </View>
             <StatusBar translucent={false} />
         </ScrollView>

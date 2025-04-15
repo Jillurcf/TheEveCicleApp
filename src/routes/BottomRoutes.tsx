@@ -129,10 +129,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { SvgXml } from "react-native-svg";
 import tw from "../lib/tailwind";
 
-import Calendar from "../screens/Calendar";
-import Sanctum from "../screens/Sanctum";
+
+// import Sanctum from "../screens/sanctum/Sanctum";
 import Profile from "../screens/Profile";
 import Today from "../screens/Today";
+import Calendar from "../screens/calendar/Calendar";
 
 import {
   IconCalendar,
@@ -146,6 +147,7 @@ import {
   IconProfileFocus,
 } from "../assets/Icons";
 import { useNavigation } from "@react-navigation/native";
+import Sanctum from "../screens/sanctum/Sanctum";
 
 const Tab = createBottomTabNavigator();
 
