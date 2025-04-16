@@ -30,6 +30,8 @@ import AddLogs from '../screens/AddLogs';
 import AddNotes from '../screens/AddNotes';
 import LinkDevice from '../screens/LinkDevice';
 import Articles from '../screens/sanctum/Articles';
+import ArticleDetails from '../component/articles/ArticleDetails';
+import DhikrAndMedition from '../screens/sanctum/DhikrAndMedition';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -77,6 +79,8 @@ export default function Routes() {
       <Stack.Screen name="AddNotes" component={AddNotes} />
       <Stack.Screen name="LinkDevice" component={LinkDevice} />
       <Stack.Screen name="Articles" component={Articles} />
+      <Stack.Screen name="ArticleDetails" component={ArticleDetails} />
+      <Stack.Screen name="DhikrAndMeditation" component={DhikrAndMedition} />
     </Stack.Navigator>
     // </StripeProvider>
   );

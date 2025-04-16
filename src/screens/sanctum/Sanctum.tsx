@@ -4,13 +4,13 @@ import tw from '../../lib/tailwind'
 
 type Props = {}
 
-const Sanctum = ({navigation}) => {
+const Sanctum = ({ navigation }) => {
   return (
     <ScrollView style={tw`bg-[#E8F6F6] flex-1 p-[4%]`}>
       <Text style={tw`text-xl font-SatoshiBold`}>Resources</Text>
-      <TouchableOpacity 
-      onPress={() => navigation.navigate("Articles")}
-      style={tw`bg-[#C9E5EB] mt-4 rounded-lg p-4`}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Articles")}
+        style={tw`bg-[#C9E5EB] mt-4 rounded-lg p-4`}>
         <View style={tw`flex-row items-center`}>
           <View style={tw`flex-1`}>
             <Text style={tw` font-SatoshiBold`}>Articles</Text>
@@ -26,12 +26,14 @@ const Sanctum = ({navigation}) => {
           </Text>
         </TouchableOpacity>
       </TouchableOpacity>
-      <View style={tw`bg-[#E5DAE7] mt-4 rounded-lg p-4`}>
+      <TouchableOpacity 
+      onPress={() => navigation.navigate("DhikrAndMeditation")}
+      style={tw`bg-[#E5DAE7] mt-4 rounded-lg p-4`}>
         <View style={tw`flex-row items-center`}>
           <View style={tw`flex-1`}>
-            <Text style={tw` font-SatoshiBold`}>Articles</Text>
+            <Text style={tw` font-SatoshiBold`}>Dhikr & meditations</Text>
             <Text style={tw` font-SatoshiRegular text-sm mt-2`}>
-              Read various kinds of Islamic articles to gain knowledge and guidance.
+              Find spiritual peace and connect deeply with Allah during every phase of your journey.
             </Text>
           </View>
           <Image source={require('../../assets/Imgages/Sanctum/Resource/DhikrAndMeditaion.png')} />
@@ -41,7 +43,7 @@ const Sanctum = ({navigation}) => {
             Learn more
           </Text>
         </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
       <View style={tw`bg-[#CCE7DE] mt-4 rounded-lg p-4`}>
         <View style={tw`flex-row items-center`}>
           <View style={tw`flex-1`}>
