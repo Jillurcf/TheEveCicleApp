@@ -26,9 +26,9 @@ const Sanctum = ({ navigation }) => {
           </Text>
         </TouchableOpacity>
       </TouchableOpacity>
-      <TouchableOpacity 
-      onPress={() => navigation.navigate("DhikrAndMeditation")}
-      style={tw`bg-[#E5DAE7] mt-4 rounded-lg p-4`}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("DhikrAndMeditation")}
+        style={tw`bg-[#E5DAE7] mt-4 rounded-lg p-4`}>
         <View style={tw`flex-row items-center`}>
           <View style={tw`flex-1`}>
             <Text style={tw` font-SatoshiBold`}>Dhikr & meditations</Text>
@@ -44,10 +44,12 @@ const Sanctum = ({ navigation }) => {
           </Text>
         </TouchableOpacity>
       </TouchableOpacity>
-      <View style={tw`bg-[#CCE7DE] mt-4 rounded-lg p-4`}>
+      <TouchableOpacity
+      onPress={() => navigation.navigate("QuranicAndPropheticDuas")}
+      style={tw`bg-[#CCE7DE] mt-4 rounded-lg p-4`}>
         <View style={tw`flex-row items-center`}>
           <View style={tw`flex-1`}>
-            <Text style={tw` font-SatoshiBold`}>Articles</Text>
+            <Text style={tw` font-SatoshiBold`}>Quranic & prophetic duas</Text>
             <Text style={tw` font-SatoshiRegular text-sm mt-2`}>
               Read various kinds of Islamic articles to gain knowledge and guidance.
             </Text>
@@ -59,11 +61,13 @@ const Sanctum = ({ navigation }) => {
             Learn more
           </Text>
         </TouchableOpacity>
-      </View>
-      <View style={tw`bg-[#DCD3EC] my-4 rounded-lg p-4`}>
+      </TouchableOpacity>
+      <TouchableOpacity 
+      onPress={() => navigation.navigate("WellnessGuidanceEbook")}
+      style={tw`bg-[#DCD3EC] my-4 rounded-lg p-4`}>
         <View style={tw`flex-row items-center`}>
           <View style={tw`flex-1`}>
-            <Text style={tw` font-SatoshiBold`}>Articles</Text>
+            <Text style={tw` font-SatoshiBold`}>Wellness guidance & eBook</Text>
             <Text style={tw` font-SatoshiRegular text-sm mt-2`}>
               Read various kinds of Islamic articles to gain knowledge and guidance.
             </Text>
@@ -75,7 +79,7 @@ const Sanctum = ({ navigation }) => {
             Learn more
           </Text>
         </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
       <StatusBar
         barStyle="dark-content"
         backgroundColor="#E8F6F6"

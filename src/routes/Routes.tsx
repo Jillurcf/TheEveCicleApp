@@ -32,6 +32,9 @@ import LinkDevice from '../screens/LinkDevice';
 import Articles from '../screens/sanctum/Articles';
 import ArticleDetails from '../component/articles/ArticleDetails';
 import DhikrAndMedition from '../screens/sanctum/DhikrAndMedition';
+import QuranicAndPropheticDuas from '../screens/QuranicAndPropheticDuas';
+import MorningDuasAfterWakeUp from '../screens/MorningDuasAfterWakeUp';
+import WellnessGuidanceEbook from '../screens/WellnessGuidanceEbook';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -81,6 +84,9 @@ export default function Routes() {
       <Stack.Screen name="Articles" component={Articles} />
       <Stack.Screen name="ArticleDetails" component={ArticleDetails} />
       <Stack.Screen name="DhikrAndMeditation" component={DhikrAndMedition} />
+      <Stack.Screen name="QuranicAndPropheticDuas" component={QuranicAndPropheticDuas} />
+      <Stack.Screen name="MorningDuasAndWakeUp" component={MorningDuasAfterWakeUp} />
+      <Stack.Screen name="WellnessGuidanceEbook" component={WellnessGuidanceEbook} />
     </Stack.Navigator>
     // </StripeProvider>
   );
