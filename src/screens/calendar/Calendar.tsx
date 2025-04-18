@@ -6,6 +6,7 @@ import tw from '../../lib/tailwind'
 import { IconCopy, IconCross, IconEdit } from '../../assets/Icons'
 import MyInteractiveCalendar from '../../component/MyInteractiveCalendar'
 import IwtButton from '../../component/IwtButton'
+import { useTheme } from '../../context/ThemeContext'
 
 
 type Props = {}
@@ -23,9 +24,10 @@ const Calender = ({ navigation }) => {
     //     { key: 'first', title: 'Month' },
     //     { key: 'second', title: 'Year' },
     // ];
-
+    const { theme } = useTheme();
+    const isDark = theme === 'dark';
     return (
-        <View style={tw`flex-1 bg-[#E8F6F6] p-[4%]`}>
+        <View style={tw`flex-1 ${isDark ? "bg-black" :"bg-[#E8F6F6] "} p-[4%]`}>
             <View style={tw`flex-row justify-between`}>
                 <TouchableOpacity
                     onPress={() => navigation.goBack()}
@@ -54,7 +56,7 @@ const Calender = ({ navigation }) => {
                     <Text style={tw`text-black text-center text-lg font-SatoshiBold`}>No record found</Text>
                     <Text style={tw`text-black text-center text-xs font-SatoshiBold my-2`}>Tab to add log</Text>
                     <IwtButton
-                    onPress={() => navigation.navigate('AddLogs')}
+                        onPress={() => navigation.navigate('AddLogs')}
                         containerStyle={tw`bg-[#2B9696] w-[50%] items-center gap-4 pl-6`} titleStyle={tw`font-SatoshiBold`} title='Add logs' svg='<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M6.25 14V7.75H0V6.25H6.25V0H7.75V6.25H14V7.75H7.75V14H6.25Z" fill="white"/>
     </svg>

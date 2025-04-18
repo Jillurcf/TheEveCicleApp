@@ -1,40 +1,46 @@
-import {Pressable, View} from 'react-native';
-
+// NormalModal.tsx
 import React from 'react';
-import {Modal} from 'react-native-ui-lib';
-import tw from '../lib/tailwind';
-
-interface NormalModalProps {
-  visible?: boolean;
-  setVisible?: React.Dispatch<React.SetStateAction<boolean>>;
-  layerContainerStyle?: any;
-  containerStyle?: any;
-  children?: React.ReactNode;
-  overlay?: string;
-}
+import { Modal, View, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 
 const NormalModal = ({
-  setVisible,
   visible,
-  containerStyle,
+  onRequestClose,
   children,
   layerContainerStyle,
-  overlay,
-}: NormalModalProps) => {
+  containerStyle,
+}: any) => {
   return (
     <Modal
       transparent
-      animationType={'fade'}
-      overlayBackgroundColor={overlay || 'rgba(0, 0, 0, 0.2)'}
+      animationType="slide"
       visible={visible}
-      onBackgroundPress={() => setVisible && setVisible(!visible)}>
-      <View style={layerContainerStyle}>
-        <Pressable style={[tw`bg-white w-full p-4`, containerStyle]}>
-          {children}
-        </Pressable>
-      </View>
+      onRequestClose={onRequestClose}
+    >
+      <TouchableWithoutFeedback onPress={onRequestClose}>
+        <View style={[styles.backdrop, layerContainerStyle]}>
+          <TouchableWithoutFeedback>
+            <View style={[styles.modalContent, containerStyle]}>
+              {children}
+            </View>
+          </TouchableWithoutFeedback>
+        </View>
+      </TouchableWithoutFeedback>
     </Modal>
   );
 };
+
+const styles = StyleSheet.create({
+  backdrop: {
+    flex: 1,
+    justifyContent: 'flex-end', // this is crucial
+    backgroundColor: 'rgba(128, 0, 128, 0.5)' // Classic purple
+  },
+  modalContent: {
+    backgroundColor: '#fff',
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    padding: 16,
+  },
+});
 
 export default NormalModal;

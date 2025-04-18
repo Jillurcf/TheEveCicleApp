@@ -35,6 +35,10 @@ import DhikrAndMedition from '../screens/sanctum/DhikrAndMedition';
 import QuranicAndPropheticDuas from '../screens/QuranicAndPropheticDuas';
 import MorningDuasAfterWakeUp from '../screens/MorningDuasAfterWakeUp';
 import WellnessGuidanceEbook from '../screens/WellnessGuidanceEbook';
+import AccountSettings from '../screens/drawerContent/AccountSettings';
+import BillingAndSubscription from '../screens/drawerContent/BillingAndSubscription';
+import UpgradeToPremimum from '../screens/drawerContent/UpgradeToPremimum';
+import Invoice from '../screens/drawerContent/Invoice';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -87,6 +91,10 @@ export default function Routes() {
       <Stack.Screen name="QuranicAndPropheticDuas" component={QuranicAndPropheticDuas} />
       <Stack.Screen name="MorningDuasAndWakeUp" component={MorningDuasAfterWakeUp} />
       <Stack.Screen name="WellnessGuidanceEbook" component={WellnessGuidanceEbook} />
+      <Stack.Screen name="AccountSettings" component={AccountSettings} />
+      <Stack.Screen name="BillingAndSubscription" component={BillingAndSubscription} />
+      <Stack.Screen name="UpgrateToPremimum" component={UpgradeToPremimum} />
+      <Stack.Screen name="Invoice" component={Invoice} />
     </Stack.Navigator>
     // </StripeProvider>
   );
