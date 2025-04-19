@@ -68,7 +68,9 @@ const BillingAndSubscription = ({ navigation }: { navigation: any }) => {
                     </View>
                 </TouchableOpacity>
                 <View style={tw`border-b w-full border-gray-300 z-40 my-2`} ></View>
-                <TouchableOpacity style={tw`flex-row items-center gap-2 py-3`}>
+                <TouchableOpacity
+                onPress={()=> navigation.navigate("CancelSubscription")}
+                style={tw`flex-row items-center gap-2 py-3`}>
                     <View style={tw`w-[20%] items-center`}>
                         <SvgXml xml={IconCancelSub} />
                     </View>

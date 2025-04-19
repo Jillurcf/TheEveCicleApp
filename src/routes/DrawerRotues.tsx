@@ -129,7 +129,7 @@ function DrawerContent({ navigation, route }: any) {
           {/*    */}
           <TouchableOpacity
             onPress={() =>
-              navigation?.navigate('Setting', {
+              navigation?.navigate('DrawerLinkDeviceScreen', {
                 // products: [...Array(10)],
                 // title: 'I miei ordini',
                 // from: 'myOrders',
@@ -147,7 +147,7 @@ function DrawerContent({ navigation, route }: any) {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() =>
-              navigation?.navigate('Setting', {
+              navigation?.navigate('Reminders', {
                 // products: [...Array(10)],
                 // title: 'I miei ordini',
                 // from: 'myOrders',
@@ -165,7 +165,7 @@ function DrawerContent({ navigation, route }: any) {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() =>
-              navigation?.navigate('Setting', {
+              navigation?.navigate('DataAnalytics', {
                 // products: [...Array(10)],
                 // title: 'I miei ordini',
                 // from: 'myOrders',
@@ -183,7 +183,7 @@ function DrawerContent({ navigation, route }: any) {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() =>
-              navigation?.navigate('Setting', {
+              navigation?.navigate('HelpAndSupport', {
                 // products: [...Array(10)],
                 // title: 'I miei ordini',
                 // from: 'myOrders',

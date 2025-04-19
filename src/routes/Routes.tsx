@@ -39,6 +39,14 @@ import AccountSettings from '../screens/drawerContent/AccountSettings';
 import BillingAndSubscription from '../screens/drawerContent/BillingAndSubscription';
 import UpgradeToPremimum from '../screens/drawerContent/UpgradeToPremimum';
 import Invoice from '../screens/drawerContent/Invoice';
+import CancelSubscription from '../screens/CancelSubscriiption';
+import LinkedDevicesScreen from '../screens/LinkDevices';
+import Reminders from '../screens/Reminders';
+import DataAndAnalytics from '../screens/drawerContent/DataAndAnalytics';
+import { IconHelpAndSupport } from '../assets/Icons';
+import HelpAndSupport from '../screens/drawerContent/HelpAndSupport';
+import CustomerSupport from '../screens/drawerContent/HelpAndSupport/CustomerSupport';
+import Faq from '../screens/drawerContent/HelpAndSupport/Faq';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -48,7 +56,7 @@ export default function Routes() {
     // <StripeProvider publishableKey="pk_test_51QKAtBKOpUtqOuW1x5VdNqH3vG7CZZl1P6V3VuV1qsRUmPLNk26i34AXeu2zCO3QurFJAOZ9zfb0EkWeCVhqBYgH008X41cXr6">
     <Stack.Navigator
       screenOptions={{ headerShown: false, animation: 'slide_from_right' }}
-    //   initialRouteName="LoadingSplash"
+      // initialRouteName="LoadingSplash"
     >
       {/* <Stack.Screen name="LoadingSplash" component={LoadingSplash}
          /> */}
@@ -58,8 +66,8 @@ export default function Routes() {
       <Stack.Screen name="Popup" component={PopupScreen} />
   
       <Stack.Screen name="DiscoverResult" component={DiscoverResult} /> */}
-
-      {/* <Stack.Screen name="WelcomeScreen1" component={WelcomeScreen1} />
+{/*==================================== */}
+    {/* <Stack.Screen name="WelcomeScreen1" component={WelcomeScreen1} />
       <Stack.Screen name="WelcomeScreen2" component={WelcomeScreen2} />
       <Stack.Screen name="WelcomeScreen3" component={WelcomeScreen3} />
       <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
@@ -76,7 +84,7 @@ export default function Routes() {
       <Stack.Screen name="SetupStep4" component={SetupStep4} />
       <Stack.Screen name="SetupStep5" component={SetupStep5} />
       <Stack.Screen name="SetupStep6" component={SetupStep6} />
-      <Stack.Screen name="LinkOtherUsers" component={LinkOtherUsers} /> */}
+      <Stack.Screen name="LinkOtherUsers" component={LinkOtherUsers} />  */}
       <Stack.Screen name="Drawer" component={DrawerRoute} />
       <Stack.Screen name="Autumn" component={Autumn} />
       <Stack.Screen name="Winter" component={Winter} />
@@ -95,6 +103,13 @@ export default function Routes() {
       <Stack.Screen name="BillingAndSubscription" component={BillingAndSubscription} />
       <Stack.Screen name="UpgrateToPremimum" component={UpgradeToPremimum} />
       <Stack.Screen name="Invoice" component={Invoice} />
+      <Stack.Screen name="CancelSubscription" component={CancelSubscription} />
+      <Stack.Screen name="DrawerLinkDeviceScreen" component={LinkedDevicesScreen} />
+      <Stack.Screen name="Reminders" component={Reminders} />
+      <Stack.Screen name="DataAnalytics" component={DataAndAnalytics} />
+      <Stack.Screen name="HelpAndSupport" component={HelpAndSupport} />
+      <Stack.Screen name="CustomerSupport" component={CustomerSupport} />
+      <Stack.Screen name="HelpFaq" component={Faq} />
     </Stack.Navigator>
     // </StripeProvider>
   );
