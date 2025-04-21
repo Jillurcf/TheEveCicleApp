@@ -47,6 +47,10 @@ import { IconHelpAndSupport } from '../assets/Icons';
 import HelpAndSupport from '../screens/drawerContent/HelpAndSupport';
 import CustomerSupport from '../screens/drawerContent/HelpAndSupport/CustomerSupport';
 import Faq from '../screens/drawerContent/HelpAndSupport/Faq';
+import StepByStepTutoriials from '../screens/drawerContent/HelpAndSupport/StepByStepTutoriials';
+import PrivacyPolicy from '../screens/drawerContent/HelpAndSupport/PrivacyPolicy';
+import TermsOfUse from '../screens/drawerContent/HelpAndSupport/TermsOfUse';
+import Notifications from '../screens/Notifications';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -110,6 +114,10 @@ export default function Routes() {
       <Stack.Screen name="HelpAndSupport" component={HelpAndSupport} />
       <Stack.Screen name="CustomerSupport" component={CustomerSupport} />
       <Stack.Screen name="HelpFaq" component={Faq} />
+      <Stack.Screen name="StepByStepTutorials" component={StepByStepTutoriials} />
+      <Stack.Screen name="PrivcyPolicy" component={PrivacyPolicy} />
+      <Stack.Screen name="TermsOfUse" component={TermsOfUse} />
+      <Stack.Screen name="Notifications" component={Notifications} />
     </Stack.Navigator>
     // </StripeProvider>
   );

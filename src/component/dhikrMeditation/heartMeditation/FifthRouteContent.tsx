@@ -1,4 +1,4 @@
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import VideoPlayer from 'react-native-video-player'
@@ -199,7 +199,7 @@ const FifthRouteContent = (props: Props) => {
 
     ]
     return (
-        <View flex-1>
+        <ScrollView flex-1>
             <View style={{ backgroundColor: '#E8F6F6', padding: '4%' }}>
                 <View style={{}}>
                     <LinearGradient
@@ -227,7 +227,7 @@ const FifthRouteContent = (props: Props) => {
             </View>
             <View style={tw``}>
                 <FlatList
-                    data={audioData}
+                    data={data}
                     renderItem={(item) => {
                         console.log(item?.item, 'item in flatlist');
                         return (
@@ -264,7 +264,7 @@ const FifthRouteContent = (props: Props) => {
                     }}
                 />
             </View>
-        </View>
+        </ScrollView>
     )
 }
 

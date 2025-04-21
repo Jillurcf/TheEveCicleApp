@@ -39,28 +39,28 @@ const FirstRoute = () => (
     //         </LinearGradient>
     //     </View>
     // </View>
-    <ScrollView>
+    <View>
         <FirstRouteContent />
-    </ScrollView>
+    </View>
 );
 const SecondRoute = () => (
-    <ScrollView>
+    <View>
         <SecondRouteContent />
-    </ScrollView>
+    </View>
 );
 const ThirdRoute = () => (
-    <ScrollView>
-       <ThirdRouteContent />
-    </ScrollView>
+    <View>
+        <ThirdRouteContent />
+    </View>
 );
 const FourthRoute = () => (
-    <ScrollView>
-        <FourthRouteContent/>
-    </ScrollView>);
+    <View>
+        <FourthRouteContent />
+    </View>);
 const FithRoute = () => (
-   <ScrollView>
-    <FifthRouteContent/>
-   </ScrollView>
+    <View>
+        <FifthRouteContent />
+    </View>
 );
 const DhikrAndMedition = ({ navigation }: { navigation: any }) => {
     const layout = useWindowDimensions();
@@ -123,13 +123,13 @@ const DhikrAndMedition = ({ navigation }: { navigation: any }) => {
                             })}
                         </View>
                     )}
-                    lazy
-                    lazyPreloadDistance={2}
                     initialLayout={{ width: layout.width }}
-                    tabBarPosition="top"
                     navigationState={{ index, routes }}
                     renderScene={renderScene}
                     onIndexChange={setIndex}
+                    lazy
+                    lazyPreloadDistance={3} // Experiment with preload distance
+                    tabBarPosition="top"
                 />
             </View>
 

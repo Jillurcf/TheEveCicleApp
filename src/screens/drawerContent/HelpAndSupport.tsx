@@ -55,7 +55,7 @@ const HelpAndSupport = ({ navigation }: { navigation: any }) => {
                 <View style={tw`border-b w-full border-gray-300 z-40 my-2`} >
                 </View>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate("Invoice")}
+                    onPress={() => navigation.navigate("StepByStepTutorials")}
                     style={tw`flex-row items-center gap-2 py-3`}>
                     <View style={tw`w-[20%] items-center`}>
                         <SvgXml xml={IconStepbyStepTutorials} />
@@ -69,7 +69,7 @@ const HelpAndSupport = ({ navigation }: { navigation: any }) => {
                 </TouchableOpacity>
                 <View style={tw`border-b w-full border-gray-300 z-40 my-2`} ></View>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate("CancelSubscription")}
+                    onPress={() => navigation.navigate("PrivcyPolicy")}
                     style={tw`flex-row items-center gap-2 py-3`}>
                     <View style={tw`w-[20%] items-center`}>
                         <SvgXml xml={IconPrivacyPolicy} />
@@ -83,7 +83,7 @@ const HelpAndSupport = ({ navigation }: { navigation: any }) => {
                 </TouchableOpacity>
                 <View style={tw`border-b w-full border-gray-300 z-40 my-2`} ></View>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate("CancelSubscription")}
+                    onPress={() => navigation.navigate("TermsOfUse")}
                     style={tw`flex-row items-center gap-2 py-3`}>
                     <View style={tw`w-[20%] items-center`}>
                         <SvgXml xml={IconTermsOfUse} />
@@ -95,8 +95,8 @@ const HelpAndSupport = ({ navigation }: { navigation: any }) => {
                         </Text>
                     </View>
                 </TouchableOpacity>
-                <View style={tw`border-b w-full border-gray-300 z-40 my-2`} ></View>
-                <TouchableOpacity
+                {/* <View style={tw`border-b w-full border-gray-300 z-40 my-2`} ></View> */}
+                {/* <TouchableOpacity
                     onPress={() => navigation.navigate("CancelSubscription")}
                     style={tw`flex-row items-center gap-2 py-3`}>
                     <View style={tw`w-[20%] items-center`}>
@@ -108,7 +108,7 @@ const HelpAndSupport = ({ navigation }: { navigation: any }) => {
                         Discover more features and resources on our official website.
                         </Text>
                     </View>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
            
             <StatusBar barStyle="dark-content" backgroundColor="#E8F6F6" translucent={false} />

@@ -346,7 +346,7 @@ const CustomerSupport = ({navigation}) => {
  
   const toggleModal = () => setOpenModal(prev => !prev);
   return (
-    <ScrollView contentContainerStyle={tw`flex-1 px-2 bg-gray-100`}>
+    <ScrollView contentContainerStyle={tw`flex-1 px-2 bg-[#E8F6F6]`}>
       <View style={tw`px-[4%] flex-row justify-between items-center  my-4`}>
         <TouchableOpacity onPress={() =>navigation.goBack()}>
           <SvgXml xml={IconLeftArrow} />

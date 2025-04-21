@@ -36,9 +36,9 @@ const Faq = ({ navigation }: { navigation: any }) => {
   const updateSections = (sections) => {
     setActiveSections(sections);
   };
-
+ 
   return (
-    <ScrollView contentContainerStyle={tw`flex-grow bg-gray-100 px-4 py-5`}>
+    <ScrollView contentContainerStyle={tw`flex-grow bg-[#E8F6F6] px-4 py-5`}>
       {/* Header */}
       <View style={tw`flex-row items-center justify-between mb-5`}>
         <TouchableOpacity onPress={() => navigation.goBack()}>

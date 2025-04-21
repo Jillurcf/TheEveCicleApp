@@ -1,4 +1,4 @@
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, FlatList, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import VideoPlayer from 'react-native-video-player'
@@ -15,6 +15,7 @@ type AudioItemType = {
 };
 const FirstRouteContent = (props: Props) => {
     const [audioData, setAudioData] = useState<AudioItemType[]>([]);
+    const [isLoading, setIsLoading] = useState(false)
     console.log(audioData?.duration, 'audioData');
     const [currentSound, setCurrentSound] = useState<Sound | null>(null);
     const [playingId, setPlayingId] = useState<string | null>(null);
@@ -195,10 +196,28 @@ const FirstRouteContent = (props: Props) => {
             , image: require('../../assets/Imgages/Sanctum/Resource/DhikrAndMedition/img.png'),
             "audio_url": "https://file-examples.com/storage/fe0d4ef3b467fe96a99bd97/2017/11/file_example_MP3_700KB.mp3"
         },
+        {
+            id: '5', title: 'Morning Adhkar'
+            , image: require('../../assets/Imgages/Sanctum/Resource/DhikrAndMedition/img.png'),
+            "audio_url": "https://file-examples.com/storage/fe0d4ef3b467fe96a99bd97/2017/11/file_example_MP3_700KB.mp3"
+        },
+        {
+            id: '6', title: 'Morning Adhkar'
+            , image: require('../../assets/Imgages/Sanctum/Resource/DhikrAndMedition/img.png'),
+            "audio_url": "https://file-examples.com/storage/fe0d4ef3b467fe96a99bd97/2017/11/file_example_MP3_700KB.mp3"
+        },
 
     ]
+    if (isLoading) {
+        return (
+          <View style={tw`flex-1 justify-center items-center`}>
+            <ActivityIndicator size="large" color="#064145" />
+            <Text style={tw`text-primary mt-2`}>Loading ....</Text>
+          </View>
+        );
+      }
     return (
-        <View flex-1>
+        <ScrollView flex-1>
             <View style={{ backgroundColor: '#E8F6F6', padding: '4%' }}>
                 <View style={{}}>
                     <LinearGradient
@@ -226,7 +245,7 @@ const FirstRouteContent = (props: Props) => {
             </View>
             <View style={tw``}>
                 <FlatList
-                    data={audioData}
+                    data={data}
                     renderItem={(item) => {
                         console.log(item?.item, 'item in flatlist');
                         return (
@@ -263,7 +282,7 @@ const FirstRouteContent = (props: Props) => {
                     }}
                 />
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
