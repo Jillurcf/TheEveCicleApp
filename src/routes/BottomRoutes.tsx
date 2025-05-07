@@ -183,10 +183,7 @@ function BottomRoutes({ route }) {
   const FloatingButtons = () => {
     const navigation = useNavigation()
     return (
-      <View style={tw`flex-row w-full gap-15 absolute bottom-[100px] 
-      
-      left-[16%] -translate-x-1/2
-       z-10
+      <View style={tw`flex-row w-[100%] gap-15 absolute bottom-[100px] left-[17%] -translate-x-1/2 z-10
       `}>
         <TouchableOpacity
           style={tw`bg-[#96CBCB] p-2 rounded-full justify-center items-center`}

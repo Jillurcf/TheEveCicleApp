@@ -36,6 +36,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ navigation }) => {
     //   return;
     // }
     // Handle login logic here
+    navigation.navigate("Drawer")
   };
 
   const handleGoogleLogin = () => {
@@ -97,8 +98,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ navigation }) => {
 
         <Button
           style={tw`text-white`}
-          containerStyle={tw`mt-6 bg-[#4FA8A8] rounded-2xl`}
-          title="Start your session's journey"
+          containerStyle={tw`mt-6 h-10 bg-[#4FA8A8] rounded-2xl`}
+          title="Sign in"
+          // title="Start your session's journey"
           titleSyle={tw`text-[#FFFFFF]`}
           onPress={handleLogin}
         />
@@ -106,7 +108,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ navigation }) => {
         <View style={tw`items-center justify-center flex`}>
           <Text style={tw`font-SatoshiMedium my-4`}>
             Don't have an account?{' '}
-            <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
               <Text style={tw`text-[#2B9696]`}>Sign up</Text>
             </TouchableOpacity>
           </Text>

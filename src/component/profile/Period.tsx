@@ -1,56 +1,78 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { LineChart } from "react-native-gifted-charts"
+import React from 'react';
+import { View, StyleSheet, Dimensions } from 'react-native';
+import {
+  AreaChart,
+  XAxis,
+  YAxis,
+  Grid,
+} from 'react-native-svg-charts';
+import { Circle } from 'react-native-svg';
+import * as shape from 'd3-shape';
+import * as d3Scale from 'd3-scale';
 
-type Props = {}
-const lineData = [
-    {value: 0, dataPointText: '0'},
-    {value: 10, dataPointText: '10'},
-    {value: 8, dataPointText: '8'},
-    {value: 58, dataPointText: '58'},
-    {value: 56, dataPointText: '56'},
-    {value: 65, dataPointText: '78'},
-    // {value: 74, dataPointText: '74'},
-    // {value: 98, dataPointText: '98'},
-  ];
+const Period = () => {
+  const chartWidth = Dimensions.get('window').width - 40;
+  const data = [10, 7, 1, 8, 6];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-//   const lineData2 = [
-//     {value: 0, dataPointText: '0'},
-//     {value: 20, dataPointText: '20'},
-//     {value: 18, dataPointText: '18'},
-//     {value: 40, dataPointText: '40'},
-//     {value: 36, dataPointText: '36'},
-//     {value: 60, dataPointText: '60'},
-//     {value: 54, dataPointText: '54'},
-//     {value: 85, dataPointText: '85'},
-//   ];
-const Period = (props: Props) => {
-  return (
-    <View>
-      <View>
-          <LineChart
-          data={lineData}
-        //   data2={lineData2}
-          height={200}
-          showVerticalLines
-          spacing={44}
-          initialSpacing={0}
-          color1="skyblue"
-          color2="orange"
-          textColor1="green"
-          dataPointsHeight={6}
-          dataPointsWidth={6}
-          dataPointsColor1="blue"
-          dataPointsColor2="red"
-          textShiftY={-2}
-          textShiftX={-5}
-          textFontSize={13}
+  const Decorator = ({ x, y, data }) => {
+    return data.map((value, index) => (
+      <Circle
+        key={index}
+        cx={x(index)}
+        cy={y(value)}
+        r={4}
+        stroke={'#2c3e50'}
+        fill={'#16a085'}
       />
+    ));
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={{ flexDirection: 'row', height: 220 }}>
+        {/* Y Axis */}
+        <YAxis
+          data={data}
+          contentInset={{ top: 20, bottom: 20 }}
+          svg={{ fontSize: 10, fill: 'black' }}
+          numberOfTicks={6}
+          formatLabel={(value)=> `${value} days`}
+        />
+
+        {/* Area Chart and X Axis */}
+        <View style={{ flex: 1, marginLeft: 10 }}>
+          <AreaChart
+            style={{ flex: 1 }}
+            data={data}
+            svg={{ fill: 'rgba(0, 128, 128, 0.4)' }}
+            contentInset={{ top: 20, bottom: 20 }}
+            curve={shape.curveLinear}
+          >
+            <Grid />
+            <Decorator />
+          </AreaChart>
+
+          <XAxis
+            style={{ marginTop: 10 }}
+            data={data}
+            numberOfTicks={data.length}
+            formatLabel={(value, index) => months[index]}
+            contentInset={{ left: 10, right: 10 }}
+            svg={{ fontSize: 10, fill: 'black' }}
+            scale={d3Scale.scaleLinear}
+          />
+        </View>
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default Period
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 50,
+    padding:0,
+  },
+});
 
-const styles = StyleSheet.create({})
+export default Period;

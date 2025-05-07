@@ -70,7 +70,7 @@ const OvulationCircle: React.FC = ({ navigation }) => {
 
     require("../../assets/Imgages/Yellow-fullMoon.png"),
     require("../../assets/Imgages/yl1.png"),
-     //  require("../../assets/Imgages/wr6.png"),
+    //  require("../../assets/Imgages/wr6.png"),
     require("../../assets/Imgages/red-r1.png"),
     require("../../assets/Imgages/red-r2.png"),
     require("../../assets/Imgages/pink-r1.png"),
@@ -78,17 +78,15 @@ const OvulationCircle: React.FC = ({ navigation }) => {
     require("../../assets/Imgages/pink-r3.png"),
     require("../../assets/Imgages/pink-r4.png"),
     require("../../assets/Imgages/pink-r5.png"),
-     
+
     require("../../assets/Imgages/wr1.png"),
     require("../../assets/Imgages/wr2.png"),
     require("../../assets/Imgages/wr-3.png"),
     require("../../assets/Imgages/wr4.png"),
     require("../../assets/Imgages/wr5.png"),
-   
+
     require("../../assets/Imgages/gr1.png"),
     require("../../assets/Imgages/gr2.png"),
-
-   
     require("../../assets/Imgages/yl14.png"),
     require("../../assets/Imgages/yl13.png"),
     require("../../assets/Imgages/yl12.png"),
@@ -104,7 +102,7 @@ const OvulationCircle: React.FC = ({ navigation }) => {
     require("../../assets/Imgages/yl2.png"),
     require("../../assets/Imgages/yl1.png"),
     require("../../assets/Imgages/yl1.png"),
-   
+
   ];
 
   return (
@@ -121,10 +119,10 @@ const OvulationCircle: React.FC = ({ navigation }) => {
         </View>
         {/* SVG Circle */}
         <View {...panResponder.panHandlers}>
-          <Svg height="420" width="490" viewBox="0 0 300 300">
+          <Svg height="490" width="490" viewBox="0 0 300 300">
             <Animated.View
               style={[
-                tw`absolute left-[75px] top-[25px]`,
+                tw`absolute left-[75px]`,
                 { transform: [{ rotate: animatedRotation }] },
               ]}
             >
@@ -153,11 +151,11 @@ const OvulationCircle: React.FC = ({ navigation }) => {
 
             {/* Fixed Circle at the Bottom */}
             <Circle
-              cx="150"
-              cy={183 + radius}
-              r={14}
+              cx="148"
+              cy={131 + radius}
+              r={10}
               strokeOpacity={"10%"}
-              strokeWidth={5  }
+              strokeWidth={2}
               stroke="#FFFFFFFF"
               fill="transparent"
             />
@@ -165,23 +163,23 @@ const OvulationCircle: React.FC = ({ navigation }) => {
         </View>
 
         {/* Text Content */}
-        <View style={tw`absolute top-[25%] items-center`}>
+        <View style={tw`absolute top-[18%] items-center`}>
           <Text style={tw`  font-SatoshiBold text-white`}>Current session</Text>
           <Text style={tw`text-lg  font-SatoshiBold text-white`}>Summer . Ovulation</Text>
           {/* <Text style={tw`text-white text-base font-bold mt-6`}>
         <Text style={tw`text-[25px] font-bold`}>{selectedDay}th</Text> Day
       </Text> */}
-          <Text style={tw`text-white text-sm  font-SatoshiBold text-center max-w-[250px] mt-2`}>
+          <Text style={tw`text-white text-sm  font-SatoshiBold text-center max-w-[250px] mt-5`}>
             Next period in 12 days
           </Text>
 
           {/* Log Period Button */}
-          <TouchableOpacity style={tw`mt-5 border-2 font- SatoshiBold border-white px-4 py-1 rounded-full bg-white`}>
+          <TouchableOpacity style={tw`mt-10 border-2 font-SatoshiBold border-white px-4 py-1 rounded-full bg-white`}>
             <Text style={tw`text-[#1E6969] text-base  font-SatoshiBold`}>Log Period</Text>
           </TouchableOpacity>
         </View>
 
-        <View style={tw`flex-row justify-betweenp-2 rounded-full px-[4%]`}>
+        <View style={tw`flex-row bottom-32 justify-between rounded-full px-[4%]`}>
           {tabs.map((tab, index) => (
             <TouchableOpacity
               key={index}
@@ -202,7 +200,7 @@ const OvulationCircle: React.FC = ({ navigation }) => {
 
         <DayPicker selectedDay={selectedDay} onDaySelect={updateRotation} rotation={rotation} />
 
-        {/* <View style={tw`flex-row gap-4 my-4`}>
+        <View style={tw`flex-row -mt-10 gap-4`}>
           <View style={tw`flex-row items-center justify-center gap-2`}>
             <View style={tw`w-3 h-3 rounded-full bg-[#4CAF50]`}></View>
             <Text style={tw`text-black font-satoshiBlack text-xs`}>Estrogen</Text>
@@ -217,9 +215,9 @@ const OvulationCircle: React.FC = ({ navigation }) => {
           </View>
           <View style={tw`flex-row items-center justify-center gap-2`}>
             <View style={tw`w-3 h-3 rounded-full bg-[#FFA500]`}></View>
-            <Text style={tw`text-black font-satoshiBlack text-xs`}>LH</Text>
+            <Text style={tw`text-black text-xs`}>LH</Text>
           </View>
-        </View> */}
+        </View>
 
       </LinearGradient>
       <View style={tw` bg-white  `}>
@@ -234,7 +232,7 @@ const OvulationCircle: React.FC = ({ navigation }) => {
         <SeasonInsights />
         <MoonPahseTody />
       </LinearGradient>
-      <StatusBar translucent={false} />
+      <StatusBar backgroundColor="#0B3434" translucent={false} />
     </ScrollView>
 
 

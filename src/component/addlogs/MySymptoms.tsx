@@ -3,6 +3,17 @@ import React, { useState } from 'react'
 import tw from '../../lib/tailwind';
 import { SvgXml } from 'react-native-svg';
 import { Iconblad, IconTick } from '../../assets/Icons';
+import HeadAchsIcon from '../../assets/Imgages/AddLogs/MySymptoms/HeadAcchs.svg'
+import CrampsIcon from '../../assets/Imgages/AddLogs/MySymptoms/Cramps.svg'
+import LossOfAppetiteIcon from '../../assets/Imgages/AddLogs/MySymptoms/LossOfAppetite.svg'
+import OilySckinIcon from '../../assets/Imgages/AddLogs/MySymptoms/OilySkin.svg'
+import DrySckinIcon from '../../assets/Imgages/AddLogs/MySymptoms/DrySkin.svg'
+import NightSwweetIcon from '../../assets/Imgages/AddLogs/MySymptoms/NigthSweets.svg'
+import CravingsIcon from '../../assets/Imgages/AddLogs/MySymptoms/Carvings.svg'
+import FatiqueIcon from '../../assets/Imgages/AddLogs/MySymptoms/Fatigue.svg'
+import ViginalDrynessIcon from '../../assets/Imgages/AddLogs/MySymptoms/VirginalDryness.svg'
+import BreastTendernessIcon from '../../assets/Imgages/AddLogs/MySymptoms/BreastTenderness.svg'
+import InsomniaIcon from '../../assets/Imgages/AddLogs/MySymptoms/Insomnia.svg'
 
 type Props = {}
 
@@ -12,67 +23,65 @@ const MySymptoms = (props: Props) => {
         {
             id: 1,
             title: "Headachs",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MySymptoms/HeadAchs.png")}
-            />
+            icon: <HeadAchsIcon width={30} height={30}/>
         },
         {
             id: 2,
             title: "Cramps",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MySymptoms/Cramps.png")}
+            icon: <CrampsIcon width={30} height={30}
             />
         },
         {
             id: 3,
             title: "Loss of appetite",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MySymptoms/LossOfAppetite.png")}
+            icon: <LossOfAppetiteIcon width={30} height={30}
             />
         },
         {
             id: 4,
             title: "Oily skin",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MySymptoms/OilySkin.png")}
-            />
+            icon: <OilySckinIcon width={30} height={30}/>
         },
         {
             id: 5,
             title: "Dry skin",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MySymptoms/DrySkin.png")}
+            icon: <DrySckinIcon width={30} height={30}
             />
         },
         {
             id: 6,
             title: "Night sweets",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MySymptoms/NightSweats.png")}
+            icon: <NightSwweetIcon width={30} height={30}
             />
         },
         {
             id: 7,
             title: "Cravings",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MySymptoms/Cravings.png")}
+            icon: <CravingsIcon width={30} height={30}
             />
         },
         {
             id: 8,
             title: "Fatigue",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MySymptoms/Fatigue.png")}
+            icon: <FatiqueIcon width={30} height={30}
             />
         },
         {
             id: 9,
             title: "Virginal dryness",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MySymptoms/VirginalDryness.png")}
+            icon: <ViginalDrynessIcon width={30} height={30}
             />
         },
         {
             id: 10,
             title: "Breast tenderness",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MySymptoms/BreastTenderness.png")}
+            icon: <BreastTendernessIcon width={30} height={30}
             />
         },
         {
             id: 11,
             title: "Insomnia",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MySymptoms/Insomnia.png")}
+            icon: <InsomniaIcon width={30} height={30}
             />
         },
         

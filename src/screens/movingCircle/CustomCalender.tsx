@@ -82,13 +82,13 @@ const DayPicker: React.FC<DayPickerProps> = ({
   };
 
   return (
-    <View style={tw`flex-1 mt-12`}>
+    <View style={tw`flex-1 `}>
       <View style={tw`w-full justify-end relative`}>
-        <HormoneChart />
-        {/* <Image source={require('../../assets/Imgages/Today/graphs.png')} style={tw``} /> */}
+        {/* <HormoneChart /> */}
+        <Image source={require('../../assets/Imgages/Today/graphs.png')} style={tw`bottom-10`} />
       </View>
 
-      <View style={tw`w-full bottom-6 ml-8 py-4 absolute`}>
+      <View style={tw`w-[99%] left-10 bottom-7 py-4 absolute`}>
         {/* <Text style={tw`text-xl font-bold text-black`}>{moment().format("MMM, YYYY")}</Text> */}
 
         <FlatList
@@ -108,14 +108,15 @@ const DayPicker: React.FC<DayPickerProps> = ({
                   }`}
                 onPress={() => toggleDate(item)}
               >
-                <Text style={tw`text-lg font-medium ${isSelected ? "text-white font-bold" : "text-gray-800"}`}>
-                  {moment(item).format("D")}
-                </Text>
-                <Text style={tw`text-sm ${isSelected ? "text-white font-medium" : "text-gray-500"}`}>
+                  <Text style={tw`text-sm ${isSelected ? "text-white font-medium" : "text-gray-500"}`}>
                   {moment(item).format("ddd")}
                 </Text>
 
-                <View style={tw`h-40 bg-black w-0.2`}></View>
+                <Text style={tw`text-lg font-medium ${isSelected ? "text-white font-bold" : "text-gray-800"}`}>
+                  {moment(item).format("D")}
+                </Text>
+              
+                <View style={tw`h-30 bg-black w-0.2`}></View>
               </TouchableOpacity>
 
             );

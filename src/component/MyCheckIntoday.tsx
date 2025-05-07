@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, FlatList, Image } from "react-native";
 import tw from "../lib/tailwind";
+import Avatar1 from "../assets/Imgages/MyTodyCheckin/Group.svg";
+
 
 
 const checkinData = [
@@ -48,7 +50,7 @@ const checkinData = [
 const CheckInList = () => {
   return (
     <View style={tw`py-8 px-6`}>
-      <Text style={tw`text-lg font-bold mb-3`}>My check-in today</Text>
+      <Text style={tw`text-xl text-[#121221] font-SatoshiBold mb-3`}>My check-in today</Text>
       <FlatList
         data={checkinData}
         horizontal
@@ -56,8 +58,8 @@ const CheckInList = () => {
         contentContainerStyle={tw`flex-row`}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
-          <View style={tw`w-24 bg-white border border-gray-400 rounded-xl px-1 mr-3 items-center`}>
-            <Text style={tw`text-sm font-semibold mb-2`}>{item.title}</Text>
+          <View style={tw`w-30 h-24 justify-center bg-white border border-gray-400 rounded-xl px-1 mr-3 items-center`}>
+            <Text style={tw`text-sm font-semibold mb-4`}>{item.title}</Text>
             <View style={tw`flex-row items-center`}>
               {item.avatars ? (
                 <View style={tw`flex-row items-center`}>

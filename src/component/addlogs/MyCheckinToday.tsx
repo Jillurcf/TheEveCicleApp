@@ -3,6 +3,25 @@ import React, { useState } from 'react'
 import tw from '../../lib/tailwind';
 import { SvgXml } from 'react-native-svg';
 import { Iconblad, IconTick } from '../../assets/Icons';
+import HappyIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Happy.svg';
+import CalmIcon from '../../assets/Imgages/AddLogs/myCheckinTody/calm.svg';
+import EnergicIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Energic.svg';
+import ConfidentIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Confident.svg';
+import SadIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Sad.svg';
+import FocuccedIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Focused.svg';
+import Exhausted from '../../assets/Imgages/AddLogs/myCheckinTody/Exhausted.svg';
+import LowIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Low.svg';
+import IrritatedIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Irritated.svg';
+import AnxiousIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Anxious.svg';
+import StressedIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Stressed.svg';
+import HighLibidoIcon from '../../assets/Imgages/AddLogs/myCheckinTody/HighLibido.svg';
+import LowLibidoIcon from '../../assets/Imgages/AddLogs/myCheckinTody/LowLibido.svg';
+import LowEnergyIcon from '../../assets/Imgages/AddLogs/myCheckinTody/LowEnergy.svg';
+import SelfCriticalIcon from '../../assets/Imgages/AddLogs/myCheckinTody/SelfCritical.svg';
+import SensitiveIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Sensitive.svg';
+import EmotionalIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Emotional.svg';
+import OverthinkingIcon from '../../assets/Imgages/AddLogs/myCheckinTody/OverThinking.svg';
+
 
 type Props = {}
 
@@ -12,110 +31,95 @@ const MyCheckinToday = (props: Props) => {
         {
             id: 1,
             title: "Happy",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Happy.png")}
-            />
+            icon: <HappyIcon width={30} height={30}/>
+            
         },
         {
             id: 2,
             title: "calm",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/calm.png")}
-            />
+            icon: <CalmIcon width={30} height={30}/>
+           
         },
         {
             id: 3,
             title: "Energetic",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Energic.png")}
-            />
+            icon: <EnergicIcon width={30} height={30}/>
         },
         {
             id: 4,
             title: "Confident",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Confident.png")}
-            />
+            icon: 
+            <ConfidentIcon width={30} height={30}/>
         },
         {
             id: 5,
             title: "Sad",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Sad.png")}
-            />
+            icon: <SadIcon width={30} height={30}/>
         },
         {
             id: 6,
             title: "Focused",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Focused.png")}
-            />
+            icon: <FocuccedIcon width={30} height={30}/>
         },
         {
             id: 7,
             title: "Exhausted",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Exhausted.png")}
-            />
+            icon: <Exhausted width={30} height={30} />
         },
         {
             id: 8,
             title: "Low",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Low.png")}
-            />
+            icon: <LowIcon width={30} height={30}/>
         },
         {
             id: 9,
             title: "Irritated",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Irritated.png")}
-            />
+            icon: <IrritatedIcon width={30} height={30}/>
         },
         {
             id: 10,
             title: "Anxious",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Anxious.png")}
-            />
+            icon: <AnxiousIcon width={30} height={30}/>
         },
         {
             id: 11,
             title: "Stressed",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Stressed.png")}
-            />
+            icon: <StressedIcon width={30} height={30}/>
         },
         {
             id: 12,
             title: "High libido",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/HighLibido.png")}
-            />
+            icon: <HighLibidoIcon width={30} height={30}/>
         },
         {
             id: 13,
             title: "Low libido",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/LowLibido.png")}
-            />
+            icon: <LowLibidoIcon width={30} height={30}/>
         },
         {
             id: 14,
             title: "Low energy",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/lowEnergy.png")}
-            />
+            icon: <LowEnergyIcon width={30} height={30}/>
         },
         {
             id: 15,
             title: "Self-critical",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Self-critical.png")}
-            />
+            icon: <SelfCriticalIcon width={30} height={30}/>
         },
         {
             id: 16,
             title: "Sensitive",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Sensitive.png")}
-            />
+            icon: <SensitiveIcon width={30} height={30}/>
         },
         {
             id: 17,
             title: "Emotional",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Emotional.png")}
-            />
+            icon: <EmotionalIcon width={30} height={30}/>
         },
         {
             id: 18,
             title: "Overthinking",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/myCheckinTody/Overthinking.png")}
-            />
+            icon: <OverthinkingIcon width={30} height={30}/>
         },
         
     ];

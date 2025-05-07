@@ -16,6 +16,7 @@ import { SceneMap, TabView } from 'react-native-tab-view';
 import Period from '../component/profile/Period';
 import CycleLength from '../component/profile/CycleLength';
 import Symptoms from '../component/profile/Symptoms';
+import ProfileCalendar from '../assets/Imgages/Profile/ProfileCalendar.svg';
 
 const FirstRoute = () => (
   <ScrollView style={tw`bg-white p-4`}>
@@ -105,14 +106,15 @@ const Profile = ({ navigation }) => {
             <Text style={tw`text-lg font-SatoshiBold text-black`}>4 days</Text>
             <Text style={tw`text-xs font-SatoshiRegular`}>Average period</Text>
           </View>
-          <Image source={require('../assets/Imgages/Profile/ProfileCalendar.png')} />
+          <ProfileCalendar width={40} height={40} />
+          <Image source={require('../assets/Imgages/Profile/ProfileCalendar.svg')} />
         </View>
       </View>
 
       <Text style={tw`text-xl font-SatoshiBold text-black mt-6`}>History</Text>
 
       {/* Give TabView a fixed height */}
-      <View style={tw`mt-4 bg-white flex-1 h-[320px] p-2 rounded-2xl my-8`}>
+      <View style={tw`mt-4 bg-white h-[580px] p-2 rounded-2xl my-8`}>
         <TabView
           navigationState={{ index, routes }}
           renderScene={renderScene}

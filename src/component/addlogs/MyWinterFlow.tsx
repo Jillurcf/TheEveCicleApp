@@ -3,6 +3,11 @@ import React, { useState } from 'react'
 import tw from '../../lib/tailwind';
 import { SvgXml } from 'react-native-svg';
 import { Iconblad, IconTick } from '../../assets/Icons';
+import Light from '../../assets/Imgages/AddLogs/MyWinterFlow/Light.svg'
+import Normal from '../../assets/Imgages/AddLogs/MyWinterFlow/Normal.svg'
+import Heavy from '../../assets/Imgages/AddLogs/MyWinterFlow/Heavy.svg'
+import Extream from '../../assets/Imgages/AddLogs/MyWinterFlow/VeryHeavy.svg'
+
 
 type Props = {}
 
@@ -12,25 +17,25 @@ const MyWinterFlow = (props: Props) => {
         {
             id: 1,
             title: "Light",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyWinterFlow/Light.png")}
+            icon: <Light width={30} height={30}
             />
         },
         {
             id: 2,
             title: "Normal",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyWinterFlow/Normal.png")}
+            icon: <Normal width={30} height={30}
             />
         },
         {
             id: 3,
             title: "Heavy",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyWinterFlow/Heavy.png")}
+            icon: <Heavy width={30} height={30}
             />
         },
         {
             id: 4,
             title: "Extream",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyWinterFlow/VeryHeavy.png")}
+            icon: <Extream width={30} height={30}
             />
         },
        

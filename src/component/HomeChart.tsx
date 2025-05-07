@@ -6,7 +6,7 @@ import tw from '../lib/tailwind';
 
 const HormoneChart = () => {
   const width = 420;
-  const height = 200;
+  const height = 120;
 
   // Hormone data wave paths (Mock paths, adjust for accuracy)
   const hormones = [

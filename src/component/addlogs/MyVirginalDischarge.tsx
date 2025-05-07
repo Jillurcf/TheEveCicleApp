@@ -3,6 +3,17 @@ import React, { useState } from 'react'
 import tw from '../../lib/tailwind';
 import { SvgXml } from 'react-native-svg';
 import { Iconblad, IconTick } from '../../assets/Icons';
+import NoDischargeIcon from '../../assets/Imgages/AddLogs/MyVirginalDischarge/NoDischarge.svg'
+import WateryIcon from '../../assets/Imgages/AddLogs/MyVirginalDischarge/Watery.svg'
+import CreamyIcon from '../../assets/Imgages/AddLogs/MyVirginalDischarge/Creamy.svg'
+import StickyIcon from '../../assets/Imgages/AddLogs/MyVirginalDischarge/Sticky.svg'
+import EggWhiteIcon from '../../assets/Imgages/AddLogs/MyVirginalDischarge/EggWhite.svg'
+import ClumpyIcon from '../../assets/Imgages/AddLogs/MyVirginalDischarge/ClumpyWhite.svg'
+import YellowishIcon from '../../assets/Imgages/AddLogs/MyVirginalDischarge/Yellowwish.svg'
+import SpottingIcon from '../../assets/Imgages/AddLogs/MyVirginalDischarge/Spotting.svg'
+import UnusualColorIcon from '../../assets/Imgages/AddLogs/MyVirginalDischarge/UnusualColor.svg'
+import OdourLessIcon from '../../assets/Imgages/AddLogs/MyVirginalDischarge/OdourLess.svg'
+import StrongIcon from '../../assets/Imgages/AddLogs/MyVirginalDischarge/StrongOdour.svg'
 
 type Props = {}
 
@@ -12,67 +23,67 @@ const MyVirginalDischarge = (props: Props) => {
         {
             id: 1,
             title: "No discharge",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyVirginalDischarge/NoDischarge.png")}
+            icon: <NoDischargeIcon width={30} height={30}
             />
         },
         {
             id: 2,
             title: "Watery",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyVirginalDischarge/Watery.png")}
+            icon: <WateryIcon width={30} height={30}
             />
         },
         {
             id: 3,
             title: "Creamy",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyVirginalDischarge/Creamy.png")}
+            icon: <CreamyIcon width={30} height={30}
             />
         },
         {
             id: 4,
             title: "Sticky",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyVirginalDischarge/Sticy.png")}
+            icon: <StickyIcon width={30} height={30}
             />
         },
         {
             id: 5,
             title: "Egg white",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyVirginalDischarge/EggtWhite.png")}
+            icon: <EggWhiteIcon width={30} height={30}
             />
         },
         {
             id: 6,
             title: "Clumpy white",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyVirginalDischarge/ClumpyWhite.png")}
+            icon: <ClumpyIcon width={30} height={30}
             />
         },
         {
             id: 7,
             title: "Yellowish",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyVirginalDischarge/Yellowish.png")}
+            icon: <YellowishIcon width={30} height={30}
             />
         },
         {
             id: 8,
             title: "Spotting",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyVirginalDischarge/Spotting.png")}
+            icon: <SpottingIcon width={30} height={30}
             />
         },
         {
             id: 9,
             title: "Unusual color",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyVirginalDischarge/UnusualColor.png")}
+            icon: <UnusualColorIcon width={30} height={30}
             />
         },
         {
             id: 10,
             title: "Odourless",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyVirginalDischarge/Odourless.png")}
+            icon: <OdourLessIcon width={30} height={30}
             />
         },
         {
             id: 11,
             title: "Strong odour",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyVirginalDischarge/StrongOdour.png")}
+            icon: <StrongIcon width={30} height={30}
             />
         },
         

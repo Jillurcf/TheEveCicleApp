@@ -71,7 +71,7 @@ export default function Routes() {
   
       <Stack.Screen name="DiscoverResult" component={DiscoverResult} /> */}
 {/*==================================== */}
-    {/* <Stack.Screen name="WelcomeScreen1" component={WelcomeScreen1} />
+     <Stack.Screen name="WelcomeScreen1" component={WelcomeScreen1} />
       <Stack.Screen name="WelcomeScreen2" component={WelcomeScreen2} />
       <Stack.Screen name="WelcomeScreen3" component={WelcomeScreen3} />
       <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
@@ -88,7 +88,7 @@ export default function Routes() {
       <Stack.Screen name="SetupStep4" component={SetupStep4} />
       <Stack.Screen name="SetupStep5" component={SetupStep5} />
       <Stack.Screen name="SetupStep6" component={SetupStep6} />
-      <Stack.Screen name="LinkOtherUsers" component={LinkOtherUsers} />  */}
+      <Stack.Screen name="LinkOtherUsers" component={LinkOtherUsers} /> 
       <Stack.Screen name="Drawer" component={DrawerRoute} />
       <Stack.Screen name="Autumn" component={Autumn} />
       <Stack.Screen name="Winter" component={Winter} />

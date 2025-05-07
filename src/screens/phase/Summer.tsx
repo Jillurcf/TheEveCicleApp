@@ -4,17 +4,19 @@ import Header from '../../component/Header'
 import { SvgXml } from 'react-native-svg'
 import { IconCross } from '../../assets/Icons'
 import tw from '../../lib/tailwind'
+import SummerImg from '../../assets/Imgages/SeasonInsights/image2.svg'
 
 type Props = {}
 
-const Summer = ({ navigation }) => {
+const Summer = ({ navigation }: {navigation:any}) => {
     return (
         <ScrollView style={tw`flex-1 p-[4%] bg-[#E8F6F6]`}>
             <TouchableOpacity onPress={() => navigation.goBack()}>
                 <SvgXml xml={IconCross} />
             </TouchableOpacity>
             <View style={tw`items-center justify-center mt-6`}>
-                <Image style={tw`opacity-50`} source={require('../../assets/Imgages/Phase/Summer.png')} />
+                {/* <Image style={tw`opacity-50`} source={require('../../assets/Imgages/Phase/Summer.png')} /> */}
+                <SummerImg width={224} height={224} style={tw`opacity-50`}/>
                 <Text style={tw`text-[#121221] text-2xl font-SatoshiBold opacity-60`}>Summer</Text>
             </View>
             <View style={tw`bg-white w-full rounded-lg h-18 mt-4 p-[2%]`}>

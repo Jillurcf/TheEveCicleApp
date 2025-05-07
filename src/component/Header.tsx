@@ -41,7 +41,7 @@ const Header = () => {
           </TouchableOpacity>
 
           <View>
-            <Text style={tw`text-title text-white font-SatoshiBold items-center justify-center font-RoboMedium`}>
+            <Text style={tw`text-xl text-white font-SatoshiBold items-center justify-center font-RoboMedium`}>
           The Sanctum
             </Text>
            

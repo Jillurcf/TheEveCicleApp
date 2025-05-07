@@ -4,6 +4,7 @@ import Header from '../../component/Header'
 import { SvgXml } from 'react-native-svg'
 import { IconCross } from '../../assets/Icons'
 import tw from '../../lib/tailwind'
+import WinterImg from '../../assets/Imgages/SeasonInsights/image1.svg'
 
 type Props = {}
 
@@ -14,7 +15,8 @@ const Winter = ({ navigation }) => {
                 <SvgXml xml={IconCross} />
             </TouchableOpacity>
             <View style={tw`items-center justify-center mt-6`}>
-                <Image style={tw`opacity-50`} source={require('../../assets/Imgages/Phase/Winter.png')} />
+                {/* <Image style={tw`opacity-50`} source={require('../../assets/Imgages/Phase/Winter.png')} /> */}
+               <WinterImg width={224} height={224} style={tw`opacity-50`}/>
                 <Text style={tw`text-[#121221] text-2xl font-SatoshiBold opacity-60`}>Winter</Text>
             </View>
             <View style={tw`bg-white w-full rounded-lg h-18 mt-4 p-[2%]`}>

@@ -9,6 +9,7 @@ import { Link } from '@react-navigation/native'
 import { SceneMap, TabView } from 'react-native-tab-view'
 import Clipboard from '@react-native-clipboard/clipboard'
 import Svg, { Circle, Line } from 'react-native-svg';
+import LinkDevices from "../assets/Imgages/LinkDevice/image.svg"
 
 type Props = {}
 const code = "FMF296";
@@ -21,7 +22,8 @@ const FirstRoute = () => (
 
         <Text style={tw`text-black text-center font-SatoshiBold text-xl`}>Coonect with your partner for a {"\n"}seamless experience</Text>
         <View style={tw`items-center justify-center`}>
-            <Image style={tw`mt-6 items-center object-cover`} source={require("../assets/Imgages/AddNotes/LinkDevice.png")} />
+            {/* <Image style={tw`mt-6 items-center object-cover`} source={require("../assets/Imgages/LinkDevice/image.svg")} /> */}
+           <LinkDevices width={358} height={264} />
         </View>
         <View style={tw`bg-white rounded-xl p-4 flex-row items-center justify-between shadow-md mt-4`}>
             <View>
