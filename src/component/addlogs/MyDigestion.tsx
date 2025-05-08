@@ -3,6 +3,11 @@ import React, { useState } from 'react'
 import tw from '../../lib/tailwind';
 import { SvgXml } from 'react-native-svg';
 import { Iconblad, IconTick } from '../../assets/Icons';
+import IconNausea from '../../assets/Imgages/AddLogs/MyDigestion/Nausea.svg'
+import IconConstipation from '../../assets/Imgages/AddLogs/MyDigestion/Constipation.svg'
+import IconDiarrahea from '../../assets/Imgages/AddLogs/MyDigestion/Diarrhea.svg'
+import IconHealthyBowels from '../../assets/Imgages/AddLogs/MyDigestion/HealthyBowels.svg'
+
 
 type Props = {}
 
@@ -12,25 +17,25 @@ const MyDigestion = (props: Props) => {
         {
             id: 1,
             title: "Nausea",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDigestion/Nausea.png")}
+            icon: <IconNausea width={30} height={30}
             />
         },
         {
             id: 2,
             title: "Constipation",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDigestion/Constipation.png")}
+            icon: <IconConstipation width={30} height={30}
             />
         },
         {
             id: 3,
             title: "Diarrhea",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDigestion/Diarrhea.png")}
+            icon: <IconDiarrahea width={30} height={30}
             />
         },
         {
             id: 4,
             title: "Healthy bowels",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDigestion/HealthyBowels.png")}
+            icon: <IconHealthyBowels width={30} height={30}
             />
         },
        

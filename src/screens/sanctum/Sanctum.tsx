@@ -1,6 +1,10 @@
 import { Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import tw from '../../lib/tailwind'
+import ArticleImg from '../../assets/Imgages/Sanctum/Resource/Article.svg'
+import DhikrAndMeditionImg from '../../assets/Imgages/Sanctum/Resource/DhikrAndMeditaion.svg'
+import QuranicAndPropheticImg from '../../assets/Imgages/Sanctum/Resource/QuranicAndProphetic.svg'
+import WellnessGuidenceImg from '../../assets/Imgages/Sanctum/Resource/WellnessGuidenceEbook.svg'
 
 type Props = {}
 
@@ -18,7 +22,8 @@ const Sanctum = ({ navigation }) => {
               Read various kinds of Islamic articles to gain knowledge and guidance.
             </Text>
           </View>
-          <Image source={require('../../assets/Imgages/Sanctum/Resource/Article.png')} />
+          <ArticleImg width={60} height={60} />
+          {/* <Image source={require('../../assets/Imgages/Sanctum/Resource/Article.png')} /> */}
         </View>
         <TouchableOpacity>
           <Text style={tw`text-[#2B9696] font-SatoshiBold mt-2`}>
@@ -36,7 +41,7 @@ const Sanctum = ({ navigation }) => {
               Find spiritual peace and connect deeply with Allah during every phase of your journey.
             </Text>
           </View>
-          <Image source={require('../../assets/Imgages/Sanctum/Resource/DhikrAndMeditaion.png')} />
+       <DhikrAndMeditionImg width={60} height={60} />
         </View>
         <TouchableOpacity>
           <Text style={tw`text-[#2B9696] font-SatoshiBold mt-2`}>
@@ -54,7 +59,7 @@ const Sanctum = ({ navigation }) => {
               Read various kinds of Islamic articles to gain knowledge and guidance.
             </Text>
           </View>
-          <Image source={require('../../assets/Imgages/Sanctum/Resource/QuranicAndprophetic.png')} />
+         <QuranicAndPropheticImg width={60} height={60} />
         </View>
         <TouchableOpacity>
           <Text style={tw`text-[#2B9696] font-SatoshiBold mt-2`}>
@@ -72,7 +77,7 @@ const Sanctum = ({ navigation }) => {
               Read various kinds of Islamic articles to gain knowledge and guidance.
             </Text>
           </View>
-          <Image source={require('../../assets/Imgages/Sanctum/Resource/WellnessAndGuidenceEbook.png')} />
+          <WellnessGuidenceImg width={60} height={60} />
         </View>
         <TouchableOpacity>
           <Text style={tw`text-[#2B9696] font-SatoshiBold mt-2`}>

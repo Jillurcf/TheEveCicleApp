@@ -3,6 +3,18 @@ import React, { useState } from 'react'
 import tw from '../../lib/tailwind';
 import { SvgXml } from 'react-native-svg';
 import { Iconblad, IconTick } from '../../assets/Icons';
+import IconHealthyMeals from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/HealthyMeals.svg'
+import IconSkippedMeals from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/SkiippedMeals.svg'
+import IconLowProteinIntake from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/LowProteinIntake.svg'
+import IconHighProteinIntake from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/HighProteinIntake.svg'
+import IconDehydrated from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/Dehydrated.svg'
+import IconDrankEnoughWater from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/DrinkEnoughWater.svg'
+import IconJunkFood from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/JunkFood.svg'
+import IconHealthySnacks from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/HealthySnacks.svg'
+import IconSugarySnaks from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/SugarySnacks.svg'
+import IconUnHealthyFood from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/UnhealthyFood.svg'
+import IconHomeMadeFood from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/HomeMadeFood.svg'
+// import IconHealthyMeals from '../../assets/Imgages/AddLogs/MyFoodAndNutrition/HealthyMeals.svg'
 
 type Props = {}
 
@@ -12,67 +24,67 @@ const MyFoodAndNutrition = (props: Props) => {
         {
             id: 1,
             title: "Healthy meals",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyFoodAndNutrition/HealtyMeals.png")}
+            icon: <IconHealthyMeals width={30} height={30}
             />
         },
         {
             id: 2,
             title: "Skipped meals",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyFoodAndNutrition/SkippedMeals.png")}
+            icon: <IconSkippedMeals width={30} height={30}
             />
         },
         {
             id: 3,
             title: "Low protein intake",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyFoodAndNutrition/LowProteinIntake.png")}
+            icon: <IconLowProteinIntake width={30} height={30}
             />
         },
         {
             id: 4,
             title: "High protein intake",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyFoodAndNutrition/HighProteinintake.png")}
+            icon: <IconHighProteinIntake width={30} height={30}
             />
         },
         {
             id: 5,
             title: "Dehydrated",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyFoodAndNutrition/Dehydrated.png")}
+            icon: <IconDehydrated width={30} height={30}
             />
         },
         {
             id: 6,
             title: "Drank enough water",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyFoodAndNutrition/DrankEnoughWater.png")}
+            icon: <IconDrankEnoughWater width={30} height={30}
             />
         },
         {
             id: 7,
             title: "Junk food",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyFoodAndNutrition/Junkfoods.png")}
+            icon: <IconJunkFood width={30} height={30}
             />
         },
         {
             id: 8,
             title: "Healthy snacks",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyFoodAndNutrition/HealthySnacks.png")}
+            icon: <IconHealthySnacks width={30} height={30}
             />
         },
         {
             id: 9,
             title: "Sugary snacks",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyFoodAndNutrition/SugarySnacks.png")}
+            icon: <IconSugarySnaks width={30} height={30}
             />
         },
         {
             id: 10,
             title: "Unhealthy foods",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyFoodAndNutrition/UnhealthyFoods.png")}
+            icon: <IconUnHealthyFood width={30} height={30}
             />
         },
         {
             id: 11,
             title: "Homemeade foods",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyFoodAndNutrition/HomemadeFoods.png")}
+            icon: <IconHomeMadeFood width={30} height={30}
             />
         },
         

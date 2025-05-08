@@ -3,6 +3,16 @@ import React, { useState } from 'react'
 import tw from '../../lib/tailwind';
 import { SvgXml } from 'react-native-svg';
 import { Iconblad, IconTick } from '../../assets/Icons';
+import IconPrayer from '../../assets/Imgages/AddLogs/MyDay/Prayer.svg'
+import IconExercise from '../../assets/Imgages/AddLogs/MyDay/Exercise.svg'
+import IconTravel from '../../assets/Imgages/AddLogs/MyDay/Travel.svg'
+import IconDhikir from '../../assets/Imgages/AddLogs/MyDay/Dhikir.svg'
+import IconSickness from '../../assets/Imgages/AddLogs/MyDay/Sickness.svg'
+import IconStress from '../../assets/Imgages/AddLogs/MyDay/Stress.svg'
+import IconRestedWell from '../../assets/Imgages/AddLogs/MyDay/Restedwell.svg'
+import IconSocialized from '../../assets/Imgages/AddLogs/MyDay/Socialized.svg'
+import IconProtectedSex from '../../assets/Imgages/AddLogs/MyDay/ProtectedSex.svg'
+import IconUnProtectedSex from '../../assets/Imgages/AddLogs/MyDay/UnprotectedSex.svg'
 
 type Props = {}
 
@@ -12,61 +22,61 @@ const MyDay = (props: Props) => {
         {
             id: 1,
             title: "Prayer",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDay/Prayer.png")}
+            icon: <IconPrayer width={30} height={30}
             />
         },
         {
             id: 2,
             title: "Excercise",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDay/Excercise.png")}
+            icon: <IconExercise width={30} height={30}
             />
         },
         {
             id: 3,
             title: "Travel",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDay/Travel.png")}
+            icon: <IconTravel width={30} height={30}
             />
         },
         {
             id: 4,
             title: "Dhikr",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDay/Dhikr.png")}
+            icon: <IconDhikir width={30} height={30}
             />
         },
         {
             id: 5,
             title: "Sickness",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDay/Sickness.png")}    
+            icon: <IconSickness width={30} height={30}
             />
         },
         {
             id: 6,
             title: "Stress",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDay/Stress.png")}      
+            icon: <IconStress width={30} height={30} 
             />
         },
         {
             id: 7,
             title: "Socialized",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDay/Socialized.png")}      
+            icon: <IconSocialized width={30} height={30}
             />
         },
         {
             id: 8,
             title: "Rested well",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDay/Restedwell.png")}      
+            icon: <IconRestedWell width={30} height={30}
             />
         },
         {
             id: 9,
             title: "Protected sex",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDay/ProtectedSex.png")}      
+            icon: <IconProtectedSex width={30} height={30}  
             />
         },
         {
             id: 10,
             title: "Unprotected sex",
-            icon: <Image source={require("../../assets/Imgages/AddLogs/MyDay/UnprotectedSex.png")}      
+            icon: <IconUnProtectedSex width={30} height={30} 
             />
         },
        
