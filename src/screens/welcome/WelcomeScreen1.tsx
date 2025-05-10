@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StatusBar, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import tw from '../../lib/tailwind';
 import TButton from '../../component/TButton';
@@ -12,11 +12,14 @@ const WelcomeScreen1 = ({navigation}: any) => {
   return (
     <ScrollView contentContainerStyle={tw`bg-[#E8F6F6] flex-1`}>
      <View>
-     <Text style={tw`text-black font-SatoshiBold text-center text-3xl mt-6`}>
-        Welcome to {'\n'} The Sanctum app
+     <Text style={tw`text-[#121221] font-SatoshiRegular text-center text-4xl mt-14`}>
+        Welcome to
+      </Text>
+     <Text style={tw`text-[#121221] font-SatoshiRegular text-center text-4xl mt-4`}>
+        The Sanctum app
       </Text>
      </View>
-      <View style={tw`flex items-center justify-center`}>
+      <View style={tw`flex items-center justify-center -mt-15`}>
         <Image
           style={tw`w-[98%]`}
           source={require('../../assets/Imgages/welcomeScreen1img.png')}
@@ -26,7 +29,7 @@ const WelcomeScreen1 = ({navigation}: any) => {
 
       <View
         style={tw`bottom-0 bg-white h-42 rounded-t-3xl z-40 w-full absolute`}>
-        <Text style={tw`font-SatoshiRegular my-4 text-black text-center`}>
+        <Text style={tw`font-SatoshiRegular text-[16px] my-4 text-[#3A3A47] text-center`}>
           Your personal cycle and wellness guide {'\n'} with spiritual insights.
         </Text>
         <View style={tw`flex-row gap-2 items-center justify-center mb-4`}>
@@ -37,12 +40,13 @@ const WelcomeScreen1 = ({navigation}: any) => {
         <View style={tw`items-center justify-center`}>
           <TButton
             onPress={() => navigation.navigate('WelcomeScreen2')}
-            containerStyle={tw`bg-[#4FA8A8] w-[80%]  `}
+            containerStyle={tw`bg-[#4FA8A8] rounded-3xl w-[90%] h-[50px] `}
             title="Next"
-            titleStyle={tw`font-SatoshiRegular`}
+            titleStyle={tw`font-SatoshiRegular text-[#FFFFFF]`}
           />
         </View>
       </View>
+      <StatusBar translucent={false}/>
     </ScrollView>
   );
 };

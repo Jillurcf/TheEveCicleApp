@@ -33,7 +33,7 @@ const FreeTrialScreen = ({navigation}) => {
       onPress={()=> navigation.goBack()}
       style={tw`my-6`}>
         <SvgXml xml={IconLeftArrow} />
-        <Text style={tw`font-SatoshiRegular text-2xl text-black my-4`}>
+        <Text style={tw`font-SatoshiRegular text-2xl text-[#121221] my-4`}>
           14 days free trial
         </Text>
         <Text style={tw`font-SatoshiRegular my-4`}>

@@ -5,15 +5,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import tw from '../../lib/tailwind';
 import Slider from '@react-native-community/slider';
-import {SvgXml} from 'react-native-svg';
-import {IconLeftArrow} from '../../assets/Icons';
+import { SvgXml } from 'react-native-svg';
+import { IconLeftArrow, IconSetup1 } from '../../assets/Icons';
 import InputText from '../../component/InputText';
 import TButton from '../../component/TButton';
 
-const SetupStep1 = ({navigation}) => {
+const SetupStep1 = ({ navigation }) => {
   const [progress, setProgress] = useState(0.2); // Example progress (20%)
   return (
     <View
@@ -41,9 +41,15 @@ const SetupStep1 = ({navigation}) => {
         </View>
 
         {/* Info Text */}
-        <View style={tw`flex-row items-start mt-6`}>
-          <Text style={tw`text-lg text-gray-700`}>
-            💡 Help us tailor your Seasons cycle journey by logging a few
+        <View style={tw` mt-6`}>
+          <View style={tw`flex-row gap-2 items-center`}>
+            <SvgXml xml={IconSetup1} />
+            <Text style={tw`text-[14px] text-[#3A3A47]`}>
+              Help us tailor your Seasons cycle journey by
+            </Text>
+          </View>
+          <Text style={tw`text-lg pl-4 text-[14px] text-[#3A3A47]`}>
+            logging a few
             details.
           </Text>
         </View>

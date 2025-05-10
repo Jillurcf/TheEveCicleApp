@@ -6,6 +6,7 @@ import tw from '../lib/tailwind';
 const InputText = ({
   placeholder,
   placeholderColor,
+  placeholderSyle,
   iconLeft,
   iconRight,
   containerStyle,
@@ -37,7 +38,7 @@ const InputText = ({
         <TextInput
           placeholder={placeholder}
           placeholderTextColor={placeholderColor}
-          style={[tw`font-RoboMedium flex-1 text-title`, style]}
+          style={[tw`font-RoboMedium flex-1 text-xs text-title`, style]}
           onChangeText={onChangeText}
           secureTextEntry={isShowPassword}
           keyboardType={keyboardType || "default"}

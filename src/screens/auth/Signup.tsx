@@ -5,13 +5,16 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import tw from '../../lib/tailwind';
-import {SvgXml} from 'react-native-svg';
+import { SvgXml } from 'react-native-svg';
 import {
+  IconApple,
   IconCloseEye,
   IconEnvelope,
+  IconFacebook,
   IconGoogle,
+  IconInstaGram,
   IconLeftArrow,
   IconLock,
   IconOpenEye,
@@ -19,11 +22,12 @@ import {
 } from '../../assets/Icons';
 import Button from '../../component/Button';
 import InputText from '../../component/InputText';
-import {Checkbox} from 'react-native-ui-lib';
+import { Checkbox } from 'react-native-ui-lib';
+import TButton from '../../component/TButton';
 
 type Props = {};
 
-const Signup = ({navigation}) => {
+const Signup = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isShowPassword, setIsShowPassword] = useState(false);
@@ -37,16 +41,16 @@ const Signup = ({navigation}) => {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <SvgXml xml={IconLeftArrow} />
         </TouchableOpacity>
-        <Text style={tw`font-SatoshiRegular text-2xl text-black my-4`}>
+        <Text style={tw`font-SatoshiBold text-[34px] text-[#121221] mt-4`}>
           Join The Sanctum
         </Text>
-        <Text style={tw`font-SatoshiRegular my-4`}>
+        <Text style={tw`font-SatoshiRegular text-[16px] text-[#3A3A47] mt-2`}>
           Sign up to start your seasons journey.
         </Text>
       </View>
       <View>
         <InputText
-          containerStyle={tw`bg-white`}
+          containerStyle={tw`bg-white h-13 rounded-3xl`}
           style={tw`bg-white`}
           placeholder={'Enter your full name'}
           placeholderColor={'#949494'}
@@ -55,8 +59,8 @@ const Signup = ({navigation}) => {
           onChangeText={(text: any) => setEmail(text)}
         />
         <InputText
-          containerStyle={tw`bg-white`}
-          style={tw`bg-white`}
+          containerStyle={tw`bg-white h-13 rounded-3xl`}
+          style={tw`bg-white text-xs`}
           placeholder={'Enter your email'}
           placeholderColor={'#949494'}
           label={'E-mail'}
@@ -64,7 +68,7 @@ const Signup = ({navigation}) => {
           onChangeText={(text: any) => setEmail(text)}
         />
         <InputText
-          containerStyle={tw`bg-white`}
+          containerStyle={tw`bg-white h-13 rounded-3xl`}
           placeholder={'Enter your password'}
           placeholderColor={'#949494'}
           label={'Password'}
@@ -100,26 +104,24 @@ const Signup = ({navigation}) => {
             color={isCheck ? '#064145' : '#A8A8A8'}
             size={20}
           />
-          <Text style={tw`text-sm text-subT font-SatoshiNormal`}>
-            Agreed to Terms of Conditions and Privacy Policy
+          <Text style={tw`text-[12px] text-[#24272B] font-SatoshiRegular`}>
+            Agree to Terms & Conditions and Privacy Policy
           </Text>
         </View>
 
-        <Button
-          style={tw`text-white`}
-          containerStyle={tw`mt-6 bg-[#4FA8A8] rounded-2xl`}
-          title={'Start my seasons trial'}
-          titleSyle={tw`text-[#FFFFFF]`}
-          
-          onPress={() => {
-            navigation?.navigate('FirstStep');
-          }}
-        />
+        <View style={tw`items-center justify-center mt-6`}>
+          <TButton
+            onPress={() => navigation.navigate("FirstStep")}
+            containerStyle={tw`bg-[#4FA8A8] h-[50px] rounded-3xl w-[100%]  `}
+            title="Next"
+            titleStyle={tw`font-SatoshiRegular text-sm`}
+          />
+        </View>
         <TouchableOpacity
           onPress={() => navigation.navigate('Login')}
           style={tw`items-center justify-center flex`}>
           <Text style={tw`font-SatoshiMedium my-4`}>
-           Already have an account?{' '}
+            Already have an account?{' '}
             <Text style={tw`text-[#2B9696]`}>Sign in</Text>{' '}
           </Text>
         </TouchableOpacity>
@@ -130,23 +132,32 @@ const Signup = ({navigation}) => {
           </Text>
           <View style={tw`bg-gray-200 h-[1px] flex-1`} />
         </View>
+        <View style={tw`flex-row gap-6 justify-center items-center`}>
+          <TouchableOpacity
+            //   onPress={handleGoogleLogin}
+            style={tw`bg-white p-2 rounded-full`}>
+            <SvgXml xml={IconGoogle} />
 
-        <TouchableOpacity
-          //   onPress={handleGoogleLogin}
-          style={tw`mb-2 rounded-lg p-2 flex-row items-center justify-center gap-2`}>
-          <SvgXml xml={IconGoogle} />
-          <Text style={tw`text-title text-base font-SatoshiMedium`}>
-            Continue with google
-          </Text>
-        </TouchableOpacity>
+          </TouchableOpacity>
+          <TouchableOpacity
+            //   onPress={handleGoogleLogin}
+            style={tw`bg-white p-2 rounded-full`}>
+            <SvgXml xml={IconApple} />
 
-        {/* <TouchableOpacity
-                style={tw`border border-border rounded-lg p-2 flex-row items-center justify-center gap-2`}>
-                <SvgXml xml={IconFacebook} />
-                <Text style={tw`text-title text-base font-SatoshiMedium`}>
-                  Continua con Facebook
-                </Text>
-              </TouchableOpacity> */}
+          </TouchableOpacity>
+          <TouchableOpacity
+           style={tw`bg-white p-2 rounded-full`}
+            >
+            <SvgXml xml={IconFacebook} />
+
+          </TouchableOpacity>
+          <TouchableOpacity
+           style={tw`bg-white p-2 rounded-full`}>
+            <SvgXml xml={IconInstaGram} />
+
+          </TouchableOpacity>
+        </View>
+
       </View>
       <StatusBar translucent={false} />
     </View>
