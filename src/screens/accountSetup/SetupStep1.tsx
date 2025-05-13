@@ -7,7 +7,8 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import tw from '../../lib/tailwind';
-import Slider from '@react-native-community/slider';
+// import Slider from '@react-native-community/slider';
+import Slider from '@react-native-assets/slider';
 import { SvgXml } from 'react-native-svg';
 import { IconLeftArrow, IconSetup1 } from '../../assets/Icons';
 import InputText from '../../component/InputText';
@@ -26,17 +27,22 @@ const SetupStep1 = ({ navigation }) => {
 
           {/* Progress Bar */}
           <Slider
-            style={tw` flex-1 `}
+            style={tw`flex-1 h-4 mx-2`}
             minimumValue={0}
             maximumValue={1}
             value={progress}
+            step={0.01}
             onValueChange={val => setProgress(val)}
-            minimumTrackTintColor="#4FA8A8"
-            maximumTrackTintColor="#D3D3D3"
-            thumbTintColor="transparent" // Hide thumb for progress effect
+            minimumTrackTintColor="#A8D4D4" 
+            maximumTrackTintColor="#FFFFFF" // Gray for the remaining track
+            // thumbTintColor="transparent" // Optional: hides the thumb
+            thumbTintColor="#4FA8A8" // Optional: sets the thumb color
+            thumbStyle={{ width: 0, height: 0 }} // Hides the thumb
+            trackStyle={{ height: 8, borderRadius: 4,  }}
           />
-          <Text style={tw`text-gray-600 text-sm`}>
-            {Math.round(progress * 5) + 1} / 6
+
+          <Text style={tw`text-gray-600 text-sm ml-1`}>
+            {Math.round(progress * 5) + 0} / 6
           </Text>
         </View>
 
@@ -53,14 +59,17 @@ const SetupStep1 = ({ navigation }) => {
             details.
           </Text>
         </View>
-        <Text style={tw`text-center text-2xl font-SatoshiBold mt-12`}>
+        <Text style={tw`text-center text-[#121221] text-2xl font-SatoshiBold mt-12`}>
           What's your name?
         </Text>
         <View style={tw`w-[90%] items-center justify-center flex mx-auto mt-2`}>
           <View style={tw`w-80 py-6`}>
             <InputText
               placeholder="Enter Name"
-              containerStyle={tw`bg-white w-full`}
+              textAlign="center"
+              style={tw`text-[#9E9EA4] text-4xl font-SatoshiBold`}
+              containerStyle={tw`bg-white h-[88px] w-full`}
+              
             />
           </View>
         </View>
@@ -71,14 +80,14 @@ const SetupStep1 = ({ navigation }) => {
             onPress={() => navigation.navigate('SetupStep2')}
             titleStyle={tw`text-[#4FA8A8]`}
             title="Skip"
-            containerStyle={tw`bg-[#EAF5F5] h-12`}
+            containerStyle={tw`bg-[#EAF5F5] rounded-3xl w-[160px] h-12`}
           />
         </View>
         <View>
           <TButton
             onPress={() => navigation.navigate('SetupStep2')}
             title="Continue"
-            containerStyle={tw`bg-[#4FA8A8] h-12`}
+            containerStyle={tw`bg-[#4FA8A8] h-12 w-[160px] rounded-3xl`}
           />
         </View>
       </View>

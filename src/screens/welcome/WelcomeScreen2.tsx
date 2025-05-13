@@ -36,7 +36,7 @@ const WelcomeScreen2 = ({navigation}: any) => {
           <View style={tw`bg-[#84C2C2] h-2 w-[6%] rounded-2xl`}></View>
           <View style={tw`bg-[#84C2C2] h-2 w-[2%] rounded-2xl`}></View>
         </View>
-        <View style={tw`items-center justify-center`}>
+        <View style={tw`items-center  justify-center`}>
           <TButton
           onPress={()=> navigation.navigate("WelcomeScreen3")}
             containerStyle={tw`bg-[#4FA8A8] rounded-3xl w-[90%] h-[50px] `}

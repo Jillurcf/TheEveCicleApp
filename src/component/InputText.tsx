@@ -11,6 +11,7 @@ const InputText = ({
   iconRight,
   containerStyle,
   style,
+  textAlign,
   label,
   labelStyle,
   onChangeText,
@@ -43,6 +44,7 @@ const InputText = ({
           secureTextEntry={isShowPassword}
           keyboardType={keyboardType || "default"}
           textAlignVertical={placeholderAlignment || "center"}
+          textAlign={textAlign}
         />
         {rightItem && rightItem}
         {iconRight && <TouchableOpacity onPress={rightIconPress}><SvgXml xml={iconRight} /></TouchableOpacity>}

@@ -51,11 +51,14 @@ import StepByStepTutoriials from '../screens/drawerContent/HelpAndSupport/StepBy
 import PrivacyPolicy from '../screens/drawerContent/HelpAndSupport/PrivacyPolicy';
 import TermsOfUse from '../screens/drawerContent/HelpAndSupport/TermsOfUse';
 import Notifications from '../screens/Notifications';
+import { useDeviceContext } from 'twrnc';
+import tw from '../lib/tailwind';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 export default function Routes() {
   const [partner, setPartner] = useState(false)
+  useDeviceContext(tw);
   return (
     // <StripeProvider publishableKey="pk_test_51QKAtBKOpUtqOuW1x5VdNqH3vG7CZZl1P6V3VuV1qsRUmPLNk26i34AXeu2zCO3QurFJAOZ9zfb0EkWeCVhqBYgH008X41cXr6">
     <Stack.Navigator

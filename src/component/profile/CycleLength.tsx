@@ -30,6 +30,9 @@ const CycleLength = (props: Props) => {
   return (
     <View style={{ marginTop: -50, marginLeft: -40 }}>
       <BarChart
+      barStyle={{
+        
+      }}
         stepValue={10}
         horizontal
         barWidth={15}

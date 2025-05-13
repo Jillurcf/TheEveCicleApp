@@ -128,121 +128,175 @@ import {
   TouchableOpacity,
   StatusBar,
 } from 'react-native';
-import React, {useState} from 'react';
-import {TabView, TabBar} from 'react-native-tab-view';
+import React, { useState } from 'react';
+import { TabView, TabBar } from 'react-native-tab-view';
 import tw from '../../lib/tailwind';
-import {SvgXml} from 'react-native-svg';
-import {IconLeftArrow} from '../../assets/Icons';
-import Slider from '@react-native-community/slider';
+import { SvgXml } from 'react-native-svg';
+import { IconLeftArrow } from '../../assets/Icons';
+// import Slider from '@react-native-community/slider';
+import Slider from '@react-native-assets/slider';
 import WheelPicker from 'react-native-wheely';
 import TButton from '../../component/TButton';
+import { Layout } from 'react-native-reanimated';
+import ScrollPicker from 'react-native-wheel-scrollview-picker';
 
 type Props = {};
 
 // Second tab route with collapsible functionality
 
-const SetupStep4 = ({navigation}) => {
+const SetupStep4 = ({ navigation }) => {
   const [index, setIndex] = React.useState(0);
   const [progress, setProgress] = useState(0.2);
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  // const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(5);
+  const [selectedIndex1, setSelectedIndex1] = useState(3);
+
+  // const [selectedIndex, setSelectedIndex] = useState(1);
+  const dataSource1 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
+  const dataSource = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
 
   const FirstRoute = () => (
     <View style={tw``}>
-      <View>
-        <WheelPicker
-          itemTextStyle={tw`text-white font-bold text-xl`}
-          itemStyle={tw`bg-[#4FA8A8] rounded-sm`}
+      <View style={tw` w-[40%] mt-12 flex justify-center mx-auto h-96 relative`}>
+        <ScrollPicker
+          dataSource={dataSource}
           selectedIndex={selectedIndex}
-          options={[
-            '1',
-            '2',
-            '3',
-            '4',
-            '5',
-            '6',
-            '7',
-            '8',
-            '9',
-            '10',
-            '11',
-            '12',
-            '13',
-            '14',
-            '15',
-            '16',
-            '17',
-            '18',
-            '19',
-            '20',
-            '21',
-            '22',
-            '23',
-            '24',
-            '25',
-            '26',
-            '27',
-            '28',
-            '29',
-            '30',
-            '31',
-          ]}
-          onChange={index => setSelectedIndex(index)}
+          renderItem={(data, index) => (
+            <Text
+              style={{
+                fontWeight: index === selectedIndex ? "bold" : "normal",
+                // fontSize: index === selectedIndex ?  30 : 20,
+                fontSize: (() => {
+                  const distance = Math.abs(index - (selectedIndex));
+                  switch (distance) {
+                    case 0: return 40;
+                    case 1: return 35;
+                    case 2: return 30;
+                    case 3: return 25;
+                    case 4: return 20;
+                    default: return 15;
+                  }
+                })(),
+
+                color: index === selectedIndex ? "#4FA8A8" : "black",
+                textAlign: "center",
+              }}
+            >
+              {data}
+            </Text>
+          )}
+          onValueChange={(data, index) => {
+            setSelectedIndex(index);
+          }}
+          wrapperHeight={380}
+          wrapperBackground="transparent"
+          itemHeight={60}
+          highlightColor="#84C2C2"
+
+          highlightBorderWidth={1}
         />
+        <Text style={tw`text-[#4FA8A8] text-[16px] mt-2 absolute top-[45%] left-[70%]`}>
+          Days
+        </Text>
       </View>
+
     </View>
   );
 
   const SecondRoute = () => (
     <View style={tw``}>
-      <View>
-        <WheelPicker
-          itemTextStyle={tw`text-white font-bold text-xl`}
-          itemStyle={tw`bg-[#4FA8A8] rounded-sm`}
-          selectedIndex={selectedIndex}
-          options={[
-            '1 -- 3',
-            '2 -- 4',
-            '3 -- 5',
-            '4 -- 6',
-            '5 -- 7',
-            '6 -- 8',
-            '7 -- 9',
-            '8 -- 10',
-            '9 -- 11',
-            '10 -- 12',
-            '11 -- 13',
-            '12 -- 14',
-            '13 -- 15',
-            '14 -- 16',
-            '15 -- 17',
-            '16 -- 18',
-            '17 -- 19',
-            '18 -- 20',
-            '19 -- 21',
-            '20 -- 22',
-            '21 -- 23',
-            '22 -- 24',
-            '23 -- 25',
-            '24 -- 26',
-            '25 -- 27',
-            '26 -- 28',
-            '27 -- 29',
-            '28 -- 30',
-            '29 -- 31',
-            '30 -- 1',
-            '31 -- 2',
-          ]}
-          onChange={index => setSelectedIndex(index)}
-        />
+      <View style={tw`flex-row justify-between items-center`}>
+        <View style={tw` w-[40%] mt-12 flex justify-center mx-auto h-96 relative`}>
+          <ScrollPicker
+            dataSource={dataSource1}
+            selectedIndex={selectedIndex1}
+            renderItem={(data, index) => (
+              <Text
+                style={{
+                  fontWeight: index === selectedIndex1 ? "bold" : "normal",
+                  // fontSize: index === selectedIndex ?  30 : 20,
+                  fontSize: (() => {
+                    const distance = Math.abs(index - (selectedIndex1));
+                    switch (distance) {
+                      case 0: return 40;
+                      case 1: return 35;
+                      case 2: return 30;
+                      case 3: return 25;
+                      case 4: return 20;
+                      default: return 15;
+                    }
+                  })(),
+
+                  color: index === selectedIndex1 ? "#4FA8A8" : "black",
+                  textAlign: "center",
+                }}
+              >
+                {data}
+              </Text>
+            )}
+            onValueChange={(data, index) => {
+              setSelectedIndex1(index);
+            }}
+            wrapperHeight={380}
+            wrapperBackground="transparent"
+            itemHeight={50}
+            highlightColor="#84C2C2"
+
+            highlightBorderWidth={1}
+          />
+        <View style={tw`border-[#4FA8A8] border-b-2 w-6 h-2 mt-2 absolute sm:top-[45%] md:top-[45%] md:left-[110%] sm:left-[110%]`}></View>
+        </View>
+        <View style={tw` w-[40%] mt-12 flex justify-center mx-auto h-96 relative`}>
+          <ScrollPicker
+            dataSource={dataSource}
+            selectedIndex={selectedIndex}
+            renderItem={(data, index) => (
+              <Text
+                style={{
+                  fontWeight: index === selectedIndex ? "bold" : "normal",
+                  // fontSize: index === selectedIndex ?  30 : 20,
+                  fontSize: (() => {
+                    const distance = Math.abs(index - (selectedIndex));
+                    switch (distance) {
+                      case 0: return 40;
+                      case 1: return 35;
+                      case 2: return 30;
+                      case 3: return 25;
+                      case 4: return 20;
+                      default: return 15;
+                    }
+                  })(),
+
+                  color: index === selectedIndex ? "#4FA8A8" : "black",
+                  textAlign: "center",
+                }}
+              >
+                {data}
+              </Text>
+            )}
+            onValueChange={(data, index) => {
+              setSelectedIndex(index);
+            }}
+            wrapperHeight={380}
+            wrapperBackground="transparent"
+            itemHeight={50}
+            highlightColor="#84C2C2"
+
+            highlightBorderWidth={1}
+          />
+          <Text style={tw`text-[#4FA8A8] text-[16px] mt-2 absolute top-[45%] left-[70%]`}>
+            Days
+          </Text>
+        </View>
       </View>
     </View>
   );
   const routes = [
-    {key: 'first', title: 'Regular'},
-    {key: 'second', title: 'Irregular'},
+    { key: 'first', title: 'Regular' },
+    { key: 'second', title: 'Irregular' },
   ];
 
-  const renderScene = ({route}) => {
+  const renderScene = ({ route }) => {
     switch (route.key) {
       case 'first':
         return <FirstRoute />;
@@ -264,46 +318,58 @@ const SetupStep4 = ({navigation}) => {
 
           {/* Progress Bar */}
           <Slider
-            style={tw` flex-1 `}
+            style={tw`flex-1 h-4 mx-2`}
             minimumValue={0}
             maximumValue={1}
             value={progress}
+            step={0.01}
             onValueChange={val => setProgress(val)}
-            minimumTrackTintColor="#4FA8A8"
-            maximumTrackTintColor="#D3D3D3"
-            thumbTintColor="transparent" // Hide thumb for progress effect
+            minimumTrackTintColor="#A8D4D4"
+            maximumTrackTintColor="#FFFFFF" // Gray for the remaining track
+            // thumbTintColor="transparent" // Optional: hides the thumb
+            thumbTintColor="#4FA8A8" // Optional: sets the thumb color
+            thumbStyle={{ width: 0, height: 0 }} // Hides the thumb
+            trackStyle={{ height: 8, borderRadius: 4, }}
           />
           <Text style={tw`text-gray-600 text-sm`}>
-            {Math.round(progress * 5) + 1} / 6
+            {Math.round(progress * 5) + 3} / 6
           </Text>
         </View>
-        <Text style={tw`text-center text-black text-2xl font-SatoshiBold my-24`}>
+        <Text style={tw`text-center text-black text-2xl font-SatoshiBold my-8`}>
           How long does your cycle {'\n'} usually last?
         </Text>
         <View style={tw`flex-1`}>
           <TabView
-            style={tw`gap-4`} // Tailwind for gap (you can adjust as per your needs)
-            navigationState={{index, routes}}
+            navigationState={{ index, routes }}
             renderScene={renderScene}
             onIndexChange={setIndex}
-            initialLayout={{width: Dimensions.get('window').width}}
-            renderTabBar={props => (
-              <TabBar
-                {...props}
-                style={styles.tabBar} // Custom tab bar style
-                indicatorStyle={styles.indicator} // Custom tab indicator style
-                tabStyle={styles.tab} // Custom tab item style
-                labelStyle={styles.label} // Custom label style
-                renderLabel={({route, focused}) => (
-                  <Text
-                    style={[
-                      styles.label,
-                      focused ? styles.activeLabel : styles.inactiveLabel, // Apply styles based on active state
-                    ]}>
-                    {route.title}
-                  </Text>
-                )}
-              />
+            initialLayout={{ width: Layout.width }}
+            renderTabBar={(props) => (
+              <View style={tw`flex-row bg-[#7676801F] p-0.5 items-center justify-center rounded-lg`}>
+                {props.navigationState.routes.map((route, i) => {
+                  const isActive = props.navigationState.index === i;
+                  return (
+                    <TouchableOpacity
+                      key={i}
+                      onPress={() => props.jumpTo(route.key)}
+                      style={tw.style(
+                        `flex-1 items-center py-2 px-2`,
+                        isActive ? `bg-[#FFFFFF]` : `bg-[#7676801F]`,
+                        isActive ? `rounded-lg` : ``
+                      )}
+                    >
+                      <Text
+                        style={tw.style(
+                          `text-xs font-SatoshiBold`,
+                          isActive ? `text-[#121221]` : `text-[#121221]`
+                        )}
+                      >
+                        {route.title}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
             )}
           />
         </View>
@@ -313,18 +379,18 @@ const SetupStep4 = ({navigation}) => {
               onPress={() => navigation.navigate('SetupStep5')}
               titleStyle={tw`text-[#4FA8A8]`}
               title="Skip"
-              containerStyle={tw`bg-[#EAF5F5] h-12`}
+              containerStyle={tw`bg-[#EAF5F5] rounded-3xl w-[160px] h-12`}
             />
           </View>
           <View>
             <TButton
               onPress={() => navigation.navigate('SetupStep5')}
               title="Continue"
-              containerStyle={tw`bg-[#4FA8A8] h-12`}
+              containerStyle={tw`bg-[#4FA8A8] h-12 w-[160px] rounded-3xl`}
             />
           </View>
         </View>
-      
+
       </View>
       <StatusBar translucent={false} />
     </View>
