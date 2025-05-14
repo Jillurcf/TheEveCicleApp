@@ -146,7 +146,7 @@ type Props = {};
 
 const SetupStep4 = ({ navigation }) => {
   const [index, setIndex] = React.useState(0);
-  const [progress, setProgress] = useState(0.2);
+  const [progress, setProgress] = useState(0.6);
   // const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(5);
   const [selectedIndex1, setSelectedIndex1] = useState(3);
@@ -332,7 +332,7 @@ const SetupStep4 = ({ navigation }) => {
             trackStyle={{ height: 8, borderRadius: 4, }}
           />
           <Text style={tw`text-gray-600 text-sm`}>
-            {Math.round(progress * 5) + 3} / 6
+            {Math.round(progress * 5) + 1} / 6
           </Text>
         </View>
         <Text style={tw`text-center text-black text-2xl font-SatoshiBold my-8`}>
