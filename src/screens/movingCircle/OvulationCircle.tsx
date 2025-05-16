@@ -163,32 +163,32 @@ const OvulationCircle: React.FC = ({ navigation }) => {
         </View>
 
         {/* Text Content */}
-        <View style={tw`absolute top-[18%] items-center`}>
-          <Text style={tw`  font-SatoshiBold text-white`}>Current session</Text>
-          <Text style={tw`text-lg  font-SatoshiBold text-white`}>Summer . Ovulation</Text>
+        <View style={tw`absolute top-[22%] items-center`}>
+          <Text style={tw` text-[20px] font-SatoshiRegular text-white`}>Current session</Text>
+          <Text style={tw`text-[28px] font-SatoshiRegular mt-1 text-white`}>Summer . Ovulation</Text>
           {/* <Text style={tw`text-white text-base font-bold mt-6`}>
         <Text style={tw`text-[25px] font-bold`}>{selectedDay}th</Text> Day
       </Text> */}
-          <Text style={tw`text-white text-sm  font-SatoshiBold text-center max-w-[250px] mt-5`}>
+          <Text style={tw`text-white text-[20px]  font-SatoshiRegular text-center max-w-[250px] mt-5`}>
             Next period in 12 days
           </Text>
 
           {/* Log Period Button */}
-          <TouchableOpacity style={tw`mt-10 border-2 font-SatoshiBold border-white px-4 py-1 rounded-full bg-white`}>
-            <Text style={tw`text-[#1E6969] text-base  font-SatoshiBold`}>Log Period</Text>
-          </TouchableOpacity>
+          <View style={tw`mt-8 w-24 h-10 border-2 justify-center font-SatoshiBold border-white rounded-3xl bg-[#E7E7E9]`}>
+            <Text style={tw`text-[#4FA8A8] text-center items-center font-SatoshiBold`}>Log Period</Text>
+          </View>
         </View>
 
-        <View style={tw`flex-row bottom-32 justify-between rounded-full px-[4%]`}>
+        <View style={tw`flex-row bottom-32 justify-between rounded-3xl px-[4%]`}>
           {tabs.map((tab, index) => (
             <TouchableOpacity
               key={index}
-              style={tw`flex-1 py-2 mx-1 rounded-full ${selectedTab === tab ? "bg-green-700 " : "bg-gray-200"
+              style={tw`flex-1 py-2 mx-1 rounded-3xl ${selectedTab === tab ? "bg-[#1E6969] " : "bg-gray-200"
                 }`}
               onPress={() => setSelectedTab(tab)}
             >
               <Text
-                style={tw`text-center font-semibold ${selectedTab === tab ? "text-white" : "text-gray-600"
+                style={tw`text-center px-1 font-semibold ${selectedTab === tab ? "text-white" : "text-[#4FA8A8]"
                   }`}
               >
                 {tab}

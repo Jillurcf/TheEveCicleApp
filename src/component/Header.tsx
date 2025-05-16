@@ -30,14 +30,14 @@ const Header = () => {
   // }, []);
   const navigation = useNavigation();
   return (
-    <View style={tw`py-2`}>
+    <View style={tw`pb-4`}>
       <View style={tw`flex-row items-center justify-between`}>
         <View style={tw`flex-row items-center gap-4`}>
           <TouchableOpacity
             // onPress={() => navigation?.dispatch(DrawerActions?.openDrawer())}
             onPress={() => navigation?.openDrawer()} 
             >
-            <SvgXml width={30} height={30} xml={IconDrawer} />
+            <SvgXml width={25} height={25} xml={IconDrawer} />
           </TouchableOpacity>
 
           <View>

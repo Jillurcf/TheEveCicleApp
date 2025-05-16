@@ -26,6 +26,7 @@
     "react-native": "0.75.5",
     "react-native-calendar-picker": "^8.0.5",
     "react-native-calendars": "^1.1312.0",
+    "react-native-circular-progress": "^1.4.1",
     "react-native-collapsible": "^1.6.2",
     "react-native-date-picker": "^5.0.10",
     "react-native-fs": "^2.20.0",

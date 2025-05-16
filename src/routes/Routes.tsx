@@ -53,6 +53,7 @@ import TermsOfUse from '../screens/drawerContent/HelpAndSupport/TermsOfUse';
 import Notifications from '../screens/Notifications';
 import { useDeviceContext } from 'twrnc';
 import tw from '../lib/tailwind';
+import LoadingScreen from '../screens/accountSetup/LoadingScreen';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -91,6 +92,7 @@ export default function Routes() {
       <Stack.Screen name="SetupStep4" component={SetupStep4} />
       <Stack.Screen name="SetupStep5" component={SetupStep5} />
       <Stack.Screen name="SetupStep6" component={SetupStep6} />
+      <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
       <Stack.Screen name="LinkOtherUsers" component={LinkOtherUsers} /> 
       <Stack.Screen name="Drawer" component={DrawerRoute} />
       <Stack.Screen name="Autumn" component={Autumn} />
