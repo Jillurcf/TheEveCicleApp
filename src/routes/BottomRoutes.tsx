@@ -148,6 +148,7 @@ import {
 } from "../assets/Icons";
 import { useNavigation } from "@react-navigation/native";
 import Sanctum from "../screens/sanctum/Sanctum";
+import { BlurView } from "@react-native-community/blur";
 
 const Tab = createBottomTabNavigator();
 
@@ -162,15 +163,15 @@ function BottomRoutes({ route }) {
     setShowFloatingButtons(!showFloatingButtons);
   };
 
-  const CustomAddButton = ({ onPress}, props:any) => {
-   
+  const CustomAddButton = ({ onPress }, props: any) => {
+
     console.log("Props+++++++++++", props)
     return (
-    
+
       <View style={tw`w-20 h-20 rounded-full bg-transparent items-center justify-center`}>
         <TouchableOpacity
-        {...props}
-          style={tw`absolute bottom-[45px] left-[12%] -translate-x-1/2 w-16 h-16 bg-[#E5F4F2] rounded-full justify-center items-center shadow-lg`}
+          {...props}
+          style={tw`absolute bottom-[45px] left-[12%] -translate-x-1/2 w-14 h-14 bg-[#E5F4F2] rounded-full justify-center items-center shadow-lg`}
           onPress={onPress}
         >
           <SvgXml xml={IconPlus} width={24} height={24} />
@@ -178,7 +179,7 @@ function BottomRoutes({ route }) {
       </View>
     );
   }
- 
+
   // Floating Buttons that will show when the "Add" button is clicked
   const FloatingButtons = () => {
     const navigation = useNavigation()
@@ -186,26 +187,59 @@ function BottomRoutes({ route }) {
       <View style={tw`flex-row w-[100%] gap-15 absolute bottom-[100px] left-[17%] -translate-x-1/2 z-10
       `}>
         <TouchableOpacity
-          style={tw`bg-[#96CBCB] p-2 rounded-full justify-center items-center`}
-          onPress={() => navigation?.navigate("LinkDevice")}
+          onPress={() => navigation?.navigate('LinkDevice')}
+          style={tw`rounded-full p-2 overflow-hidden`}
         >
-          <Image source={require('../assets/Imgages/Today/linkDevice.png')}/>
-      
+          <BlurView
+            style={tw`rounded-full p-3 justify-center items-center w-6 h-6`}
+            blurType="light" // can be "light", "dark", or "extraLight"
+            blurAmount={20}
+            reducedTransparencyFallbackColor="white"
+          >
+            <Image
+              source={require('../assets/Imgages/Today/linkDevice.png')}
+            // style={tw`w-2 h-2`}
+            />
+          </BlurView>
         </TouchableOpacity>
-       <View>
-       <TouchableOpacity
-          style={tw`bg-[#96CBCB] p-2 rounded-full justify-center items-center -mt-8`}
-          onPress={() => navigation?.navigate("AddLogs")}
-        >
-          <Image source={require('../assets/Imgages/Today/addLog.png')}/>
-        </TouchableOpacity>
-       </View>
+        <View>
+          <TouchableOpacity
+            onPress={() => navigation?.navigate("AddLogs")}
+            style={tw`rounded-full p-2 overflow-hidden -mt-8`}
+          >
+            <BlurView
+              style={tw`w-6 h-6 rounded-full p-3 justify-center items-center`}
+              blurType="light" // options: "light", "dark", "extraLight"
+              blurAmount={20}
+              reducedTransparencyFallbackColor="white"
+            >
+              {/* <View style={tw`bg-[#96CBCB] p-2 rounded-full justify-center items-center`}> */}
+                <Image source={require('../assets/Imgages/Today/addLog.png')} />
+              {/* </View> */}
+            </BlurView>
+          </TouchableOpacity>
+        </View>
         <TouchableOpacity
+            onPress={() => navigation?.navigate("AddLogs")}
+            style={tw`rounded-full p-2 overflow-hidden `}
+          >
+            <BlurView
+              style={tw`w-6 h-6 rounded-full p-3 justify-center items-center`}
+              blurType="light" // options: "light", "dark", "extraLight"
+              blurAmount={20}
+              reducedTransparencyFallbackColor="white"
+            >
+              {/* <View style={tw`bg-[#96CBCB] p-2 rounded-full justify-center items-center`}> */}
+              <Image source={require('../assets/Imgages/Today/addNote.png')} />
+              {/* </View> */}
+            </BlurView>
+          </TouchableOpacity>
+        {/* <TouchableOpacity
           style={tw`bg-[#96CBCB] p-2 rounded-full justify-center items-center`}
           onPress={() => navigation?.navigate("AddNotes")}
         >
-          <Image source={require('../assets/Imgages/Today/addNote.png')}/>
-        </TouchableOpacity>
+          <Image source={require('../assets/Imgages/Today/addNote.png')} />
+        </TouchableOpacity> */}
       </View>
     );
   }

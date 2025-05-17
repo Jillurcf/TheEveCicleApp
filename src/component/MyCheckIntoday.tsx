@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, FlatList, Image } from "react-native";
 import tw from "../lib/tailwind";
-import Avatar1 from "../assets/Imgages/MyTodyCheckin/Group.svg";
+
 
 
 
@@ -29,19 +29,19 @@ const checkinData = [
     id: "3",
     title: "Discharge",
     avatars: [
-        require("../assets/Imgages/MyTodyCheckin/Group.png"),
-        require("../assets/Imgages/MyTodyCheckin/Group.png"),
-        require("../assets/Imgages/MyTodyCheckin/Group.png"),
+        require("../assets/Imgages/MyTodyCheckin/Vector.png"),
+        require("../assets/Imgages/MyTodyCheckin/Vector.png"),
+        require("../assets/Imgages/MyTodyCheckin/Vector.png"),
        
       ],
   },
   {
-    id: "3",
+    id: "4",
     title: "Discharge",
     emojis: ["💧", "💧", "💧"],
   },
   {
-    id: "3",
+    id: "5",
     title: "Discharge",
     emojis: ["💧", "💧", "💧"],
   },
@@ -49,7 +49,7 @@ const checkinData = [
 
 const CheckInList = () => {
   return (
-    <View style={tw`py-8 px-6`}>
+    <View style={tw`py-8 px-4`}>
       <Text style={tw`text-xl text-[#121221] font-SatoshiBold mb-3`}>My check-in today</Text>
       <FlatList
         data={checkinData}
@@ -58,8 +58,8 @@ const CheckInList = () => {
         contentContainerStyle={tw`flex-row`}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
-          <View style={tw`w-30 h-24 justify-center bg-white border border-gray-400 rounded-xl px-1 mr-3 items-center`}>
-            <Text style={tw`text-sm font-semibold mb-4`}>{item.title}</Text>
+          <View style={tw`w-24 h-18 justify-center bg-[#FFFFFF] border border-[#CECECF] shadow-lg rounded-lg mr-3 items-center`}>
+            <Text style={tw`text-sm font-semibold mb-2`}>{item.title}</Text>
             <View style={tw`flex-row items-center`}>
               {item.avatars ? (
                 <View style={tw`flex-row items-center`}>
@@ -69,8 +69,8 @@ const CheckInList = () => {
                       source={avatar}
                       resizeMode="contain"
                       style={[
-                        tw`w-6 h-6 rounded-full border-2 border-white`,
-                        { marginLeft: index === 0 ? 0 : -10 },
+                        tw`w-6 h-6`,
+                        { marginLeft: index === 0 ? 0 : -12 },
                       ]}
                     />
                   ))}
@@ -78,7 +78,9 @@ const CheckInList = () => {
               ) : (
                 <Text style={tw`text-xl`}>{item.emojis?.join(" ")}</Text>
               )}
-              {item.count && <Text style={tw`ml-2 text-sm font-bold text-green-500`}>{item.count}</Text>}
+              {item.count && <View style={tw`w-5 h-5 bg-[#EAF5F5] rounded-full flex items-center justify-center`}>
+                <Text style={tw`ml-2 text-xs font-SatoshiRegular mx-auto text-center text-green-500`}>{item.count}</Text>
+                </View>}
             </View>
           </View>
         )}

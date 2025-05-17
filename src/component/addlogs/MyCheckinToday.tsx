@@ -31,95 +31,95 @@ const MyCheckinToday = (props: Props) => {
         {
             id: 1,
             title: "Happy",
-            icon: <HappyIcon width={30} height={30}/>
+            icon: <HappyIcon width={20} height={20}/>
             
         },
         {
             id: 2,
             title: "calm",
-            icon: <CalmIcon width={30} height={30}/>
+            icon: <CalmIcon width={20} height={20}/>
            
         },
         {
             id: 3,
             title: "Energetic",
-            icon: <EnergicIcon width={30} height={30}/>
+            icon: <EnergicIcon width={20} height={20}/>
         },
         {
             id: 4,
             title: "Confident",
             icon: 
-            <ConfidentIcon width={30} height={30}/>
+            <ConfidentIcon width={20} height={20}/>
         },
         {
             id: 5,
             title: "Sad",
-            icon: <SadIcon width={30} height={30}/>
+            icon: <SadIcon width={20} height={20}/>
         },
         {
             id: 6,
             title: "Focused",
-            icon: <FocuccedIcon width={30} height={30}/>
+            icon: <FocuccedIcon width={20} height={20}/>
         },
         {
             id: 7,
             title: "Exhausted",
-            icon: <Exhausted width={30} height={30} />
+            icon: <Exhausted width={20} height={20} />
         },
         {
             id: 8,
             title: "Low",
-            icon: <LowIcon width={30} height={30}/>
+            icon: <LowIcon width={20} height={20}/>
         },
         {
             id: 9,
             title: "Irritated",
-            icon: <IrritatedIcon width={30} height={30}/>
+            icon: <IrritatedIcon width={20} height={20}/>
         },
         {
             id: 10,
             title: "Anxious",
-            icon: <AnxiousIcon width={30} height={30}/>
+            icon: <AnxiousIcon width={20} height={20}/>
         },
         {
             id: 11,
             title: "Stressed",
-            icon: <StressedIcon width={30} height={30}/>
+            icon: <StressedIcon width={20} height={20}/>
         },
         {
             id: 12,
             title: "High libido",
-            icon: <HighLibidoIcon width={30} height={30}/>
+            icon: <HighLibidoIcon width={20} height={20}/>
         },
         {
             id: 13,
             title: "Low libido",
-            icon: <LowLibidoIcon width={30} height={30}/>
+            icon: <LowLibidoIcon width={20} height={20}/>
         },
         {
             id: 14,
             title: "Low energy",
-            icon: <LowEnergyIcon width={30} height={30}/>
+            icon: <LowEnergyIcon width={20} height={20}/>
         },
         {
             id: 15,
             title: "Self-critical",
-            icon: <SelfCriticalIcon width={30} height={30}/>
+            icon: <SelfCriticalIcon width={20} height={20}/>
         },
         {
             id: 16,
             title: "Sensitive",
-            icon: <SensitiveIcon width={30} height={30}/>
+            icon: <SensitiveIcon width={20} height={20}/>
         },
         {
             id: 17,
             title: "Emotional",
-            icon: <EmotionalIcon width={30} height={30}/>
+            icon: <EmotionalIcon width={20} height={20}/>
         },
         {
             id: 18,
             title: "Overthinking",
-            icon: <OverthinkingIcon width={30} height={30}/>
+            icon: <OverthinkingIcon width={20} height={20}/>
         },
         
     ];
@@ -136,7 +136,7 @@ const MyCheckinToday = (props: Props) => {
     };
     return (
         <View style={tw`bg-white rounded-2xl p-[4%]`}>
-            <Text style={tw`text-black text-lg font-SatoshiBold`}>My Check-In today</Text>
+            <Text style={tw`text-[#121221] my-2 font-SatoshiBold`}>My Check-In today</Text>
             <View style={tw`my-2 flex-row flex-wrap gap-1`}>
                 {options.map((option) =>
                 {
@@ -147,20 +147,20 @@ const MyCheckinToday = (props: Props) => {
                             key={option.id}
                             onPress={() => toggleOption(option.title)}
                             style={[
-                                tw`mb-2 relative rounded-full flex-row items-center gap-2 px-4 py-2`,
+                                tw`mb-2 relative rounded-full flex-row items-center gap-1 p-1 px-2`,
                                 {
-                                    backgroundColor: isSelected ? '#EAF5F5' : '#f2f2f2',
-                                    borderColor: isSelected ? '#EAF5F5' : '#ccc',
+                                    backgroundColor: isSelected ? '#EAF5F5' : '#FFFFFF',
+                                    borderColor: isSelected ? '#EAF5F5' : '#E7E7E9',
                                     borderWidth: 1,
                                 }
                             ]}
                         >
                            
                             {option.icon}
-                            <Text style={{ color: isSelected ? '#2B9696' : 'black', fontSize: 14, marginRight: 6 }}>
+                            <Text style={{ color: isSelected ? '#2B9696' : '#76767E', fontSize: 12, marginRight: 6 }}>
                                 {option.title}
                             </Text>
-                            {isSelected &&   <SvgXml style={tw`absolute right-1`} xml={IconTick}/> }
+                            {isSelected &&   <SvgXml style={tw`absolute right-0`} xml={IconTick}/> }
                           
                         </TouchableOpacity>
                     );

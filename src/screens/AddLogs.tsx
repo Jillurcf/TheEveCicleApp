@@ -36,7 +36,7 @@ const AddLogs = ({
     onScroll = () => { },
 }) => {
     const navigation = useNavigation()
-    const [selectedDays, setSelectedDays] = useState<number[]>([]);
+    const [selectedDays, setSelectedDays] = useState<number[]>([moment().date()]);
     const [daysInMonth, setDaysInMonth] = useState<string[]>([]);
     const flatListRef = useRef<FlatList<string>>(null);
 
@@ -45,14 +45,21 @@ const AddLogs = ({
         setDaysInMonth(days);
     }, []);
 
+    // useEffect(() => {
+    //     if (flatListRef.current && selectedDay !== null && selectedDay > 0) {
+    //         const index = selectedDay - 1;
+    //         if (index >= 0 && index < daysInMonth.length) {
+    //             flatListRef.current.scrollToIndex({ animated: true, index });
+    //         }
+    //     }
+    // }, [selectedDay, daysInMonth]);
     useEffect(() => {
-        if (flatListRef.current && selectedDay !== null && selectedDay > 0) {
-            const index = selectedDay - 1;
-            if (index >= 0 && index < daysInMonth.length) {
-                flatListRef.current.scrollToIndex({ animated: true, index });
-            }
+        if (daysInMonth.length > 0 && flatListRef.current) {
+            const index = moment().date() - 1;
+            flatListRef.current.scrollToIndex({ animated: true, index });
         }
-    }, [selectedDay, daysInMonth]);
+    }, [daysInMonth]);
+    
 
     const getDaysInMonth = (month: number, year: number): string[] => {
         const startOfMonth = moment({ year, month }).startOf("month");
@@ -90,26 +97,28 @@ const AddLogs = ({
 
     return (
         <ScrollView style={tw`p-[4%] flex-1 bg-[#E8F6F6]`}>
-            <View style={tw`flex-row justify-between`}>
+            <View style={tw`flex-row my-4 justify-between`}>
                 <TouchableOpacity
                     onPress={() => navigation.goBack()}
                 >
                     <SvgXml xml={IconCross} />
                 </TouchableOpacity>
-                <Text style={tw`font-SatoshiBold text-xl`}>Add log</Text>
+                <View>
+                <Text style={tw`font-SatoshiBold text-[#121221] ml-6 text-xl`}>Add log</Text>
+                </View>
                 <View>
                     <TouchableOpacity
                         onPress={() => console.log("LinkDevice")}
                     >
                         <View style={tw`flex-row items-center gap-2`}>
                             <SvgXml xml={IconEdit} />
-                            <Text style={tw`text-[#2B9696] text-lg`}>Edit logs</Text>
+                            <Text style={tw`text-[#2B9696] `}>Edit logs</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
             </View>
 
-            <View style={tw`w-full py-4 items-center justify-center mr-4`}>
+            <View style={tw`w-full bg-white rounded-xl mb-4 py-4 items-center justify-center mr-4`}>
 
                 <FlatList
                     ref={flatListRef}

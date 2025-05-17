@@ -174,8 +174,8 @@ const OvulationCircle: React.FC = ({ navigation }) => {
           </Text>
 
           {/* Log Period Button */}
-          <View style={tw`mt-8 w-24 h-10 border-2 justify-center font-SatoshiBold border-white rounded-3xl bg-[#E7E7E9]`}>
-            <Text style={tw`text-[#4FA8A8] text-center items-center font-SatoshiBold`}>Log Period</Text>
+          <View style={tw`mt-8 w-20 h-8 border-2 justify-center font-SatoshiBold border-white rounded-3xl bg-[#E7E7E9]`}>
+            <Text style={tw`text-[#4FA8A8] text-center  text-xs items-center font-SatoshiBold p-0.5`}>Log Period</Text>
           </View>
         </View>
 
@@ -188,7 +188,7 @@ const OvulationCircle: React.FC = ({ navigation }) => {
               onPress={() => setSelectedTab(tab)}
             >
               <Text
-                style={tw`text-center px-1 font-semibold ${selectedTab === tab ? "text-white" : "text-[#4FA8A8]"
+                style={tw`text-center text-xs px-1 font-semibold ${selectedTab === tab ? "text-white" : "text-[#4FA8A8]"
                   }`}
               >
                 {tab}
@@ -200,22 +200,22 @@ const OvulationCircle: React.FC = ({ navigation }) => {
 
         <DayPicker selectedDay={selectedDay} onDaySelect={updateRotation} rotation={rotation} />
 
-        <View style={tw`flex-row -mt-10 gap-4`}>
-          <View style={tw`flex-row items-center justify-center gap-2`}>
-            <View style={tw`w-3 h-3 rounded-full bg-[#4CAF50]`}></View>
-            <Text style={tw`text-black font-satoshiBlack text-xs`}>Estrogen</Text>
+        <View style={tw`flex-row -mt-8 gap-2`}>
+          <View style={tw`flex-row items-center justify-center gap-1`}>
+            <View style={tw`w-2 h-2 rounded-full bg-[#4CAF50]`}></View>
+            <Text style={tw`text-black font-SatoshiRegular text-[10px]`}>Estrogen</Text>
           </View>
-          <View style={tw`flex-row items-center justify-center gap-2`}>
-            <View style={tw`w-3 h-3 rounded-full bg-[#9733EE]`}></View>
-            <Text style={tw`text-black font-satoshiBlack text-xs`}>Progestterone</Text>
+          <View style={tw`flex-row items-center justify-center gap-1`}>
+            <View style={tw`w-2 h-2 rounded-full bg-[#9733EE]`}></View>
+            <Text style={tw`text-black font-SatoshiRegular text-[10px]`}>Progestterone</Text>
           </View>
-          <View style={tw`flex-row items-center justify-center gap-2`}>
-            <View style={tw`w-3 h-3 rounded-full bg-[#FF4C4C]`}></View>
-            <Text style={tw`text-black font-satoshiBlack text-xs`}>Testosterone</Text>
+          <View style={tw`flex-row items-center justify-center gap-1`}>
+            <View style={tw`w-2 h-2 rounded-full bg-[#FF4C4C]`}></View>
+            <Text style={tw`text-black font-SatoshiRegular text-[10px]`}>Testosterone</Text>
           </View>
-          <View style={tw`flex-row items-center justify-center gap-2`}>
-            <View style={tw`w-3 h-3 rounded-full bg-[#FFA500]`}></View>
-            <Text style={tw`text-black text-xs`}>LH</Text>
+          <View style={tw`flex-row items-center justify-center gap-1`}>
+            <View style={tw`w-2 h-2 rounded-full bg-[#FFA500]`}></View>
+            <Text style={tw`text-black text-[10px]`}>LH</Text>
           </View>
         </View>
 

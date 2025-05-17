@@ -16,8 +16,8 @@ const Autumn = ({ navigation }) => {
             </TouchableOpacity>
             <View style={tw`items-center justify-center mt-6`}>
                 {/* <Image style={tw`opacity-50`} source={require('../../assets/Imgages/Phase/autumn.png')} /> */}
-                <AutumnImg style={tw`opacity-50`} width={224} height={224}/>
-                <Text style={tw`text-[#121221] text-2xl font-SatoshiBold opacity-60`}>Autumn</Text>
+                <AutumnImg style={tw`opacity-80`} width={180} height={180}/>
+                <Text style={tw`text-[#121221] text-2xl font-SatoshiRegular opacity-60`}>Autumn</Text>
             </View>
             <View style={tw`bg-white w-full rounded-lg h-18 mt-4 p-[2%]`}>
                 <Text style={tw`text-black text-lg font-SatoshiBold px-[4%]`}>Body</Text>
@@ -28,7 +28,7 @@ const Autumn = ({ navigation }) => {
                 <Text style={tw`text-black font-SatoshiRegular py-1 px-[4%]`}>Creative, inquisitive, motivated, enthusiastic.</Text>
             </View>
             <View style={tw`bg-white w-full rounded-lg h-18 mt-4 px-[2%]`}>
-                <Text style={tw`text-black text-lg font-SatoshiBold px-[4%]`}>Sprit</Text>
+                <Text style={tw`text-black text-lg font-SatoshiBold px-[4%]`}>Spirit</Text>
                 <Text style={tw`text-black font-SatoshiRegular py-1 px-[4%]`}>Very low; your body is shedding the unfertilized egg.</Text>
             </View>
             <View style={tw`bg-white w-full rounded-lg h-30 mt-4`}>
@@ -67,7 +67,7 @@ const Autumn = ({ navigation }) => {
                     </View>
                 </View>
             </View>
-            <View style={tw`bg-white w-full rounded-lg h-18 mt-4 mb-12 px-[2%]`}>
+            <View style={tw`bg-white w-full rounded-lg h-18 mt-4 mb-12 px-[0%]`}>
                 <Text style={tw`text-black text-lg font-SatoshiBold px-[4%]`}>Spritual reflections</Text>
                 <Text style={tw`text-black font-SatoshiRegular py-1 px-[4%]`}>Follicular phase, estrogen rising.</Text>
             </View>
