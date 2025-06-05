@@ -13,13 +13,13 @@ const CancelSubscription = ({ navigation }: { navigation: any }) => {
     return (
         <ScrollView style={tw`flex-1 bg-[#E1F2F1] px-4`}>
             {/* Header */}
-            <View style={tw`flex-row justify-between`}>
+            <View style={tw`flex-row justify-between mt-4`}>
                 <TouchableOpacity
                     onPress={() => navigation.goBack()}
                 >
                     <SvgXml xml={IconLeftArrow} />
                 </TouchableOpacity>
-                <Text style={tw`font-SatoshiBold text-xl`}>Billing & subscription</Text>
+                <Text style={tw`font-SatoshiBold font-bold text-[#121221] text-xl`}>Cancel subscription</Text>
                 <View></View>
             </View>
             {/* Subscription Card */}
@@ -32,7 +32,10 @@ const CancelSubscription = ({ navigation }: { navigation: any }) => {
                         </View>
                         <Text style={tw`text-xs text-gray-400`}>Current Subscription</Text>
                     </View>
-                    <Text style={tw`text-sm font-semibold`}>£29.99/year</Text>
+                    <View style={tw`flex items-end`}>
+                        <SvgXml style={tw`text-end items-end`} xml={IconTick} />
+                        <Text style={tw`text-sm font-semibold`}>£29.99/year</Text>
+                    </View>
                 </View>
 
                 {/* Benefits List */}
@@ -45,7 +48,7 @@ const CancelSubscription = ({ navigation }: { navigation: any }) => {
                 ].map((benefit, index) => (
                     <View key={index} style={tw`flex-row items-center mb-2`}>
                         <SvgXml xml={IconTick} />
-                        <Text style={tw`ml-2 text-sm text-gray-700`}>{benefit}</Text>
+                        <Text style={tw`ml-2 mt-2 text-sm font-SatoshiRegular text-[#3A3A47]`}>{benefit}</Text>
                     </View>
                 ))}
 
@@ -56,14 +59,16 @@ const CancelSubscription = ({ navigation }: { navigation: any }) => {
             </View>
 
             {/* Cancel Button */}
-            <TouchableOpacity
-                onPress={() => setLogoutConfirmationModalVisible(true)}
-                style={tw`bg-teal-600 mt-10 py-3 rounded-full shadow-lg`}>
-                <Text style={tw`text-white text-center font-semibold`}>Cancel Subscriptions</Text>
-            </TouchableOpacity>
+            <View style={tw`items-center`}>
+                <TouchableOpacity
+                    onPress={() => setLogoutConfirmationModalVisible(true)}
+                    style={tw`bg-[#4FA8A8] w-[50%] mt-10 py-3 rounded-full shadow-lg`}>
+                    <Text style={tw`text-white text-center font-semibold`}>Cancel Subscriptions</Text>
+                </TouchableOpacity>
+            </View>
             <NormalModal
-                layerContainerStyle={tw`justify-end animate-bounce`} // Ensure modal content aligns at the bottom
-                containerStyle={tw`bg-white rounded-t-2xl p-6`} // Styling the modal itself
+                layerContainerStyle={tw`justify-center animate-bounce`} // Ensure modal content aligns at the bottom
+                containerStyle={tw`bg-white rounded-2xl mx-4 p-6`} // Styling the modal itself
                 visible={logoutConfirmationModalVisible}
                 setVisible={setLogoutConfirmationModalVisible}
             >

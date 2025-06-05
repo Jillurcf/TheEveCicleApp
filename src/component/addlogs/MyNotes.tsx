@@ -14,7 +14,7 @@ const MyNotes = (props: Props) => {
     const [openDeleteModal, setOpenDeleteModal] = React.useState(false)
     return (
         <View style={tw`bg-white rounded-2xl p-4`}>
-            <Text style={tw`text-black font-SatoshiBold text-lg`}>My Notes</Text>
+            <Text style={tw`text-[#121221] my-2 font-SatoshiBold`}>My Notes</Text>
             <View style={tw`flex-1 mt-4 border h-32 border-gray-400 rounded-lg`}>
                 <TextArea
                     containerStyle={tw`border border-gray-400`}  // Border for the container
@@ -57,8 +57,22 @@ const MyNotes = (props: Props) => {
                 }}
             >
                 <View style={tw`flex-1 justify-center items-center bg-black bg-opacity-50`}>
-                    <View style={tw`bg-white rounded-lg p-4 w-80`}>
+                    <View style={tw`bg-white rounded-lg h-60 p-4 w-80`}>
                         <Text style={tw`text-black font-SatoshiBold text-lg`}>My Notes</Text>
+                        <View style={tw`flex-1 mt-4 border h-32 border-gray-400 rounded-lg`}>
+                            <TextArea
+                                containerStyle={tw`border border-gray-400`}  // Border for the container
+                                contentContainerStyle={tw`border border-gray-400`}
+                                style={tw`bg-white text-black border`} // Background color should be white
+                                placeholder="Write your notes here..."
+                                cursorColor="black" // White cursor
+                                placeholderTextColor="gray" // Placeholder text color
+                                textInputStyle={{
+                                    color: 'black', // Text color should be black
+                                    cursorColor: 'white', // White cursor
+                                }}
+                            />
+                        </View>
 
                         <View style={tw`flex-row justify-between w-full  items-center mt-4`}>
                             <TButton

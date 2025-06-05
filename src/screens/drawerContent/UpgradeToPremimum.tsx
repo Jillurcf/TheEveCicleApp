@@ -52,12 +52,18 @@ const UpgradeToPremimum = ({ navigation }: { navigation: any }) => {
     return (
         <ScrollView style={tw`flex-1 bg-[#E8F6F6] p-4`}>
             <View style={tw`flex-row justify-between`}>
-                <TouchableOpacity
-                    onPress={() => navigation.goBack()}
-                >
-                    <SvgXml xml={IconCross} />
-                </TouchableOpacity>
+                <View style={tw`w-[10%]`}>
+                    <TouchableOpacity
+                        onPress={() => navigation.goBack()}
+                    >
+                        <SvgXml xml={IconCross} />
+                    </TouchableOpacity>
 
+                </View>
+                <View style={tw`w-[80%] items-center`}>
+                    <Text style={tw`font-SatoshiBold text-[#121221] text-xl`}>Upgrade to premimum</Text>
+                </View>
+                <View style={tw`w-[10%]`}></View>
             </View>
             <View style={tw`w-full items-center mt-8`}>
                 <Image style={tw`w-24 h-24`} source={require("../../assets/Imgages/SplashIcon.png")} />
@@ -76,7 +82,7 @@ const UpgradeToPremimum = ({ navigation }: { navigation: any }) => {
                                 <Text style={tw`text-xl font-SatoshiBold text-black py-2`}>{item.plan_name}</Text>
                             </View>
 
-                          
+
                             <Text style={tw`text-sm text-gray-500`}>Duration: {item.duration} days</Text>
                             <Text style={tw`text-lg font-SatoshiBold mt-2 text-black`}>
                                 ${item.current_price.toFixed(2)}

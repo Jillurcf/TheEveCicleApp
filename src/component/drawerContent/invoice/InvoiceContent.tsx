@@ -75,8 +75,8 @@ const InvoiceContent = (props: Props) => {
           </thead>
           <tbody>
             ${data
-              .map(
-                (item) => `
+          .map(
+            (item) => `
                   <tr>
                     <td style="padding: 10px; border: 1px solid #ccc;">${item.id}</td>
                     <td style="padding: 10px; border: 1px solid #ccc;">${item.date}</td>
@@ -84,8 +84,8 @@ const InvoiceContent = (props: Props) => {
                     <td style="padding: 10px; border: 1px solid #ccc;">${item.amount}</td>
                     <td style="padding: 10px; border: 1px solid #ccc;">${item.status}</td>
                   </tr>`
-              )
-              .join('')}
+          )
+          .join('')}
           </tbody>
         </table>
       `;
@@ -133,7 +133,7 @@ const InvoiceContent = (props: Props) => {
   };
 
   return (
-    <View>
+    <View style={tw`bg-white p-2 rounded-lg`}>
       <View style={tw`flex-row justify-between mb-2`}>
         <Text style={tw`text-gray-500 text-xs`}>Invoice ID</Text>
         <Text style={tw`text-gray-500 text-xs`}>Billing Date</Text>
@@ -156,19 +156,21 @@ const InvoiceContent = (props: Props) => {
         )}
       />
 
-      <TouchableOpacity
-        style={tw`bg-[#4FA8A8] py-3 rounded-full mt-6 items-center`}
-        onPress={downloadPDF}
-      >
-        <Text style={tw`text-white font-bold`}>Download PDF</Text>
-      </TouchableOpacity>
+      <View style={tw`items-center`}>
+        <TouchableOpacity
+          style={tw`bg-[#4FA8A8] py-3 rounded-full w-[50%] mt-6 items-center`}
+          onPress={downloadPDF}
+        >
+          <Text style={tw`text-white font-bold`}>Download PDF</Text>
+        </TouchableOpacity>
+      </View>
 
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={tw`bg-gray-700 py-3 rounded-full mt-4 items-center`}
         onPress={copyPDFToClipboard}
       >
         <Text style={tw`text-white font-bold`}>Copy PDF to Clipboard</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 };

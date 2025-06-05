@@ -259,7 +259,7 @@
 
 // export default ChatScreen;
 
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   TextInput,
@@ -274,11 +274,11 @@ import {
   StatusBar,
 } from 'react-native';
 import Video from 'react-native-video'; // Ensure this is installed: npm install react-native-video
-import {launchImageLibrary, launchCamera} from 'react-native-image-picker';
+import { launchImageLibrary, launchCamera } from 'react-native-image-picker';
 // import io from 'socket.io-client';
 import tw from 'twrnc'; // Tailwind for React Native
 
-import {SvgXml} from 'react-native-svg';
+import { SvgXml } from 'react-native-svg';
 import { IconCross, IconLeftArrow } from '../../../assets/Icons';
 import NormalModal from '../../../component/NormalModal';
 
@@ -286,7 +286,7 @@ import NormalModal from '../../../component/NormalModal';
 
 // const socket = io('http://localhost:3000'); // Replace with your server's IP or domain
 
-const CustomerSupport = ({navigation}) => {
+const CustomerSupport = ({ navigation }) => {
   const [openModal, setOpenModal] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -308,51 +308,56 @@ const CustomerSupport = ({navigation}) => {
   const [mediaUri, setMediaUri] = useState(null); // For holding selected image or video URI
   const [mediaType, setMediaType] = useState(null); // 'image' or 'video'
 
-//   useEffect(() => {
-//     // Listen for new messages from the server
-//     socket.on('receiveMessage', message => {
-//       setMessages(prev => [...prev, message]);
-//     });
+  //   useEffect(() => {
+  //     // Listen for new messages from the server
+  //     socket.on('receiveMessage', message => {
+  //       setMessages(prev => [...prev, message]);
+  //     });
 
-//     // Cleanup on unmount
-//     return () => {
-//       socket.disconnect();
-//     };
-//   }, []);
+  //     // Cleanup on unmount
+  //     return () => {
+  //       socket.disconnect();
+  //     };
+  //   }, []);
 
-//   const sendMessage = () => {
-//     if (text.trim() || mediaUri) {
-//       const message = {
-//         text,
-//         user: 'User1', // Replace this with dynamic user data
-//         createdAt: new Date(),
-//         image: mediaType === 'image' ? mediaUri : null,
-//         video: mediaType === 'video' ? mediaUri : null,
-//       };
+  //   const sendMessage = () => {
+  //     if (text.trim() || mediaUri) {
+  //       const message = {
+  //         text,
+  //         user: 'User1', // Replace this with dynamic user data
+  //         createdAt: new Date(),
+  //         image: mediaType === 'image' ? mediaUri : null,
+  //         video: mediaType === 'video' ? mediaUri : null,
+  //       };
 
-//       // Send message to the server
-//       socket.emit('sendMessage', message);
+  //       // Send message to the server
+  //       socket.emit('sendMessage', message);
 
-//       // Update local message state
-//       setMessages(prev => [...prev, message]);
+  //       // Update local message state
+  //       setMessages(prev => [...prev, message]);
 
-//       // Clear input field and media
-//       setText('');
-//       setMediaUri(null);
-//       setMediaType(null);
-//     }
-//   };
+  //       // Clear input field and media
+  //       setText('');
+  //       setMediaUri(null);
+  //       setMediaType(null);
+  //     }
+  //   };
 
- 
+
   const toggleModal = () => setOpenModal(prev => !prev);
   return (
     <ScrollView contentContainerStyle={tw`flex-1 px-2 bg-[#E8F6F6]`}>
       <View style={tw`px-[4%] flex-row justify-between items-center  my-4`}>
-        <TouchableOpacity onPress={() =>navigation.goBack()}>
+        <View style={tw`w-[10%]`}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
           <SvgXml xml={IconLeftArrow} />
         </TouchableOpacity>
+        </View>
         <View style={tw`flex-row items-center gap-6`}>
-          <View>
+          <View style={tw`w-[80%]  items-center`}>
+            <Text style={{ fontFamily: 'Satoshi-Bold', fontSize: 18, color: "#121221" }}>Customer support</Text>
+          </View>
+          {/* <View>
             <Image
               source={require('../../../assets/Imgages/Profile/pfp.png')}
               style={tw`w-12 h-12 relative`}
@@ -360,8 +365,11 @@ const CustomerSupport = ({navigation}) => {
             <View
               style={tw`w-3 h-3 bg-green-400 rounded-full absolute bottom-0 right-0`}
             />
-          </View>
+          </View> */}
           {/* <Text style={tw`font-SatoshiBold text-black`}>Danniel</Text> */}
+          <View style={tw`w-[10%]`}>
+
+          </View>
         </View>
         <TouchableOpacity onPress={toggleModal}>
           {/* <SvgXml xml={KibubIcon} /> */}
@@ -371,7 +379,7 @@ const CustomerSupport = ({navigation}) => {
       <FlatList
         data={messages}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={({item}) => (
+        renderItem={({ item }) => (
           <View
             style={[
               tw`mb-3 p-3 rounded-lg  w-[85%] text-black`,
@@ -382,14 +390,14 @@ const CustomerSupport = ({navigation}) => {
             <Text style={tw`font-MontserratRegular text-black`}>{item.user}</Text>
             {item.image && (
               <Image
-                source={{uri: item.image}}
+                source={{ uri: item.image }}
                 style={tw`h-40 w-full rounded-lg my-2`}
                 resizeMode="cover"
               />
             )}
             {item.video && (
               <Video
-                source={{uri: item.video}}
+                source={{ uri: item.video }}
                 style={tw`h-40 w-full rounded-lg my-2`}
                 resizeMode="cover"
                 controls
@@ -406,7 +414,7 @@ const CustomerSupport = ({navigation}) => {
 
       {/* Input and Send Button */}
       <View style={tw`border-t border-gray-300`}>
-        <View style={tw`flex-row items-center p-3  w-[100%]`}>      
+        <View style={tw`flex-row items-center p-3  w-[100%]`}>
           <View style={tw`flex-row w-full gap-1`}>
             <TextInput
               style={tw`relative w-full h-10 border text-black border-gray-400 rounded-2xl px-2`}
@@ -414,11 +422,11 @@ const CustomerSupport = ({navigation}) => {
               placeholderTextColor={'black'}
               cursorColor={'black'}
               value={text}
-              
+
               onChangeText={setText}
             />
             <TouchableOpacity
-            //   onPress={sendMessage}
+              //   onPress={sendMessage}
               style={tw`absolute right-4 top-2`}>
               <Text style={tw`text-[#2B9696] text-sm font-SatoshiBold`}>Send</Text>
               {/* <SvgXml xml={SendIcon} width={20} /> */}
@@ -431,7 +439,7 @@ const CustomerSupport = ({navigation}) => {
       {mediaUri && mediaType === 'image' && (
         <View style={tw`flex-row items-center p-3`}>
           <Image
-            source={{uri: mediaUri}}
+            source={{ uri: mediaUri }}
             style={tw`h-20 w-20 rounded-lg`}
             resizeMode="cover"
           />
@@ -441,7 +449,7 @@ const CustomerSupport = ({navigation}) => {
       {mediaUri && mediaType === 'video' && (
         <View style={tw`flex-row items-center p-3`}>
           <Video
-            source={{uri: mediaUri}}
+            source={{ uri: mediaUri }}
             style={tw`h-40 w-full rounded-lg`}
             resizeMode="cover"
             controls
@@ -450,7 +458,7 @@ const CustomerSupport = ({navigation}) => {
           <Button title="Remove" onPress={() => setMediaUri(null)} />
         </View>
       )}
-      <View style={{ justifyContent: 'center', alignItems: 'center'}}>
+      <View style={{ justifyContent: 'center', alignItems: 'center' }}>
         {/* Button to open the modal */}
         {/* <Button title="Open Modal"  /> */}
 
@@ -460,8 +468,8 @@ const CustomerSupport = ({navigation}) => {
           setVisible={setOpenModal}
           animationType="fade" // Optional, choose 'none', 'slide', or 'fade'
           scrollable={true} // Optional, to make the modal content scrollable
-          layerContainerStyle={{padding: 20}} // Optional, styling for the background layer
-          containerStyle={{borderRadius: 10}} // Optional, styling for the modal container
+          layerContainerStyle={{ padding: 20 }} // Optional, styling for the background layer
+          containerStyle={{ borderRadius: 10 }} // Optional, styling for the modal container
         >
           {/* Content inside the modal */}
           <View>

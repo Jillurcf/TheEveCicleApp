@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import tw from '../../lib/tailwind';
 import { SvgXml } from 'react-native-svg';
 import { Iconblad, IconTick } from '../../assets/Icons';
-import HappyIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Happy.svg';
+import HappyIcon from '../../assets/Imgages/AddLogs/myCheckinTody/newsvg/happy.png';
 import CalmIcon from '../../assets/Imgages/AddLogs/myCheckinTody/calm.svg';
 import EnergicIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Energic.svg';
 import ConfidentIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Confident.svg';
@@ -27,101 +27,106 @@ type Props = {}
 
 const MyCheckinToday = (props: Props) => {
     const options = [
-        
+
         {
             id: 1,
             title: "Happy",
-            icon: <HappyIcon width={20} height={20}/>
-            
+            icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/happy.png')} />
+
         },
         {
             id: 2,
             title: "calm",
-            icon: <CalmIcon width={20} height={20}/>
-           
+            icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/calm.png')} />
+
+        },
+        {
+            id: 3,
+            title: "Reflective",
+            icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/reflective.png')} />
         },
         {
             id: 3,
             title: "Energetic",
-            icon: <EnergicIcon width={20} height={20}/>
+            icon:
+                <EnergicIcon width={20} height={20} />
         },
         {
             id: 4,
             title: "Confident",
-            icon: 
-            <ConfidentIcon width={20} height={20}/>
+            icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/confident.png')} />
         },
         {
             id: 5,
             title: "Sad",
-            icon: <SadIcon width={20} height={20}/>
+             icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/sad.png')} />
         },
         {
             id: 6,
             title: "Focused",
-            icon: <FocuccedIcon width={20} height={20}/>
+              icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/foccused.png')} />
         },
         {
             id: 7,
             title: "Exhausted",
-            icon: <Exhausted width={20} height={20} />
+            icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/exhausted.png')} />
         },
         {
             id: 8,
             title: "Low",
-            icon: <LowIcon width={20} height={20}/>
+              icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/low.png')} />
         },
         {
             id: 9,
             title: "Irritated",
-            icon: <IrritatedIcon width={20} height={20}/>
+            icon: <IrritatedIcon width={20} height={20} />
         },
         {
             id: 10,
             title: "Anxious",
-            icon: <AnxiousIcon width={20} height={20}/>
+            icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/anxious.png')} />
         },
         {
             id: 11,
             title: "Stressed",
-            icon: <StressedIcon width={20} height={20}/>
+           icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/stressed.png')} />
         },
         {
             id: 12,
             title: "High libido",
-            icon: <HighLibidoIcon width={20} height={20}/>
+             icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/highLibido.png')} />
         },
         {
             id: 13,
             title: "Low libido",
-            icon: <LowLibidoIcon width={20} height={20}/>
+            icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/lowLibido.png')} />
         },
         {
             id: 14,
             title: "Low energy",
-            icon: <LowEnergyIcon width={20} height={20}/>
+            icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/lowEnergy.png')} />
         },
         {
             id: 15,
             title: "Self-critical",
-            icon: <SelfCriticalIcon width={20} height={20}/>
+              icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/selfCritical.png')} />
         },
         {
             id: 16,
             title: "Sensitive",
-            icon: <SensitiveIcon width={20} height={20}/>
+           icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/sensitive.png')} />
         },
         {
             id: 17,
             title: "Emotional",
-            icon: <EmotionalIcon width={20} height={20}/>
+            icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/Emotional.png')} />
         },
         {
             id: 18,
             title: "Overthinking",
-            icon: <OverthinkingIcon width={20} height={20}/>
+            icon: <Image style={tw`w-4 h-4`} source={require('../../assets/Imgages/AddLogs/myCheckinTody/newsvg/overThinking.png')} />
         },
-        
+
     ];
 
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
@@ -138,8 +143,7 @@ const MyCheckinToday = (props: Props) => {
         <View style={tw`bg-white rounded-2xl p-[4%]`}>
             <Text style={tw`text-[#121221] my-2 font-SatoshiBold`}>My Check-In today</Text>
             <View style={tw`my-2 flex-row flex-wrap gap-1`}>
-                {options.map((option) =>
-                {
+                {options.map((option) => {
                     const isSelected = selectedOptions.includes(option.title);
 
                     return (
@@ -155,13 +159,15 @@ const MyCheckinToday = (props: Props) => {
                                 }
                             ]}
                         >
-                           
-                            {option.icon}
+                            <View style={tw``}>
+                                {option.icon}
+                            </View>
+
                             <Text style={{ color: isSelected ? '#2B9696' : '#76767E', fontSize: 12, marginRight: 6 }}>
                                 {option.title}
                             </Text>
-                            {isSelected &&   <SvgXml style={tw`absolute right-0`} xml={IconTick}/> }
-                          
+                            {isSelected && <SvgXml style={tw`absolute right-0`} xml={IconTick} />}
+
                         </TouchableOpacity>
                     );
                 }

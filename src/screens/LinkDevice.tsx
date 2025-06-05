@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native'
+import { Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native'
 import React from 'react'
 import tw from '../lib/tailwind'
 import { SvgXml } from 'react-native-svg'
@@ -20,14 +20,15 @@ const copyToClipboard = () => {
 const FirstRoute = () => (
     <ScrollView style={tw`flex-1 bg-transparent mt-6`}>
 
-        <Text style={tw`text-black text-center font-SatoshiBold text-xl`}>Coonect with your partner for a {"\n"}seamless experience</Text>
+        <Text style={tw`text-black text-center font-SatoshiBold text-xl`}>Connect with your partner & trusted {"\n"}friends for a shared experience</Text>
         <View style={tw`items-center justify-center`}>
             {/* <Image style={tw`mt-6 items-center object-cover`} source={require("../assets/Imgages/LinkDevice/image.svg")} /> */}
            <LinkDevices width={358} height={264} />
         </View>
         <View style={tw`bg-white rounded-xl p-4 flex-row items-center justify-between shadow-md mt-4`}>
-            <View>
-                <Text style={tw`text-lg font-bold text-black`}>{code}</Text>
+            <View></View>
+            <View style={tw`items-center`}>
+                <Text style={tw`text-2xl font-bold text-black`}>{code}</Text>
                 <Text style={tw`text-xs text-gray-500`}>for spouse</Text>
             </View>
             <TouchableOpacity onPress={copyToClipboard}>
@@ -35,6 +36,16 @@ const FirstRoute = () => (
             </TouchableOpacity>
         </View>
         <View style={tw`bg-white rounded-xl p-4 flex-row items-center justify-between shadow-md mt-4`}>
+             <View></View>
+            <View style={tw`items-center`}>
+                <Text style={tw`text-2xl font-bold text-black`}>{code}</Text>
+                <Text style={tw`text-xs text-gray-500`}>for family & friends</Text>
+            </View>
+            <TouchableOpacity onPress={copyToClipboard}>
+                <SvgXml xml={IconCopy} />
+            </TouchableOpacity>
+        </View>
+        {/* <View style={tw`bg-white rounded-xl p-4 flex-row items-center justify-between shadow-md mt-4`}>
             <View>
                 <Text style={tw`text-lg font-bold text-black`}>{code}</Text>
                 <Text style={tw`text-xs text-gray-500`}>for family & friends</Text>
@@ -42,17 +53,8 @@ const FirstRoute = () => (
             <TouchableOpacity onPress={copyToClipboard}>
                 <SvgXml xml={IconCopy} />
             </TouchableOpacity>
-        </View>
-        <View style={tw`bg-white rounded-xl p-4 flex-row items-center justify-between shadow-md mt-4`}>
-            <View>
-                <Text style={tw`text-lg font-bold text-black`}>{code}</Text>
-                <Text style={tw`text-xs text-gray-500`}>for family & friends</Text>
-            </View>
-            <TouchableOpacity onPress={copyToClipboard}>
-                <SvgXml xml={IconCopy} />
-            </TouchableOpacity>
-        </View>
-        <Text style={tw`text-black text-center py-4`}>This code is valid for next 48 hours</Text>
+        </View> */}
+        <Text style={tw`text-[#76767E] text-center py-4`}>This code is valid for next 48 hours</Text>
     </ScrollView>
 );
 
@@ -253,44 +255,44 @@ const SecondRoute = () => (
                 <Text style={tw`text-xl font-SatoshiBold`}>Support</Text>
              
 
-                    <View style={tw`mt-3`}>
-                        <Text style={tw`text-black text-lg font-SatoshiBold`}>Winter</Text>
-                        <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                    <View style={tw`mt-4`}>
+                        <Text style={tw`text-[#121221] text-lg font-SatoshiBold`}>Winter</Text>
+                        <Text style={tw`text-[#3A3A47`}>Needs warm clothes, heating, extra rest.</Text>
                     </View>
                
-                <View style={tw`mt-3`}>
-                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Summer</Text>
-                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                <View style={tw`mt-4`}>
+                    <Text style={tw`text-[#121221] text-lg font-SatoshiBold`}>Summer</Text>
+                    <Text style={tw`text-[#3A3A47]`}>Needs warm clothes, heating, extra rest.</Text>
                 </View>
-                <View style={tw`mt-3`}>
-                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Spring</Text>
-                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                <View style={tw`mt-4`}>
+                    <Text style={tw`text-[#121221] text-lg font-SatoshiBold`}>Spring</Text>
+                    <Text style={tw`text-[#3A3A47]`}>Needs warm clothes, heating, extra rest.</Text>
                 </View>
-                <View style={tw`mt-3`}>
-                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Autumn</Text>
-                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                <View style={tw`mt-4`}>
+                    <Text style={tw`text-[#121221] text-lg font-SatoshiBold`}>Autumn</Text>
+                    <Text style={tw`text-[#3A3A47]`}>Needs warm clothes, heating, extra rest.</Text>
                 </View>
             </View>
-            <View style={tw`absoulute top-255 bg-white w-full rounded-3xl shadow-md p-4 mb-4`}>
+            <View style={tw`absoulute top-260 bg-white w-full rounded-3xl shadow-md p-4 mb-4`}>
                 <Text style={tw`text-xl font-SatoshiBold`}>Health insights</Text>
              
 
-                    <View style={tw`mt-3`}>
-                        <Text style={tw`text-black text-lg font-SatoshiBold`}>Winter</Text>
-                        <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                    <View style={tw`mt-4`}>
+                        <Text style={tw`text-[#121221text-lg font-SatoshiBold`}>Winter</Text>
+                        <Text style={tw`text-[#3A3A47]`}>Needs warm clothes, heating, extra rest.</Text>
                     </View>
                
-                <View style={tw`mt-3`}>
-                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Summer</Text>
-                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                <View style={tw`mt-4`}>
+                    <Text style={tw`text-[#121221] text-lg font-SatoshiBold`}>Summer</Text>
+                    <Text style={tw`text-[#3A3A47]`}>Needs warm clothes, heating, extra rest.</Text>
                 </View>
-                <View style={tw`mt-3`}>
-                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Spring</Text>
-                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                <View style={tw`mt-4`}>
+                    <Text style={tw`text-[#121221] text-lg font-SatoshiBold`}>Spring</Text>
+                    <Text style={tw`text-[#3A3A47]`}>Needs warm clothes, heating, extra rest.</Text>
                 </View>
-                <View style={tw`mt-3`}>
-                    <Text style={tw`text-black text-lg font-SatoshiBold`}>Autumn</Text>
-                    <Text style={tw`text-black`}>Needs warm clothes, heating, extra rest.</Text>
+                <View style={tw`mt-4`}>
+                    <Text style={tw`text-[#121221] text-lg font-SatoshiBold`}>Autumn</Text>
+                    <Text style={tw`text-[#3A3A47]`}>Needs warm clothes, heating, extra rest.</Text>
                 </View>
             </View>
 
@@ -314,13 +316,13 @@ const LinkDevice = ({ navigation }) => {
 
     return (
         <View style={tw`flex-1 bg-[#E8F6F6] p-[4%]`}>
-            <View style={tw`flex-row justify-between`}>
+            <View style={tw`flex-row justify-between mt-6`}>
                 <TouchableOpacity
                     onPress={() => navigation.goBack()}
                 >
                     <SvgXml xml={IconCross} />
                 </TouchableOpacity>
-                <Text style={tw`font-SatoshiBold text-xl`}>Link device</Text>
+                <Text style={tw`font-SatoshiBold text-[#121221] text-xl`}>Link device</Text>
                 <View></View>
             </View>
             <View style={tw`mt-8 flex-1 bg-transparent`}>
@@ -360,6 +362,7 @@ const LinkDevice = ({ navigation }) => {
                     renderScene={renderScene}
                     onIndexChange={setIndex}
                 />
+                <StatusBar translucent={false}/>
             </View>
 
 

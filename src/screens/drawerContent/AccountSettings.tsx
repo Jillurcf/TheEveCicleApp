@@ -48,13 +48,17 @@ const AccountSettings = ({ navigation }) => {
   return (
     <ScrollView style={tw`flex-1 bg-[#E8F6F6] p-4`}>
       <View style={tw`flex-row justify-between`}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-        >
-          <SvgXml xml={IconLeftArrow} />
-        </TouchableOpacity>
-        <Text style={tw`font-SatoshiBold text-xl`}>Accounts settings</Text>
-        <View></View>
+        <View style={tw`w-[10%]`}>
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+          >
+            <SvgXml xml={IconLeftArrow} />
+          </TouchableOpacity>
+        </View>
+        <View style={tw`w-[80%%] items-center`}>
+          <Text style={tw`font-SatoshiBold text-[#121221] text-xl`}>Accounts settings</Text>
+        </View>
+        <View style={tw`w-[10%]`}></View>
       </View>
 
       <TouchableOpacity onPress={selectImage} style={tw`items-center mt-8`}>
@@ -65,7 +69,7 @@ const AccountSettings = ({ navigation }) => {
                 ? { uri: profileImage }
                 : require('../../assets/Imgages/Profile/pfp.png')
             }
-            style={tw`w-24 h-24 rounded-full`}
+            style={tw`w-18 h-18 rounded-full`}
           />
           <TouchableOpacity style={tw`absolute bottom-0 right-0`}>
             <SvgXml xml={IconCamera} />
@@ -82,7 +86,7 @@ const AccountSettings = ({ navigation }) => {
         <InputText
           containerStyle={tw`bg-white`}
           style={tw`bg-white`}
-          placeholder="Enter your Name"
+          placeholder="Enter your full name"
           placeholderColor="#949494"
           label="Name"
           // iconLeft={IconEnvelope}

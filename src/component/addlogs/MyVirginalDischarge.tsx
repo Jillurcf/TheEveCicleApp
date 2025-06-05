@@ -23,67 +23,67 @@ const MyVirginalDischarge = (props: Props) => {
         {
             id: 1,
             title: "No discharge",
-            icon: <NoDischargeIcon width={30} height={30}
+            icon: <NoDischargeIcon width={20} height={20}
             />
         },
         {
             id: 2,
             title: "Watery",
-            icon: <WateryIcon width={30} height={30}
+            icon: <WateryIcon width={20} height={20}
             />
         },
         {
             id: 3,
             title: "Creamy",
-            icon: <CreamyIcon width={30} height={30}
+            icon: <CreamyIcon width={20} height={20}
             />
         },
         {
             id: 4,
             title: "Sticky",
-            icon: <StickyIcon width={30} height={30}
+            icon: <StickyIcon width={20} height={20}
             />
         },
         {
             id: 5,
             title: "Egg white",
-            icon: <EggWhiteIcon width={30} height={30}
+            icon: <EggWhiteIcon width={20} height={20}
             />
         },
         {
             id: 6,
             title: "Clumpy white",
-            icon: <ClumpyIcon width={30} height={30}
+            icon: <ClumpyIcon width={20} height={20}
             />
         },
         {
             id: 7,
             title: "Yellowish",
-            icon: <YellowishIcon width={30} height={30}
+            icon: <YellowishIcon width={20} height={20}
             />
         },
         {
             id: 8,
             title: "Spotting",
-            icon: <SpottingIcon width={30} height={30}
+            icon: <SpottingIcon width={20} height={20}
             />
         },
         {
             id: 9,
             title: "Unusual color",
-            icon: <UnusualColorIcon width={30} height={30}
+            icon: <UnusualColorIcon width={20} height={20}
             />
         },
         {
             id: 10,
             title: "Odourless",
-            icon: <OdourLessIcon width={30} height={30}
+            icon: <OdourLessIcon width={20} height={20}
             />
         },
         {
             id: 11,
             title: "Strong odour",
-            icon: <StrongIcon width={30} height={30}
+            icon: <StrongIcon width={20} height={20}
             />
         },
         
@@ -101,7 +101,7 @@ const MyVirginalDischarge = (props: Props) => {
     };
     return (
         <View style={tw`bg-white rounded-2xl p-[4%]`}>
-            <Text style={tw`text-black text-lg font-SatoshiBold`}>My virginal discharge</Text>
+            <Text  style={tw`text-[#121221] my-2 font-SatoshiBold`}>My virginal discharge</Text>
             <View style={tw`my-2 flex-row flex-wrap gap-1`}>
                 {options.map((option) =>
                 {
@@ -112,20 +112,20 @@ const MyVirginalDischarge = (props: Props) => {
                             key={option.id}
                             onPress={() => toggleOption(option.title)}
                             style={[
-                                tw`mb-2 relative rounded-full flex-row items-center gap-2 px-4 py-2`,
-                                {
-                                    backgroundColor: isSelected ? '#EAF5F5' : '#f2f2f2',
-                                    borderColor: isSelected ? '#EAF5F5' : '#ccc',
+                                tw`mb-2 relative rounded-full flex-row items-center gap-1 px-1 py-1`,
+                                 {
+                                    backgroundColor: isSelected ? '#EAF5F5' : '#FFFFFF',
+                                    borderColor: isSelected ? '#EAF5F5' : '#E7E7E9',
                                     borderWidth: 1,
                                 }
                             ]}
                         >
                            
                             {option.icon}
-                            <Text style={{ color: isSelected ? '#2B9696' : 'black', fontSize: 14, marginRight: 10 }}>
+                            <Text style={{ color: isSelected ? '#2B9696' : '#76767E', fontSize: 12, marginRight: 6 }}>
                                 {option.title}
                             </Text>
-                            {isSelected &&   <SvgXml style={tw`absolute right-2`} xml={IconTick}/> }
+                            {isSelected &&   <SvgXml style={tw`absolute right-0`} xml={IconTick}/> }
                           
                         </TouchableOpacity>
                     );

@@ -17,25 +17,25 @@ const MyDigestion = (props: Props) => {
         {
             id: 1,
             title: "Nausea",
-            icon: <IconNausea width={30} height={30}
+            icon: <IconNausea width={25} height={25}
             />
         },
         {
             id: 2,
             title: "Constipation",
-            icon: <IconConstipation width={30} height={30}
+            icon: <IconConstipation width={25} height={25}
             />
         },
         {
             id: 3,
             title: "Diarrhea",
-            icon: <IconDiarrahea width={30} height={30}
+            icon: <IconDiarrahea width={25} height={25}
             />
         },
         {
             id: 4,
             title: "Healthy bowels",
-            icon: <IconHealthyBowels width={30} height={30}
+            icon: <IconHealthyBowels width={25} height={25}
             />
         },
        
@@ -53,7 +53,7 @@ const MyDigestion = (props: Props) => {
     };
     return (
         <View style={tw`bg-white rounded-2xl p-[4%]`}>
-            <Text style={tw`text-black text-lg font-SatoshiBold`}>My digestion</Text>
+            <Text  style={tw`text-[#121221] my-2 font-SatoshiBold`}>My digestion</Text>
             <View style={tw`my-2 flex-row flex-wrap gap-1`}>
                 {options.map((option) =>
                 {
@@ -63,21 +63,22 @@ const MyDigestion = (props: Props) => {
                         <TouchableOpacity
                             key={option.id}
                             onPress={() => toggleOption(option.title)}
-                            style={[
-                                tw`mb-2 relative rounded-full flex-row items-center gap-2 px-4 py-2`,
-                                {
-                                    backgroundColor: isSelected ? '#EAF5F5' : '#f2f2f2',
-                                    borderColor: isSelected ? '#EAF5F5' : '#ccc',
+                              style={[
+                                tw`mb-2 relative rounded-full flex-row items-center gap-1 px-1 py-1`,
+                                 {
+                                    backgroundColor: isSelected ? '#EAF5F5' : '#FFFFFF',
+                                    borderColor: isSelected ? '#EAF5F5' : '#E7E7E9',
                                     borderWidth: 1,
                                 }
                             ]}
                         >
                            
                             {option.icon}
-                            <Text style={{ color: isSelected ? '#2B9696' : 'black', fontSize: 14, marginRight: 10 }}>
+                             <Text style={{ color: isSelected ? '#2B9696' : '#76767E', fontSize: 12, marginRight: 6 }}>
                                 {option.title}
                             </Text>
-                            {isSelected &&   <SvgXml style={tw`absolute right-2`} xml={IconTick}/> }
+                            {isSelected &&   <SvgXml style={tw`absolute right-0`} xml={IconTick}/> }
+                          
                           
                         </TouchableOpacity>
                     );

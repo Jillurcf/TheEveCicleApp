@@ -19,7 +19,7 @@ const Invoice = ({ navigation }: { navigation: any }) => {
                 >
                     <SvgXml xml={IconLeftArrow} />
                 </TouchableOpacity>
-                <Text style={tw`font-SatoshiBold text-xl`}>Billing & subscription</Text>
+                <Text style={tw`font-SatoshiBold text-[#121221] text-xl`}>Invoice</Text>
                 <View></View>
             </View>
             <Text style={tw`text-base font-semibold text-gray-800 mb-2 mt-8`}>

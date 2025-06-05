@@ -12,7 +12,7 @@ import tw from '../lib/tailwind';
 import { SvgXml } from 'react-native-svg';
 import NormalModal from '../component/NormalModal';
 import Button from '../component/Button';
-import { IconBillingAndSubscription, IconCross, IconDataDownload, IconHelpAndSupport, IconLeftArrow, IconLinkAccount, IconLock, IconLogout, IconReminder, IconRightArrrow, IconRightDrawer } from '../assets/Icons';
+import { IconBillingAndSubscription, IconCross, IconDataDownload, IconHelpAndSupport, IconLeftArrow, IconLinkAccount, IconLock, IconLogout, IconMoon, IconReminder, IconRightArrrow, IconRightDrawer, IconSun } from '../assets/Icons';
 import TButton from '../component/TButton';
 import LinearGradient from 'react-native-linear-gradient';
 import { useTheme } from '../context/ThemeContext';
@@ -81,6 +81,10 @@ function DrawerContent({ navigation, route }: any) {
   //   }
   const { theme, setTheme } = useTheme();
   const isDark = theme === 'dark';
+  const handleToggle = (selectedTheme) => {
+    setTheme(selectedTheme);
+    // Your theme logic here
+  };
   return (
     <View style={tw`px-4 h-full justify-between rounded-3xl ${isDark ? "bg-black" : "bg-white"} `}>
       <View style={tw`rounded-lg mt-6`}>
@@ -89,7 +93,23 @@ function DrawerContent({ navigation, route }: any) {
           style={tw`flex-row justify-end`}>
           <SvgXml xml={IconCross} />
         </TouchableOpacity>
-        <View style={tw`mt-6 gap-y-12`}>
+        <View style={tw`mt-6 gap-y-8`}>
+          <View>
+            <View style={tw`flex-row gap-2 items-center`}>
+              <View>
+                <Image source={require('../assets/Imgages/Drawer/Avatar.png')} />
+              </View>
+              <View style={tw` w-[90%]`}>
+                <Text style={tw`text-[#121221] text-lg font-SatoshiBold`}>
+                  Aisha Rahman
+                </Text>
+                <Text style={tw`text-[#76767E] text-xs font-SatoshiBold`}>
+                  aisharahman@gmail.com
+                </Text>
+                {/* <SvgXml xml={IconRightDrawer} /> */}
+              </View>
+            </View>
+          </View>
           <TouchableOpacity
             onPress={() =>
               navigation?.navigate('AccountSettings', {
@@ -97,7 +117,8 @@ function DrawerContent({ navigation, route }: any) {
                 // title: 'I miei ordini',
                 // from: 'myOrders',
               })
-            }>
+            }
+          >
             <View style={tw`flex-row gap-2 items-center`}>
               <SvgXml xml={IconLock} />
               <View style={tw`flex-row justify-between w-[90%]`}>
@@ -208,7 +229,7 @@ function DrawerContent({ navigation, route }: any) {
             </Text>
           </TouchableOpacity>
         </View>
-        <View style={tw`bg-[#E7E7E9] py-6 p-2 flex-row justify-between rounded-2xl my-12`}>
+        <View style={tw`bg-[#E7E7E9] py-6 p-2 flex-row justify-between rounded-2xl my-8`}>
           <View style={tw`w-[30%] items-center justify-center`}>
             <Image style={tw`w-12 h-12`} source={require('../assets/Imgages/SplashIcon.png')} />
           </View>
@@ -218,7 +239,7 @@ function DrawerContent({ navigation, route }: any) {
               colors={['#FFA68D', '#FD3A84']} // Purple gradient
               start={{ x: 1, y: 0 }}
               end={{ x: 1, y: 1 }}
-              style={tw`rounded-lg py-1 px-2`}
+              style={tw`rounded-2xl py-2 px-4`}
             >
               <TouchableOpacity>
                 <Text style={tw`text-white text-center`}>Get Premium</Text>
@@ -226,15 +247,52 @@ function DrawerContent({ navigation, route }: any) {
             </LinearGradient>
           </View>
         </View>
-        {/* <View>
-          <TouchableOpacity>
-            <Text>Dark modd</Text>
-            <Switch
-              value={theme === 'dark'}
-              onValueChange={(value) => setTheme(value ? 'dark' : 'light')}
-            />
-          </TouchableOpacity>
-        </View> */}
+        {/* dark and light mode */}
+        <View style={tw` my-4`}>
+          <Text style={tw`text-base text-gray-800 mb-4`}>Theme</Text>
+
+          <View style={tw`flex-row bg-gray-200 rounded-full p-1`}>
+            {/* Light Option */}
+            <TouchableOpacity
+              // onPress={() => handleToggle('light')}
+              style={tw.style(
+                `flex-1 flex-row items-center justify-center py-2 rounded-full`,
+                theme === 'light' ? `bg-white shadow` : ``
+              )}
+            >
+              {/* <Icon name="sun" size={18} color={theme === 'light' ? '#000' : '#666'} /> */}
+              <SvgXml xml={IconSun} />
+              <Text
+                style={tw.style(
+                  `ml-2 font-medium`,
+                  theme === 'light' ? `text-black font-bold` : `text-gray-500`
+                )}
+              >
+                Light
+              </Text>
+            </TouchableOpacity>
+
+            {/* Dark Option */}
+            <TouchableOpacity
+              // onPress={() => handleToggle('dark')}
+              style={tw.style(
+                `flex-1 flex-row items-center justify-center py-2 rounded-full`,
+                theme === 'dark' ? `bg-white shadow` : ``
+              )}
+            >
+              {/* <Icon name="moon" size={18} color={theme === 'dark' ? '#000' : '#666'} /> */}
+              <SvgXml xml={IconMoon} />
+              <Text
+                style={tw.style(
+                  `ml-2 font-medium`,
+                  theme === 'dark' ? `text-black font-bold` : `text-gray-500`
+                )}
+              >
+                Dark
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
 
 

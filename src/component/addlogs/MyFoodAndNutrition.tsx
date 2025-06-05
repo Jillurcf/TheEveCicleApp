@@ -24,61 +24,61 @@ const MyFoodAndNutrition = (props: Props) => {
         {
             id: 1,
             title: "Healthy meals",
-            icon: <IconHealthyMeals width={30} height={30}
+            icon: <IconHealthyMeals width={20} height={20}
             />
         },
         {
             id: 2,
             title: "Skipped meals",
-            icon: <IconSkippedMeals width={30} height={30}
+            icon: <IconSkippedMeals width={20} height={20}
             />
         },
         {
             id: 3,
             title: "Low protein intake",
-            icon: <IconLowProteinIntake width={30} height={30}
+            icon: <IconLowProteinIntake width={20} height={20}
             />
         },
         {
             id: 4,
             title: "High protein intake",
-            icon: <IconHighProteinIntake width={30} height={30}
+            icon: <IconHighProteinIntake width={20} height={20}
             />
         },
         {
             id: 5,
             title: "Dehydrated",
-            icon: <IconDehydrated width={30} height={30}
+            icon: <IconDehydrated width={20} height={20}
             />
         },
         {
             id: 6,
             title: "Drank enough water",
-            icon: <IconDrankEnoughWater width={30} height={30}
+            icon: <IconDrankEnoughWater width={20} height={20}
             />
         },
         {
             id: 7,
             title: "Junk food",
-            icon: <IconJunkFood width={30} height={30}
+            icon: <IconJunkFood width={20} height={20}
             />
         },
         {
             id: 8,
             title: "Healthy snacks",
-            icon: <IconHealthySnacks width={30} height={30}
+            icon: <IconHealthySnacks width={20} height={20}
             />
         },
         {
             id: 9,
             title: "Sugary snacks",
-            icon: <IconSugarySnaks width={30} height={30}
+            icon: <IconSugarySnaks width={20} height={20}
             />
         },
         {
             id: 10,
             title: "Unhealthy foods",
-            icon: <IconUnHealthyFood width={30} height={30}
+            icon: <IconUnHealthyFood width={20} height={20}
             />
         },
         {
@@ -103,7 +103,7 @@ const MyFoodAndNutrition = (props: Props) => {
     };
     return (
         <View style={tw`bg-white rounded-2xl p-[4%]`}>
-            <Text style={tw`text-black text-lg font-SatoshiBold`}>My food & nutrition</Text>
+            <Text  style={tw`text-[#121221] my-2 font-SatoshiBold`}>My food & nutrition</Text>
             <View style={tw`my-2 flex-row flex-wrap gap-1`}>
                 {options.map((option) =>
                 {
@@ -114,20 +114,20 @@ const MyFoodAndNutrition = (props: Props) => {
                             key={option.id}
                             onPress={() => toggleOption(option.title)}
                             style={[
-                                tw`mb-2 relative rounded-full flex-row items-center gap-2 px-4 py-2`,
-                                {
-                                    backgroundColor: isSelected ? '#EAF5F5' : '#f2f2f2',
-                                    borderColor: isSelected ? '#EAF5F5' : '#ccc',
+                                tw`mb-2 relative rounded-full flex-row items-center gap-1 px-1 py-1`,
+                                 {
+                                    backgroundColor: isSelected ? '#EAF5F5' : '#FFFFFF',
+                                    borderColor: isSelected ? '#EAF5F5' : '#E7E7E9',
                                     borderWidth: 1,
                                 }
                             ]}
                         >
                            
                             {option.icon}
-                            <Text style={{ color: isSelected ? '#2B9696' : 'black', fontSize: 14, marginRight: 6 }}>
+                           <Text style={{ color: isSelected ? '#2B9696' : '#76767E', fontSize: 12, marginRight: 6 }}>
                                 {option.title}
                             </Text>
-                            {isSelected &&   <SvgXml style={tw`absolute right-1`} xml={IconTick}/> }
+                            {isSelected &&   <SvgXml style={tw`absolute right-0`} xml={IconTick}/> }
                           
                         </TouchableOpacity>
                     );

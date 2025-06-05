@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   backdrop: {
     flex: 1,
     justifyContent: 'flex-end', // this is crucial
-    backgroundColor: 'rgba(128, 0, 128, 0.5)' // Classic purple
+    backgroundColor: 'rgba(10, 0, 10, 0.5)' // Classic purple
   },
   modalContent: {
     backgroundColor: '#fff',
