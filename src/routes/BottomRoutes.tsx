@@ -220,7 +220,7 @@ function BottomRoutes({ route }) {
           </TouchableOpacity>
         </View>
         <TouchableOpacity
-            onPress={() => navigation?.navigate("AddLogs")}
+            onPress={() => navigation?.navigate("AddNotes")}
             style={tw`rounded-full p-2 overflow-hidden `}
           >
             <BlurView

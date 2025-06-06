@@ -98,21 +98,23 @@ const AddLogs = ({
     return (
         <ScrollView style={tw`p-[4%] flex-1 bg-[#E8F6F6]`}>
             <View style={tw`flex-row my-4 justify-between`}>
-                <TouchableOpacity
+                <View style={tw`w-[10%]`}>
+                    <TouchableOpacity
                     onPress={() => navigation.goBack()}
                 >
                     <SvgXml xml={IconCross} />
                 </TouchableOpacity>
-                <View>
+                </View>
+                <View style={tw`w-[70%] items-center`}>
                 <Text style={tw`font-SatoshiBold text-[#121221] ml-6 text-xl`}>Add log</Text>
                 </View>
-                <View>
+                <View style={tw`w-[20%]`}>
                     <TouchableOpacity
                         onPress={() => console.log("LinkDevice")}
                     >
                         <View style={tw`flex-row items-center gap-2`}>
                             <SvgXml xml={IconEdit} />
-                            <Text style={tw`text-[#2B9696] `}>Edit logs</Text>
+                            <Text style={tw`text-[#2B9696] `}>Edit log</Text>
                         </View>
                     </TouchableOpacity>
                 </View>

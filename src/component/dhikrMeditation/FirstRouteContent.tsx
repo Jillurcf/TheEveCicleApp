@@ -254,6 +254,7 @@ const FirstRouteContent = (props: Props) => {
                                 onPress={() => handlePlay(item?.item)}
                             >
                                 <Image
+                                style={tw`w-12 h-12`}
                                     source={item?.item?.image}
                                 />
                                 <View style={tw`flex-1`}>

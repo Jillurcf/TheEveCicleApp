@@ -34,7 +34,7 @@ const WellnessGuidanceEbook = ({navigation}) => {
     image: require('../assets/Imgages/Sanctum/Resource/wellnesGuidance/img1.png')},
   ]
   return (
-    <ScrollView contentContainerStyle={{ flex: 1, backgroundColor: '#E8F6F6', padding: '4%' }}>
+    <ScrollView contentContainerStyle={{ backgroundColor: '#E8F6F6', padding: '4%' }}>
             <View style={tw`flex-row items-center justify-between`}>
                 <TouchableOpacity
                     onPress={() => navigation?.goBack()}

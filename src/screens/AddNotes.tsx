@@ -17,7 +17,7 @@ const AddNotes = ({ navigation }) => {
         >
           <SvgXml xml={IconCross} />
         </TouchableOpacity>
-        <Text style={tw`font-SatoshiBold text-xl`}>Add notes</Text>
+        <Text style={tw`font-SatoshiBold text-[#121221] text-xl`}>Add notes</Text>
         <View></View>
       </View>
       <Text style={tw`mt-8 text-lg text-black font-SatoshiBold`}>My notes</Text>

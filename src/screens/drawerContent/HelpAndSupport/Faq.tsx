@@ -1,65 +1,72 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import Accordion from 'react-native-collapsible/Accordion';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 import tw from 'twrnc';
 import { IconLeftArrow } from '../../../assets/Icons';
+import GeneralInformationFaq from '../../../component/faq/GeneralInformation';
 
-const SECTIONS = [
-  {
-    title: 'How can I reset my password?',
-    content: 'To reset your password, go to the login page and tap "Forgot password".',
-  },
-  {
-    title: 'How do I contact support?',
-    content: 'You can contact support through the Help section in your profile.',
-  },
-];
+// Import category components
 
-const Faq = ({ navigation }: { navigation: any }) => {
-  const [activeSections, setActiveSections] = useState([]);
+// import AccountIssueFaq from './AccountIssueFaq';
+// import PaymentFaq from './PaymentFaq';
+// import SecurityFaq from './SecurityFaq';
 
-  const renderHeader = (section, _, isActive) => (
-    <View style={tw`bg-white px-4 py-3 border-b border-gray-200`}>
-      <Text style={tw`text-base font-semibold text-black`}>
-        {section.title}
-      </Text>
-    </View>
-  );
+const categories = ['General Information', 'Account issue', 'Payment', 'Security'];
 
-  const renderContent = (section) => (
-    <View style={tw`bg-white px-4 py-3`}>
-      <Text style={tw`text-gray-700`}>{section.content}</Text>
-    </View>
-  );
+const Faq = ({ navigation }: {navigation: any}) => {
+  const [selectedCategory, setSelectedCategory] = useState('General Information');
 
-  const updateSections = (sections) => {
-    setActiveSections(sections);
+  const renderCategoryComponent = () => {
+    switch (selectedCategory) {
+      case 'General Information':
+        return <GeneralInformationFaq />;
+      // case 'Account issue':
+      //   return <AccountIssueFaq />;
+      // case 'Payment':
+      //   return <PaymentFaq />;
+      // case 'Security':
+      //   return <SecurityFaq />;
+      default:
+        return null;
+    }
   };
- 
+
   return (
-    <ScrollView contentContainerStyle={tw`flex-grow bg-[#E8F6F6] px-4 py-5`}>
+    <View style={tw`flex-1 bg-[#E8F6F6] p-4`}>
       {/* Header */}
-      <View style={tw`flex-row items-center justify-between mb-5`}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <SvgXml xml={IconLeftArrow} width={24} height={24} />
-        </TouchableOpacity>
-        <Text style={tw`font-SatoshiBold text-lg text-black`}>FAQs</Text>
-        <View style={tw`w-6`} /> 
+      <View style={tw`flex-row items-center mb-4`}>
+        <View style={tw`w-[10%]`}>
+          <TouchableOpacity
+            onPress={() => navigation?.goBack()}
+            style={tw`mr-4`}>
+            <SvgXml xml={IconLeftArrow} />
+          </TouchableOpacity>
+        </View>
+      <View style={tw`w-[80%] items-center`}>
+          <Text style={tw`text-lg font-bold text-[#121221]`}>FAQs</Text>
+      </View>
+      <View style={tw`w-[10%]`}></View>
       </View>
 
-      {/* Accordion */}
-      <View style={tw`bg-white rounded-xl overflow-hidden shadow-sm`}>
-        <Accordion
-          sections={SECTIONS}
-          activeSections={activeSections}
-          renderHeader={renderHeader}
-          renderContent={renderContent}
-          onChange={updateSections}
-          underlayColor="transparent"
-        />
-      </View>
-    </ScrollView>
+      {/* Category Tabs */}
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={tw`-mb-120`}>
+        {categories.map((category) => (
+          <TouchableOpacity
+            key={category}
+            onPress={() => setSelectedCategory(category)}
+            style={tw`px-2 h-12 mx-0.5 rounded-full items-center ${selectedCategory === category ? 'bg-[#4FA8A8]' : 'bg-white'
+              } border border-gray-300`}
+          >
+            <Text style={tw`${selectedCategory === category ? 'text-white' : 'text-[#646464]'} mt-3 font-SatoshiRegular`}>
+              {category}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+
+      {/* FAQ List for Selected Category */}
+      {renderCategoryComponent()}
+    </View>
   );
 };
 

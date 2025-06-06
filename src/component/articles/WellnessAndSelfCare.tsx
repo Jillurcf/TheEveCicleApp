@@ -33,7 +33,7 @@ const WellnessAndSelfCare = (props: Props) => {
         },
     ];
     return (
-        <View>
+        <View style={tw`mb-110`}>
             <View style={tw` text-black `}>
                             <Text style={tw`font-SatoshiBold text-lg`}>
                                 Wellness & Self-care

@@ -28,26 +28,30 @@ const StepByStepTutoriials = ({ navigation }: { navigation: any }) => {
                     source={item.source}
                     thumbnail={item.thumbnail}
                     autoplay
-                    style={tw` rounded-2xl`}
+                    style={tw`w-full h-30 rounded-2xl`}
                 />
             </LinearGradient>
-            <Text numberOfLines={2} style={tw`w-32 text-xs mt-2`}>{item.title}</Text>
+            <Text numberOfLines={2} style={tw`w-32 text-[#3A3A47] text-xs mt-2`}>{item.title}</Text>
         </View>
     );
 
     return (
         <ScrollView style={tw`flex-1 bg-[#E8F6F6] p-4`}>
             <View style={tw`flex-row justify-between`}>
-                <TouchableOpacity
-                    onPress={() => navigation.goBack()}
-                >
-                    <SvgXml xml={IconLeftArrow} />
-                </TouchableOpacity>
-                <Text style={tw`font-SatoshiBold text-xl`}>Step-by-step tutorials </Text>
+                <View style={tw`w-[10%]`}>
+                    <TouchableOpacity
+                        onPress={() => navigation.goBack()}
+                    >
+                        <SvgXml xml={IconLeftArrow} />
+                    </TouchableOpacity>
+                </View>
+             <View style={tw`w-[80%] items-center`}>
+                   <Text style={tw`font-SatoshiBold text-[#121221] text-xl`}>Step-by-step tutorials </Text>
+             </View>
                 <View></View>
             </View>
             <View style={tw`mt-4`}>
-                <Text style={tw`font-SatoshiBold text-black text-xl py-3`}>Quick and start guides</Text>
+                <Text style={tw`font-SatoshiBold text-black text-xl py-3`}>Quick start guides</Text>
                 <FlatList
                     showsHorizontalScrollIndicator={false}
                     data={videoData}
@@ -57,7 +61,7 @@ const StepByStepTutoriials = ({ navigation }: { navigation: any }) => {
                     contentContainerStyle={{ paddingBottom: 16 }}
                 />
             </View>
-             <StatusBar barStyle="dark-content" backgroundColor="#E8F6F6" translucent={false} />
+            <StatusBar barStyle="dark-content" backgroundColor="#E8F6F6" translucent={false} />
         </ScrollView>
     );
 };

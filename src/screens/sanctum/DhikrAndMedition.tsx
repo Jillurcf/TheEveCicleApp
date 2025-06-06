@@ -83,18 +83,10 @@ const DhikrAndMedition = ({ navigation }: { navigation: any }) => {
         { key: 'fifth', title: 'Heart Meditation' },
     ];
     return (
-        <View style={{ flex: 1, backgroundColor: '#E8F6F6', padding: '4%' }}>
-            <View style={tw`flex-row items-center justify-between`}>
-                <TouchableOpacity
-                    onPress={() => navigation?.goBack()}
-                >
-                    <SvgXml xml={IconLeftArrow} />
-                </TouchableOpacity>
-                <Text style={tw`text-lg text-black font-SatoshiBold`}>Dhikr & Meditation</Text>
-                <View></View>
-            </View>
+        <View style={{ flex: 1, backgroundColor: '#E8F6F6', padding: '4%', marginTop: -650 }}>
+            
 
-            <View style={tw`mt-8 flex-1 bg-transparent`}>
+            <View style={tw`flex-1 bg-transparent`}>
                 <TabView
                     style={{ backgroundColor: 'transparent' }}
                     renderTabBar={(props) => (

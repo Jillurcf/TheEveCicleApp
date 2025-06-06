@@ -96,10 +96,10 @@ const MyNotes = (props: Props) => {
             >
                 <View style={tw`flex-1 justify-center items-center bg-black bg-opacity-50`}>
                     <View style={tw`bg-white rounded-lg p-4 w-80`}>
-                        <Text style={tw`text-black font-SatoshiBold text-lg text-center`}>Delete notes</Text>
-                        <Text style={tw`text-gray-500 font-SatoshiBold`}>
+                        <Text style={tw`text-[#121221] font-SatoshiBold text-lg text-center`}>Delete notes</Text>
+                        <Text style={{fontFamily: 'Satoshi-Regular', color: "#3A3A47"}}>
                             Once you delete the note it will be permanently removed from your notes.
-                            This is a hint text to help user.</Text>
+                           </Text>
                         <View style={tw`border border-gray-200 my-4`}>
 
                         </View>
@@ -110,7 +110,7 @@ const MyNotes = (props: Props) => {
                                 Delete' titleStyle={tw`text-[#2B9696]`} />
                             <TButton
 
-                                containerStyle={tw`bg-[#4FA8A8] w-[45%]`} title='No' titleStyle={tw`text-white`} />
+                                containerStyle={tw`bg-[#4FA8A8] w-[45%]`} title='No, Keep It' titleStyle={tw`text-white`} />
                         </View>
                     </View>
                 </View>

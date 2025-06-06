@@ -47,7 +47,11 @@ const NotificationItem = ({ item }) => (
     <Image source={item.icon} style={tw`w-6 h-6 mt-1`} />
     <View style={tw`ml-3 flex-1`}>
       <Text style={tw`text-sm font-bold text-black`}>{item.title}</Text>
-      <Text style={tw`text-sm text-gray-600`}>{item.message}</Text>
+      <Text
+      style={{ fontFamily: 'Satoshi-Regular', fontSize: 13, color:"#3A3A47", marginTop: 4  }}
+      // style={tw`text-sm font-SatoshiRegular text-gray-600`}
+      >{item.message}
+      </Text>
     </View>
   </View>
 );
@@ -60,7 +64,7 @@ const Notifications = ({ navigation }:{navigation:any}) => {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <SvgXml xml={IconLeftArrow} />
         </TouchableOpacity>
-        <Text style={tw`text-lg font-bold text-black`}>Notifications</Text>
+        <Text style={tw`text-lg font-SatoshiBold font-bold text-black`}>Notifications</Text>
         <TouchableOpacity>
           <Text style={tw`text-primaryBlue text-sm`}>Read all</Text>
         </TouchableOpacity>

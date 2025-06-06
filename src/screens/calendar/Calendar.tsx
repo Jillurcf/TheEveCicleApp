@@ -27,15 +27,19 @@ const Calender = ({ navigation }) => {
     const { theme } = useTheme();
     const isDark = theme === 'dark';
     return (
-        <View style={tw`flex-1 ${isDark ? "bg-black" :"bg-[#E8F6F6] "} p-[4%]`}>
+        <View style={tw`flex-1 ${isDark ? "bg-black" : "bg-[#E8F6F6] "} p-[4%]`}>
             <View style={tw`flex-row justify-between`}>
-                <TouchableOpacity
-                    onPress={() => navigation.goBack()}
-                >
-                    <SvgXml xml={IconCross} />
-                </TouchableOpacity>
-                <Text style={tw`font-SatoshiBold text-xl`}>Calendar</Text>
-                <View>
+                <View style={tw`w-[10%]`}>
+                    <TouchableOpacity
+                        onPress={() => navigation.goBack()}
+                    >
+                        <SvgXml xml={IconCross} />
+                    </TouchableOpacity>
+                </View>
+                <View style={tw`w-[80%] items-center`}>
+                    <Text style={tw`font-SatoshiBold text-[#121221] text-xl`}>Calendar</Text>
+                </View>
+                <View style={tw`w-[10%]`}>
                     {/* <TouchableOpacity
                         onPress={() => console.log("LinkDevice")}
                     >
@@ -53,11 +57,11 @@ const Calender = ({ navigation }) => {
 
 
                 <View style={tw`bg-white rounded-lg p-4 mt-4 items-center`}>
-                    <Text style={tw`text-black text-center text-lg font-SatoshiBold`}>No record found</Text>
-                    <Text style={tw`text-black text-center text-xs font-SatoshiBold my-2`}>Tab to add log</Text>
+                    <Text style={tw`text-[#121221] text-center text-lg mt-4 font-SatoshiBold`}>No Record</Text>
+                    <Text style={tw`text-[#76767E] text-center text-xs  font-SatoshiBold my-2`}>Tab to add log</Text>
                     <IwtButton
                         onPress={() => navigation.navigate('AddLogs')}
-                        containerStyle={tw`bg-[#2B9696] w-[50%] items-center gap-4 pl-6`} titleStyle={tw`font-SatoshiBold`} title='Add logs' svg='<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        containerStyle={tw`bg-[#2B9696] w-[40%] h-12 my-8 items-center gap-4 pl-6`} titleStyle={tw`font-SatoshiBold`} title='Add logs' svg='<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M6.25 14V7.75H0V6.25H6.25V0H7.75V6.25H14V7.75H7.75V14H6.25Z" fill="white"/>
     </svg>
     '/>
