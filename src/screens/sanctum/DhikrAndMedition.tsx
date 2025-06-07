@@ -1,5 +1,5 @@
 import { Image, ScrollView, StatusBar, StyleSheet, Text, Touchable, TouchableOpacity, useWindowDimensions, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { SvgXml } from 'react-native-svg'
 import { IconLeftArrow } from '../../assets/Icons'
 
@@ -14,117 +14,64 @@ import ThirdRouteContent from '../../component/dhikrMeditation/summerJoy/ThirdRo
 import FourthRouteContent from '../../component/dhikrMeditation/autumnPeach/FourthRouteContent'
 import FifthRouteContent from '../../component/dhikrMeditation/heartMeditation/FifthRouteContent'
 
+
+const categories = ["Winter care", "Spring grouth", "Summer joy", "Autumn peach", "Heart meditation"]
 type Props = {}
-const FirstRoute = () => (
-    // <View style={{ flex: 1, backgroundColor: '#E8F6F6', padding: '4%' }}>
-    //     <View style={{ flex: 1 }}>
-    //         <LinearGradient
-    //             colors={['#CAF0F800', '#00B4D8', '#CAF0F800']} // Gradient colors (adjust as needed)
-    //             style={tw`w-full h-52 rounded-lg overflow-hidden mt-4`}
-    //         >
-    //             <VideoPlayer
-    //                 // controls
-    //                 // controlsStyles={tw`bg-gray-500 rounded-lg`}
-    //                 // videoStyle={styles.video}
-    //                 // videoProps={{
-    //                 //     resizeMode: 'contain', // Adjust the video size
-    //                 //     repeat: true, // Loop the video
-    //                 // }}
-    //                 source={require('../../assets/video/SampleVideo_1280x720_1mb.mp4')}
-    //                 // source={{ uri: 'https://wcmauthorguide.illinois.gov/media/videos/sample-videos/hourglass-mp4' }}
-    //                 thumbnail={require('../../assets/Imgages/AddLogs/MyDay/Dhikr.png')}
-    //                 autoplay
-    //                 style={tw`w-[95%] h-full rounded-2xl mx-auto px-6`} // Apply the full width and height for the video player
-    //             />
-    //         </LinearGradient>
-    //     </View>
-    // </View>
-    <View>
-        <FirstRouteContent />
-    </View>
-);
-const SecondRoute = () => (
-    <View>
-        <SecondRouteContent />
-    </View>
-);
-const ThirdRoute = () => (
-    <View>
-        <ThirdRouteContent />
-    </View>
-);
-const FourthRoute = () => (
-    <View>
-        <FourthRouteContent />
-    </View>);
-const FithRoute = () => (
-    <View>
-        <FifthRouteContent />
-    </View>
-);
+
 const DhikrAndMedition = ({ navigation }: { navigation: any }) => {
     const layout = useWindowDimensions();
     const [index, setIndex] = React.useState(0);
-    const renderScene = SceneMap({
-        first: FirstRoute,
-        second: SecondRoute,
-        third: ThirdRoute,
-        fourth: FourthRoute,
-        fifth: FithRoute,
-    });
+    const [selectedCategory, setSelectedCategory] = useState("Winter care");
+  
 
-
-
-    const routes = [
-        { key: 'first', title: 'Winter care' },
-        { key: 'second', title: 'Spring grouth' },
-        { key: 'third', title: 'Summer joy' },
-        { key: 'fourth', title: 'Autumn peach' },
-        { key: 'fifth', title: 'Heart Meditation' },
-    ];
+    const renderCategoryComponent = () => {
+        switch (selectedCategory) {
+            case 'Winter care':
+                return <FifthRouteContent />
+            case 'Spring grouth':
+                return   <SecondRouteContent />
+            case 'Summer joy':
+                return  <ThirdRouteContent />
+            case 'Autumn peach':
+                return <FourthRouteContent />
+            case 'Heart meditation':
+                return  <FifthRouteContent />
+            default:
+                return null
+        }
+    }
     return (
-        <View style={{ flex: 1, backgroundColor: '#E8F6F6', padding: '4%', marginTop: -650 }}>
-            
-
-            <View style={tw`flex-1 bg-transparent`}>
-                <TabView
-                    style={{ backgroundColor: 'transparent' }}
-                    renderTabBar={(props) => (
-                        <View style={tw`flex-row gap-0.6 p-0.5 items-center justify-center rounded-lg`}>
-                            {props.navigationState.routes.map((route, i) => {
-                                const isActive = props.navigationState.index === i;
-                                return (
-                                    <TouchableOpacity
-                                        key={i}
-                                        onPress={() => props.jumpTo(route.key)}
-                                        style={tw.style(
-                                            `flex-1 items-center py-2 border rounded-md border-gray-300 `,
-                                            isActive ? `bg-[#4FA8A8] rounded-md` : `bg-transparent`
-                                        )}
-                                    >
-                                        <Text
-                                            style={tw.style(
-                                                `text-xs px-0.3 font-SatoshiBold text-center`,
-                                                isActive ? `text-white` : `text-gray-500`
-                                            )}
-                                        >
-                                            {route.title}
-                                        </Text>
-                                    </TouchableOpacity>
-                                );
-                            })}
-                        </View>
+        <View style={{ flex: 1, backgroundColor: '#E8F6F6', padding: '0%', marginTop: -660 }}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={tw``}>
+                <FlatList
+                showsVerticalScrollIndicator={false}
+                    data={categories}
+                    keyExtractor={(item) => item}
+                    numColumns={3}
+                    columnWrapperStyle={tw``}
+                    contentContainerStyle={tw`gap-3 -mb-15`}
+                    renderItem={({ item: category }) => (
+                        <TouchableOpacity
+                            onPress={() => setSelectedCategory(category)}
+                            style={tw`mr-2`} // 31% to fit 3 columns with space
+                        >
+                            <View
+                                style={tw`flex-row gap-2 items-center justify-center py-1 w-[25] border border-[#9E9EA4] rounded-2xl ${selectedCategory === category ? 'bg-[#4FA8A8] border-0' : 'bg-none'
+                                    }`}
+                            >
+                                <Text
+                                    style={tw` ${selectedCategory === category ? 'text-white font-bold' : 'text-[#646464]'
+                                        } mt-1 text-xs text-center font-SatoshiRegular mb-2`}
+                                >
+                                    {category}
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
                     )}
-                    initialLayout={{ width: layout.width }}
-                    navigationState={{ index, routes }}
-                    renderScene={renderScene}
-                    onIndexChange={setIndex}
-                    lazy
-                    lazyPreloadDistance={3} // Experiment with preload distance
-                    tabBarPosition="top"
                 />
-            </View>
+            </ScrollView>
 
+            {renderCategoryComponent()}
 
             <StatusBar
                 barStyle="dark-content"

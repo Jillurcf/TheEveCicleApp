@@ -38,7 +38,7 @@ const MorningAndEvening = () => {
                         onPress={() => navigation.navigate('MorningDuasAndWakeUp')}
                         style={tw` rounded-lg `}>
                         <Image style={tw`w-24 mr-2 h-24 rounded-lg`} source={item?.image} />
-                        <Text style={tw` text-xs w-22 text-center text-gray-600 font-SatoshiRegular mt-1`}
+                        <Text style={tw` text-xs w-22 text-start text-gray-600 font-SatoshiRegular mt-1`}
                             numberOfLines={2}
                         >{item?.title}
 

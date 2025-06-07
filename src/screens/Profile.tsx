@@ -11,28 +11,29 @@ import React, { useState } from 'react';
 import tw from '../lib/tailwind';
 import { launchImageLibrary } from 'react-native-image-picker';
 import { SvgXml } from 'react-native-svg';
-import { IconCamera } from '../assets/Icons';
+import { Iconblad, IconCamera } from '../assets/Icons';
 import { SceneMap, TabView } from 'react-native-tab-view';
 import Period from '../component/profile/Period';
 import CycleLength from '../component/profile/CycleLength';
 import Symptoms from '../component/profile/Symptoms';
 import ProfileCalendar from '../assets/Imgages/Profile/ProfileCalendar.svg';
+import Blad from '../assets/Imgages/Profile/blad.svg';
 
 const FirstRoute = () => (
   <ScrollView style={tw`bg-white p-4`}>
- <Period/>
+    <Period />
   </ScrollView>
 );
 
 const SecondRoute = () => (
   <ScrollView style={tw`bg-white p-4`}>
-   <CycleLength/>
+    <CycleLength />
   </ScrollView>
 );
 
 const ThirdRoute = () => (
   <ScrollView style={tw`bg-white p-4`}>
-   <Symptoms />
+    <Symptoms />
   </ScrollView>
 );
 
@@ -55,7 +56,7 @@ const Profile = ({ navigation }) => {
   const routes = [
     { key: 'first', title: 'Period' },
     { key: 'second', title: 'Cycle length' },
-    { key: 'third', title: 'Symptopms' },
+    { key: 'third', title: 'Symptoms' },
   ];
 
   const renderScene = SceneMap({
@@ -99,7 +100,7 @@ const Profile = ({ navigation }) => {
             <Text style={tw`text-lg font-SatoshiBold text-black`}>4 days</Text>
             <Text style={tw`text-xs font-SatoshiRegular`}>Average period</Text>
           </View>
-          <Image source={require('../assets/Imgages/Profile/profileBlad.png')} />
+          <Blad width={40} height={40} />
         </View>
         <View style={tw`bg-white p-3 rounded-lg w-[48%] flex-row justify-between`}>
           <View>
@@ -114,8 +115,9 @@ const Profile = ({ navigation }) => {
       <Text style={tw`text-xl font-SatoshiBold text-black mt-6`}>History</Text>
 
       {/* Give TabView a fixed height */}
-      <View style={tw`mt-4 bg-white h-[580px] p-2 rounded-2xl my-8`}>
+      <View style={tw`mt-4 bg-white h-[600px] p-2 rounded-2xl my-8`}>
         <TabView
+        
           navigationState={{ index, routes }}
           renderScene={renderScene}
           onIndexChange={setIndex}

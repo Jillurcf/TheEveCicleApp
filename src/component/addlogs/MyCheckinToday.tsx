@@ -5,13 +5,13 @@ import { SvgXml } from 'react-native-svg';
 import { Iconblad, IconTick } from '../../assets/Icons';
 import HappyIcon from '../../assets/Imgages/AddLogs/myCheckinTody/newsvg/happy.png';
 import CalmIcon from '../../assets/Imgages/AddLogs/myCheckinTody/calm.svg';
-import EnergicIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Energic.svg';
+import EnergicIcon from '../../assets/Imgages/AddLogs/myCheckinTody/newsvg/energetic.svg';
 import ConfidentIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Confident.svg';
 import SadIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Sad.svg';
 import FocuccedIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Focused.svg';
 import Exhausted from '../../assets/Imgages/AddLogs/myCheckinTody/Exhausted.svg';
 import LowIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Low.svg';
-import IrritatedIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Irritated.svg';
+import IrritatedIcon from '../../assets/Imgages/AddLogs/myCheckinTody/newsvg/irritated.svg';
 import AnxiousIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Anxious.svg';
 import StressedIcon from '../../assets/Imgages/AddLogs/myCheckinTody/Stressed.svg';
 import HighLibidoIcon from '../../assets/Imgages/AddLogs/myCheckinTody/HighLibido.svg';
@@ -48,8 +48,8 @@ const MyCheckinToday = (props: Props) => {
         {
             id: 3,
             title: "Energetic",
-            icon:
-                <EnergicIcon width={20} height={20} />
+            icon: <EnergicIcon width={30} height={30}/>
+                
         },
         {
             id: 4,
@@ -79,7 +79,7 @@ const MyCheckinToday = (props: Props) => {
         {
             id: 9,
             title: "Irritated",
-            icon: <IrritatedIcon width={20} height={20} />
+            icon: <IrritatedIcon width={30} height={30} />
         },
         {
             id: 10,

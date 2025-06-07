@@ -55,7 +55,7 @@ const WellnessAndSelfCare = (props: Props) => {
                                         style={tw`w-32 h-32 rounded-lg`}
                                     />
                                 </View>
-                                <Text style={tw`text-black font-SatoshiRegular text-center mt-1 font-SatoshiRegular`}> {item?.item?.title}</Text>
+                                <Text style={tw`text-[#3A3A47] text-xs font-SatoshiRegular text-start mt-1 font-SatoshiRegular`}> {item?.item?.title}</Text>
                             </View>
                         )
                     }

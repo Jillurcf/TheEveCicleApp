@@ -9,6 +9,7 @@ import {
 import { Circle } from 'react-native-svg';
 import * as shape from 'd3-shape';
 import * as d3Scale from 'd3-scale';
+import tw from '../../lib/tailwind';
 
 const Period = () => {
   const chartWidth = Dimensions.get('window').width - 40;
@@ -23,13 +24,13 @@ const Period = () => {
         cy={y(value)}
         r={4}
         stroke={'#2c3e50'}
-        fill={'#16a085'}
+        fill={'#96CBCB99'}
       />
     ));
   };
 
   return (
-    <View style={styles.container}>
+    <View style={tw`bg-white rounded-xl flex-1 h-[200px]`}>
       <View style={{ flexDirection: 'row', height: 220 }}>
         {/* Y Axis */}
         <YAxis
@@ -70,8 +71,9 @@ const Period = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
-    padding:0,
+    marginTop: 0,
+    padding:8,
+    backgroundColor: "white"
   },
 });
 

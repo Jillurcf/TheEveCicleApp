@@ -200,7 +200,7 @@ const FifthRouteContent = (props: Props) => {
     ]
     return (
         <ScrollView flex-1>
-            <View style={{ backgroundColor: '#E8F6F6', padding: '4%' }}>
+            <View style={{ backgroundColor: '#E8F6F6', padding: '4%', marginTop: 0 }}>
                 <View style={{}}>
                     <LinearGradient
                         colors={[  '#AAC0AA00', "#93C13D", ]} // Gradient colors (adjust as needed)
